@@ -57,5 +57,10 @@ namespace Miljöboven1.View
                 btnLogIn.PerformClick();
             }
         }
+
+        private void InloggningsForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
+        }
     }
 }

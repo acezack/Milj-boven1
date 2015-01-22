@@ -34,7 +34,6 @@ namespace Miljöboven1.Controller
             for (int i = 0; i < crimeList.Count; i++)
             {
                 crimeList[i].ApplyEventList(handläggareForm);
-                string bitching = "ola luktar bajs";
             }
         }
 

@@ -112,6 +112,7 @@
             this.MinimumSize = new System.Drawing.Size(554, 430);
             this.Name = "InloggningsForm";
             this.Text = "Miljöboven";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.InloggningsForm_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

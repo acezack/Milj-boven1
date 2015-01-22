@@ -16,10 +16,9 @@ namespace Miljöboven1.View
         View.InloggningsForm inloggningsForm;
         CrimeList crimeList;
         
-        public HandläggareForm(View.InloggningsForm inloggningsForm)
+        public HandläggareForm()
         {
             InitializeComponent();
-            this.inloggningsForm = inloggningsForm;
             this.crimeList = new CrimeList(this);
         }
 

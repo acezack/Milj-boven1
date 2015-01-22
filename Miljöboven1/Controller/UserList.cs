@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-namespace Miljöboven.Controller
+namespace Miljöboven1.Controller
 {
     public class UserList
     {

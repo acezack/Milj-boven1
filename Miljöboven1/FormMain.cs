@@ -15,6 +15,8 @@ namespace Miljöboven1
         public FormMain()
         {
             InitializeComponent();
+            View.InloggningsForm inloggningsForm = new View.InloggningsForm();
+            inloggningsForm.ShowDialog();
         }
     }
 }

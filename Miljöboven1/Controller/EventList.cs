@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Miljöboven.View;
+using Miljöboven1.View;
 
-namespace Miljöboven.Controller
+namespace Miljöboven1.Controller
 {
     public class EventList
     {

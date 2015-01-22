@@ -15,11 +15,17 @@ namespace Miljöboven1.View
         public AdminForm()
         {
             InitializeComponent();
+
         }
 
         private void AdminForm_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnAddUser_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
