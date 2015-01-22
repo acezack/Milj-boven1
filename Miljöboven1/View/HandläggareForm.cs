@@ -13,13 +13,16 @@ namespace Miljöboven1.View
 {
     public partial class HandläggareForm : Form
     {
-        View.InloggningsForm inloggningsForm;
+        UserList userList;
         CrimeList crimeList;
+        InloggningsForm inloggningsForm;
         
-        public HandläggareForm()
+        public HandläggareForm(UserList userList)
         {
             InitializeComponent();
             this.crimeList = new CrimeList(this);
+            this.userList = userList;
+            inloggningsForm = new InloggningsForm(userList);
         }
 
         private void HandläggareForm_Load(object sender, EventArgs e)
@@ -29,12 +32,18 @@ namespace Miljöboven1.View
 
         private void HandläggareForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            inloggningsForm.Show();
+            
         }
 
         private void clbÄrendetitlar_SelectedIndexChanged(object sender, EventArgs e)
         {
             crimeList.UpdateSelectedCrime(clbÄrendetitlar.SelectedIndex);
+        }
+
+        private void HandläggareForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            InloggningsForm inloggningsForm = new InloggningsForm(userList);
+            inloggningsForm.Show();
         }
     }
 }

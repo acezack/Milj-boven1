@@ -122,6 +122,7 @@
             this.MinimizeBox = false;
             this.Name = "HandläggareForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.HandläggareForm_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.HandläggareForm_FormClosed);
             this.Load += new System.EventHandler(this.HandläggareForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

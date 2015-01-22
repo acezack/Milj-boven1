@@ -79,9 +79,10 @@
             this.tbxPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbxPassword.Location = new System.Drawing.Point(398, 321);
             this.tbxPassword.Name = "tbxPassword";
+            this.tbxPassword.PasswordChar = '*';
             this.tbxPassword.Size = new System.Drawing.Size(128, 20);
             this.tbxPassword.TabIndex = 2;
-            this.tbxPassword.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbxPassword_KeyUp);
+            this.tbxPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbxPassword_KeyDown);
             // 
             // pictureBox1
             // 
@@ -112,7 +113,7 @@
             this.MinimumSize = new System.Drawing.Size(554, 430);
             this.Name = "InloggningsForm";
             this.Text = "Miljöboven";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.InloggningsForm_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.InloggningsForm_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

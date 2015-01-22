@@ -12,9 +12,11 @@ namespace Miljöboven1.View
 {
     public partial class ChefForm : Form
     {
-        public ChefForm()
+        Controller.UserList userList;
+        public ChefForm(Controller.UserList userList)
         {
             InitializeComponent();
+            this.userList = userList;
         }
 
         private void ChefForm_Load(object sender, EventArgs e)
@@ -25,6 +27,12 @@ namespace Miljöboven1.View
         private void ChefForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             
+        }
+
+        private void ChefForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            InloggningsForm inloggningsForm = new InloggningsForm(userList);
+            inloggningsForm.Show();
         }
     }
 }

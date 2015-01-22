@@ -30,13 +30,14 @@
         {
             this.SuspendLayout();
             // 
-            // Miljösamordnareform
+            // MiljösamordnareForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 262);
-            this.Name = "Miljösamordnareform";
+            this.Name = "MiljösamordnareForm";
             this.Text = "Miljösamordnareform";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MiljösamordnareForm_FormClosed);
             this.Load += new System.EventHandler(this.MiljösamordnareForm_Load);
             this.ResumeLayout(false);
 

@@ -35,5 +35,17 @@ namespace Miljöboven1.Controller
         {
             return userList[index].ID;
         }
+        public void RemoveUser(int index)
+        {
+            userList.RemoveAt(index);
+        }
+        public void ChangeUserPassword(int index, string newPassword)
+        {
+            userList[index].Password = newPassword;
+        }
+        public void ChangeUserUserName(int index, string newUserName)
+        {
+            userList[index].UserName = newUserName;
+        }
     }
 }

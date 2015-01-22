@@ -8,59 +8,89 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Miljöboven1.Controller;
-using Miljöboven1.View;
 
 namespace Miljöboven1.View
 {
     public partial class InloggningsForm : Form
     {
+        UserList userList;
 
-        public InloggningsForm()
+        public Boolean loggedIn;
+        public InloggningsForm(UserList userList)
         {
             InitializeComponent();
-            userList = new UserList();
-
-            userList.Add(new User("admin", "admin", 0, 0));
-            userList.Add(new User("chef", "chef", 1, 0));
-            userList.Add(new User("hand", "hand", 2, 0));
-            userList.Add(new User("milj", "milj", 3, 0));
+            loggedIn = false;
+            this.userList = userList;
         }
-
-        UserList userList;
 
         private void btnLoggaIn_Click(object sender, EventArgs e)
         {
             for (int index = 0; index < userList.GetCount(); index++)
             {
-                if (tbxUsername.Text == userList.GetUserName(index))
+                if (tbxUsername.Text == userList.GetUserName(index) && tbxPassword.Text == userList.GetPassword(index))
                 {
                     if (userList.GetType(index) == 0)//admin
                     {
                         this.Hide();
-                        AdminForm adminForm = new AdminForm();
+                        AdminForm adminForm = new AdminForm(userList);
                         adminForm.Show();
+                        loggedIn = true;
+                        tbxUsername.Clear();
+                        tbxPassword.Clear();
                     }
 
-                    if (userList.GetType(index) == 1)//chef
+                    else if(userList.GetType(index) == 1)//chef
                     {
-                        ChefForm chefForm = new ChefForm();
+                        this.Hide();
+                        ChefForm chefForm = new ChefForm(userList);
                         chefForm.Show();
+                        loggedIn = true;
+                        tbxUsername.Clear();
+                        tbxPassword.Clear();
+                    }
+
+                    else if (userList.GetType(index) == 2)//handläggare
+                    {
+                        this.Hide();
+                        HandläggareForm handläggareForm = new HandläggareForm(userList);
+                        handläggareForm.Show();
+                        loggedIn = true;
+                        tbxUsername.Clear();
+                        tbxPassword.Clear();
+                    }
+                    
+                    else if (userList.GetType(index) == 3)//miljösamordnare
+                    {
+                        this.Hide();
+                        MiljösamordnareForm miljösamordnareForm = new MiljösamordnareForm(userList);
+                        miljösamordnareForm.Show();
+                        loggedIn = true;
+                        tbxUsername.Clear();
+                        tbxPassword.Clear();
                     }
                 }
+                if (loggedIn)
+                {
+                    break;
+                }
+            }
+            if (!loggedIn)
+            {
+                tbxPassword.Clear();
+                MessageBox.Show("Fel användarnamn eller lösenord.");
             }
         }
+        private void InloggningsForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
 
-        private void tbxPassword_KeyUp(object sender, KeyEventArgs e)
+        private void tbxPassword_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
                 btnLogIn.PerformClick();
             }
-        }
-
-        private void InloggningsForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-
         }
     }
 }

@@ -38,6 +38,7 @@
             this.Name = "ChefForm";
             this.Text = "Chefform";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ChefForm_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ChefForm_FormClosed);
             this.Load += new System.EventHandler(this.ChefForm_Load);
             this.ResumeLayout(false);
 
