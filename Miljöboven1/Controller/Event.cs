@@ -14,7 +14,7 @@ namespace Miljöboven1.Controller
         public Event(string kommentar)
         {
             this.Kommentar = kommentar;
-            this.Datum = DateTime.Now.ToString("MM/dd");
+            this.Datum = DateTime.Now.ToString("yyyy/MM/dd");
         }
         public string getKommentar()
         {

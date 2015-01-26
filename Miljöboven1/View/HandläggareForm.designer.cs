@@ -67,6 +67,7 @@
             this.btnSkicka.TabIndex = 2;
             this.btnSkicka.Text = "Kommentera";
             this.btnSkicka.UseVisualStyleBackColor = true;
+            this.btnSkicka.Click += new System.EventHandler(this.btnSkicka_Click);
             // 
             // label1
             // 
@@ -94,6 +95,7 @@
             this.button1.TabIndex = 5;
             this.button1.Text = "Slutför";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // lbEvent
             // 

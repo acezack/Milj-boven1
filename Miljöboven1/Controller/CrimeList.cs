@@ -11,7 +11,7 @@ namespace Miljöboven1.Controller
     {
         HandläggareForm handläggareForm;
         List<Crime> crimeList;
-        
+
 
         public CrimeList(HandläggareForm handläggareForm)
         {
@@ -20,7 +20,7 @@ namespace Miljöboven1.Controller
             AddCurrentItemsToList();
             AddPreviousEventsToEventLists();
             InitForm();
-            
+
 
         }
 
@@ -50,14 +50,39 @@ namespace Miljöboven1.Controller
         }
         public void UpdateSelectedCrime(int i)
         {
-            handläggareForm.rtbÄrenedeinformation.Text = crimeList[i].GetÄrendeInformation();
-            handläggareForm.lbEvent.Items.Clear();
-            for (int j = 0; j < crimeList[i].eventList.getCount(); j++)
+            try
             {
-                handläggareForm.lbEvent.Items.Add(crimeList[i].eventList.getEventInfo(j));
+                handläggareForm.rtbÄrenedeinformation.Text = crimeList[i].GetÄrendeInformation();
+                handläggareForm.lbEvent.Items.Clear();
+                for (int j = 0; j < crimeList[i].eventList.getCount(); j++)
+                {
+                    handläggareForm.lbEvent.Items.Add(crimeList[i].eventList.getEventInfo(j));
+                }
             }
+            catch (Exception)
+            { }
         }
 
-        
+        public void CommentSelectedCrime()
+        {
+            if (handläggareForm.rtbKommentar.Text.Trim() != String.Empty)
+            {
+                if (handläggareForm.clbÄrendetitlar.GetItemChecked(handläggareForm.clbÄrendetitlar.SelectedIndex))
+                {
+                    crimeList[handläggareForm.clbÄrendetitlar.SelectedIndex].eventList.AddToList(new Event(handläggareForm.rtbKommentar.Text));
+                }
+            }
+        }
+        public void FinishCrime()
+        {
+            if (handläggareForm.clbÄrendetitlar.GetItemChecked(handläggareForm.clbÄrendetitlar.SelectedIndex))
+            {
+                int i = handläggareForm.clbÄrendetitlar.SelectedIndex;
+                handläggareForm.clbÄrendetitlar.Items.RemoveAt(i);
+                crimeList.RemoveAt(i);
+                handläggareForm.rtbÄrenedeinformation.Text = "";
+                handläggareForm.lbEvent.Items.Clear();
+            }
+        }
     }
 }
