@@ -71,6 +71,7 @@ namespace Miljöboven1.Controller
                 {
                     crimeList[handläggareForm.clbÄrendetitlar.SelectedIndex].eventList.AddToList(new Event(handläggareForm.rtbKommentar.Text));
                 }
+                
             }
         }
         public void FinishCrime()

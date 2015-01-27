@@ -57,7 +57,7 @@ namespace Miljöboven1.View
             {
                 MessageBox.Show("Du måste skriva något i kommentar rutan för att uppdatera ett event!", "Fel", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-
+            rtbKommentar.Clear();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -74,6 +74,7 @@ namespace Miljöboven1.View
                     crimeList.FinishCrime();
                 }
             }
+            rtbKommentar.Clear();
         }
     }
 }

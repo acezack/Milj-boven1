@@ -11,7 +11,7 @@ namespace Miljöboven1.Controller
     {
         List<User> userList = new List<User>();
 
-        public void Add(User user)
+        public void AddUser(User user)
         {
             userList.Add(user);
         }

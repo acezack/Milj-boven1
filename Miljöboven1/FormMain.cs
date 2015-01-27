@@ -22,10 +22,10 @@ namespace Miljöboven1
             InitializeComponent();
             userList = new UserList();
 
-            userList.Add(new User("admin", "admin", 0, 0));
-            userList.Add(new User("chef", "chef", 1, 0));
-            userList.Add(new User("hand", "hand", 2, 0));
-            userList.Add(new User("milj", "milj", 3, 0));
+            userList.AddUser(new User("admin", "admin", 0, 0));
+            userList.AddUser(new User("chef", "chef", 1, 0));
+            userList.AddUser(new User("hand", "hand", 2, 0));
+            userList.AddUser(new User("milj", "milj", 3, 0));
             this.ShowInTaskbar = false;
             this.WindowState = FormWindowState.Minimized;
             this.FormBorderStyle = FormBorderStyle.FixedToolWindow;

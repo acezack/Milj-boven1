@@ -35,13 +35,42 @@ namespace Miljöboven1.View
 
         private void btnAddUser_Click(object sender, EventArgs e)
         {
-            userList.Add(new User(tbxAddUserUserName.Text, tbxAddUserPassword.Text, cbxAddUserType.SelectedIndex, userList.GetCount()));
+            if (MessageBox.Show("Vill du lägga till denna användare?", "Lägga till användare", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                userList.AddUser(new User(tbxAddUserUserName.Text, tbxAddUserPassword.Text, cbxAddUserType.SelectedIndex + 1, userList.GetCount()));
+                tbxAddUserUserName.Clear();
+                tbxAddUserPassword.Clear();
+                cbxRemoveUser.Items.Clear();
+                for (int index = 0; index < userList.GetCount(); index++)
+                {
+                    cbxRemoveUser.Items.Add(userList.GetUserName(index));
+                }
+                cbxAddUserType.SelectedIndex = 0;
+                cbxRemoveUser.SelectedIndex = 0;
+            }
+            else
+            {
+                tbxAddUserUserName.Clear();
+                tbxAddUserPassword.Clear();
+            }
         }
 
         private void btnRemoveUser_Click(object sender, EventArgs e)
         {
-            userList.RemoveUser(cbxRemoveUser.SelectedIndex);
-            cbxRemoveUser.Update();
+            if (MessageBox.Show("Vill du ta bort denna användare?", "Ta bort användare", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                userList.RemoveUser(cbxRemoveUser.SelectedIndex);
+                cbxRemoveUser.Items.Clear();
+                for (int index = 0; index < userList.GetCount(); index++)
+                {
+                    cbxRemoveUser.Items.Add(userList.GetUserName(index));
+                }
+                cbxRemoveUser.SelectedIndex = 0;
+            }
+            else
+            {
+                cbxRemoveUser.SelectedIndex = 0;
+            }
         }
 
         private void AdminForm_FormClosed(object sender, FormClosedEventArgs e)
