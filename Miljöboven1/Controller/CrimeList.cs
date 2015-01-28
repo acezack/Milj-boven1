@@ -41,11 +41,11 @@ namespace Miljöboven1.Controller
         {
             handläggareForm.rtbÄrenedeinformation.Text = "";
             handläggareForm.rtbKommentar.Text = "";
-            handläggareForm.clbÄrendetitlar.Items.Clear();
+            handläggareForm.lbCrimes.Items.Clear();
             handläggareForm.lbEvent.Items.Clear();
             for (int i = 0; i < crimeList.Count; i++)
             {
-                handläggareForm.clbÄrendetitlar.Items.Add(crimeList[i].Title);
+                handläggareForm.lbCrimes.Items.Add(crimeList[i].Title);
             }
         }
         public void UpdateSelectedCrime(int i)
@@ -65,25 +65,15 @@ namespace Miljöboven1.Controller
 
         public void CommentSelectedCrime()
         {
-            if (handläggareForm.rtbKommentar.Text.Trim() != String.Empty)
-            {
-                if (handläggareForm.clbÄrendetitlar.GetItemChecked(handläggareForm.clbÄrendetitlar.SelectedIndex))
-                {
-                    crimeList[handläggareForm.clbÄrendetitlar.SelectedIndex].eventList.AddToList(new Event(handläggareForm.rtbKommentar.Text));
-                }
-                
-            }
+                    crimeList[handläggareForm.lbCrimes.SelectedIndex].eventList.AddToList(new Event(handläggareForm.rtbKommentar.Text.Trim()));
         }
         public void FinishCrime()
         {
-            if (handläggareForm.clbÄrendetitlar.GetItemChecked(handläggareForm.clbÄrendetitlar.SelectedIndex))
-            {
-                int i = handläggareForm.clbÄrendetitlar.SelectedIndex;
-                handläggareForm.clbÄrendetitlar.Items.RemoveAt(i);
+            int i = handläggareForm.lbCrimes.SelectedIndex;
+            handläggareForm.lbCrimes.Items.RemoveAt(i);
                 crimeList.RemoveAt(i);
                 handläggareForm.rtbÄrenedeinformation.Text = "";
                 handläggareForm.lbEvent.Items.Clear();
-            }
         }
     }
 }

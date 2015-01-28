@@ -25,21 +25,6 @@ namespace Miljöboven1.View
             inloggningsForm = new InloggningsForm(userList);
         }
 
-        private void HandläggareForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void HandläggareForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-
-        }
-
-        private void clbÄrendetitlar_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            crimeList.UpdateSelectedCrime(clbÄrendetitlar.SelectedIndex);
-        }
-
         private void HandläggareForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             inloggningsForm.Show();
@@ -47,34 +32,48 @@ namespace Miljöboven1.View
 
         private void btnSkicka_Click(object sender, EventArgs e)
         {
-            crimeList.CommentSelectedCrime();
-            crimeList.UpdateSelectedCrime(clbÄrendetitlar.SelectedIndex);
-            if (!clbÄrendetitlar.GetItemChecked(clbÄrendetitlar.SelectedIndex))
+            if (lbCrimes.SelectedIndex != -1)
             {
-                MessageBox.Show("För att markera ett ärende: Välj ditt ärende och se till att även kryssrutan för ärendet är ifyllt!", "Fel", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (rtbKommentar.Text.Trim() != String.Empty)
+                {
+                    DialogResult res = MessageBox.Show("Är du helt säker på att du vill kommentera?", "Bekräfta", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                    if (res == DialogResult.Yes)
+                    {
+                        crimeList.CommentSelectedCrime();
+                        crimeList.UpdateSelectedCrime(lbCrimes.SelectedIndex);
+                        rtbKommentar.Clear();
+                    }
+                }
+                else
+                    MessageBox.Show("Du måste skriva något i kommentar rutan för att uppdatera ett event!", "Fel", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            if (rtbKommentar.Text.Trim() == String.Empty)
-            {
-                MessageBox.Show("Du måste skriva något i kommentar rutan för att uppdatera ett event!", "Fel", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            rtbKommentar.Clear();
+            else
+                MessageBox.Show("Du måste välja ett brott ifrån listan till vänster först!", "Fel", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (!clbÄrendetitlar.GetItemChecked(clbÄrendetitlar.SelectedIndex))
-            {
-                MessageBox.Show("För att markera ett ärende: Välj ditt ärende och se till att även kryssrutan för ärendet är ifyllt!", "Fel", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
+            if (lbCrimes.SelectedIndex != -1)
             {
                 DialogResult res = MessageBox.Show("Är du helt säker på att jobbet har slutförts?", "Bekräfta", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (res == DialogResult.Yes)
                 {
                     crimeList.FinishCrime();
                 }
+                rtbKommentar.Clear();
             }
-            rtbKommentar.Clear();
+            else
+                MessageBox.Show("Du måste välja ett brott ifrån listan till vänster först!", "Fel", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
+        private void lbCrimes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            crimeList.UpdateSelectedCrime(lbCrimes.SelectedIndex);
+        }
+
+        private void HandläggareForm_Load(object sender, EventArgs e)
+        {
+            lbCrimes.SelectedIndex = lbCrimes.Items.Count - 1;
         }
     }
 }
