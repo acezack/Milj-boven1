@@ -14,14 +14,12 @@ namespace Miljöboven1.View
     public partial class HandläggareForm : Form
     {
         UserList userList;
-        CrimeList crimeList;
         InloggningsForm inloggningsForm;
         HandläggareFormController handläggarcontroller;
 
         public HandläggareForm(UserList userList)
         {
             InitializeComponent();
-            this.crimeList = new CrimeList(this);
             this.userList = userList;
             this.handläggarcontroller = new HandläggareFormController(this);
             inloggningsForm = new InloggningsForm(userList);
@@ -42,7 +40,7 @@ namespace Miljöboven1.View
                     if (res == DialogResult.Yes)
                     {
                         handläggarcontroller.CommentSelectedCrime();
-                        crimeList.UpdateSelectedCrime(lbCrimes.SelectedIndex);
+                        handläggarcontroller.UpdateSelectedCrime(lbCrimes.SelectedIndex);
                         rtbKommentar.Clear();
                     }
                 }
@@ -60,7 +58,7 @@ namespace Miljöboven1.View
                 DialogResult res = MessageBox.Show("Är du helt säker på att jobbet har slutförts?", "Bekräfta", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (res == DialogResult.Yes)
                 {
-                    crimeList.FinishCrime();
+                    handläggarcontroller.FinishCrime();
                 }
                 rtbKommentar.Clear();
             }
@@ -70,7 +68,7 @@ namespace Miljöboven1.View
 
         private void lbCrimes_SelectedIndexChanged(object sender, EventArgs e)
         {
-            crimeList.UpdateSelectedCrime(lbCrimes.SelectedIndex);
+            handläggarcontroller.UpdateSelectedCrime(lbCrimes.SelectedIndex);
         }
 
         private void HandläggareForm_Load(object sender, EventArgs e)

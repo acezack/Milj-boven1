@@ -15,6 +15,15 @@ namespace Miljöboven1.Controller
         {
             this.handläggareForm = handläggarform;
             this.crimeList = new CrimeList(handläggarform);
+            AddPreviousEventsToEventLists();
+            AddCurrentItemsToList();
+            InitForm();
+        }
+
+        void AddCurrentItemsToList()
+        {
+            crimeList.Add(new Crime(0, DateTime.Now.ToString("MM/dd"), "Göteborgsgatan 23/3c", "Superadde", "Supergatan 1337", "07013371337"));
+            crimeList.Add(new Crime(1, DateTime.Now.ToString("MM/dd"), "Stockholmsgatan 29c", "Superkungen", "Superkunggatan 1337", "07013391339"));
         }
 
         void InitForm()
@@ -30,7 +39,39 @@ namespace Miljöboven1.Controller
         }
         public void CommentSelectedCrime()
         {
-            crimeList[handläggareForm.lbCrimes.SelectedIndex].eventList.AddToList(new Event(handläggareForm.rtbKommentar.Text.Trim()));
+            crimeList.GetCrime(handläggareForm.lbCrimes.SelectedIndex).eventList.AddToList(new Event(handläggareForm.rtbKommentar.Text.Trim()));
+        }
+
+        public void UpdateSelectedCrime(int i)
+        {
+            try
+            {
+                handläggareForm.rtbÄrenedeinformation.Text = crimeList.GetCrime(i).GetÄrendeInformation();
+                handläggareForm.lbEvent.Items.Clear();
+                for (int j = 0; j < crimeList.GetCrime(i).eventList.getCount(); j++)
+                {
+                    handläggareForm.lbEvent.Items.Add(crimeList.GetCrime(i).eventList.getEventInfo(j));
+                }
+            }
+            catch (Exception)
+            { }
+        }
+
+        public void FinishCrime()
+        {
+            int i = handläggareForm.lbCrimes.SelectedIndex;
+            handläggareForm.lbCrimes.Items.RemoveAt(i);
+            crimeList.RemoveAt(i);
+            handläggareForm.rtbÄrenedeinformation.Text = "";
+            handläggareForm.lbEvent.Items.Clear();
+        }
+
+        public void AddPreviousEventsToEventLists()
+        {
+            for (int i = 0; i < crimeList.GetCount(); i++)
+            {
+                crimeList.GetCrime(i).ApplyEventList(handläggareForm);
+            }
         }
     }
 }

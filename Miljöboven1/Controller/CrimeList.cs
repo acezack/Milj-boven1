@@ -17,37 +17,13 @@ namespace Miljöboven1.Controller
         {
             this.handläggareForm = handläggareForm;
             this.crimeList = new List<Crime>();
-            AddCurrentItemsToList();
-            AddPreviousEventsToEventLists();
-            InitForm();
+            
+            
         }
 
-        void AddCurrentItemsToList()
+        public void Add(Crime crime)
         {
-            crimeList.Add(new Crime(0, DateTime.Now.ToString("MM/dd"), "Göteborgsgatan 23/3c", "Superadde", "Supergatan 1337", "07013371337"));
-            crimeList.Add(new Crime(1, DateTime.Now.ToString("MM/dd"), "Stockholmsgatan 29c", "Superkungen", "Superkunggatan 1337", "07013391339"));
-        }
-        void AddPreviousEventsToEventLists()
-        {
-            for (int i = 0; i < crimeList.Count; i++)
-            {
-                crimeList[i].ApplyEventList(handläggareForm);
-            }
-        }
-
-        public void UpdateSelectedCrime(int i)
-        {
-            try
-            {
-                handläggareForm.rtbÄrenedeinformation.Text = crimeList[i].GetÄrendeInformation();
-                handläggareForm.lbEvent.Items.Clear();
-                for (int j = 0; j < crimeList[i].eventList.getCount(); j++)
-                {
-                    handläggareForm.lbEvent.Items.Add(crimeList[i].eventList.getEventInfo(j));
-                }
-            }
-            catch (Exception)
-            { }
+            crimeList.Add(crime);
         }
 
         public int GetCount()
@@ -60,13 +36,14 @@ namespace Miljöboven1.Controller
             return crimeList[index].Title;
         }
 
-        public void FinishCrime()
+        public Crime GetCrime(int index)
         {
-            int i = handläggareForm.lbCrimes.SelectedIndex;
-            handläggareForm.lbCrimes.Items.RemoveAt(i);
-                crimeList.RemoveAt(i);
-                handläggareForm.rtbÄrenedeinformation.Text = "";
-                handläggareForm.lbEvent.Items.Clear();
+            return crimeList[index];
+        }
+
+        public void RemoveAt(int index)
+        {
+            crimeList.RemoveAt(index);
         }
     }
 }
