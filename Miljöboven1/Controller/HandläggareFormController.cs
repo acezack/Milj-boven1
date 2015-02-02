@@ -15,8 +15,8 @@ namespace Miljöboven1.Controller
         {
             this.handläggareForm = handläggarform;
             this.crimeList = new CrimeList(handläggarform);
-            AddPreviousEventsToEventLists();
             AddCurrentItemsToList();
+            AddPreviousEventsToEventLists();
             InitForm();
         }
 
