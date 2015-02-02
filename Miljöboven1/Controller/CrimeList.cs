@@ -20,8 +20,6 @@ namespace Miljöboven1.Controller
             AddCurrentItemsToList();
             AddPreviousEventsToEventLists();
             InitForm();
-
-
         }
 
         void AddCurrentItemsToList()
@@ -37,17 +35,6 @@ namespace Miljöboven1.Controller
             }
         }
 
-        void InitForm()
-        {
-            handläggareForm.rtbÄrenedeinformation.Text = "";
-            handläggareForm.rtbKommentar.Text = "";
-            handläggareForm.lbCrimes.Items.Clear();
-            handläggareForm.lbEvent.Items.Clear();
-            for (int i = 0; i < crimeList.Count; i++)
-            {
-                handläggareForm.lbCrimes.Items.Add(crimeList[i].Title);
-            }
-        }
         public void UpdateSelectedCrime(int i)
         {
             try
@@ -63,10 +50,16 @@ namespace Miljöboven1.Controller
             { }
         }
 
-        public void CommentSelectedCrime()
-        {
-                    crimeList[handläggareForm.lbCrimes.SelectedIndex].eventList.AddToList(new Event(handläggareForm.rtbKommentar.Text.Trim()));
+        public int GetCount()
+        { 
+            return crimeList.Count; 
         }
+
+        public string GetCrimeTitle(int index)
+        {
+            return crimeList[index].Title;
+        }
+
         public void FinishCrime()
         {
             int i = handläggareForm.lbCrimes.SelectedIndex;

@@ -48,6 +48,7 @@
     <Compile Include="Controller\CrimeList.cs" />
     <Compile Include="Controller\Event.cs" />
     <Compile Include="Controller\EventList.cs" />
+    <Compile Include="Controller\HandläggareFormController.cs" />
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
     </Compile>

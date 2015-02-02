@@ -16,12 +16,14 @@ namespace Miljöboven1.View
         UserList userList;
         CrimeList crimeList;
         InloggningsForm inloggningsForm;
+        HandläggareFormController handläggarcontroller;
 
         public HandläggareForm(UserList userList)
         {
             InitializeComponent();
             this.crimeList = new CrimeList(this);
             this.userList = userList;
+            this.handläggarcontroller = new HandläggareFormController(this);
             inloggningsForm = new InloggningsForm(userList);
         }
 
@@ -39,7 +41,7 @@ namespace Miljöboven1.View
                     DialogResult res = MessageBox.Show("Är du helt säker på att du vill kommentera?", "Bekräfta", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                     if (res == DialogResult.Yes)
                     {
-                        crimeList.CommentSelectedCrime();
+                        handläggarcontroller.CommentSelectedCrime();
                         crimeList.UpdateSelectedCrime(lbCrimes.SelectedIndex);
                         rtbKommentar.Clear();
                     }
