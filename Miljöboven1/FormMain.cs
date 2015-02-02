@@ -21,18 +21,18 @@ namespace Miljöboven1
 
         public FormMain()
         {
-            Stream fileStream;
-            if (File.Exists("data.txt"))
-            {
-                fileStream = File.OpenRead("data.txt");
-            }
-            else
-            {
-                fileStream = File.Create("data.txt");
-            }
-            BinaryFormatter serializer = new BinaryFormatter();
-            serializer.Serialize(fileStream, userList);
-            fileStream.Close();
+            //Stream fileStream;
+            //if (File.Exists("data.txt"))
+            //{
+            //    fileStream = File.OpenRead("data.txt");
+            //}
+            //else
+            //{
+            //    fileStream = File.Create("data.txt");
+            //}
+            //BinaryFormatter serializer = new BinaryFormatter();
+            //serializer.Serialize(fileStream, userList);
+            //fileStream.Close();
             InitializeComponent();
             userList = new UserList();
 

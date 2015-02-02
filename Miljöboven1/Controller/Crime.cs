@@ -33,6 +33,7 @@ namespace Miljöboven1.Controller
             this.CallerName = callerName;
             this.CallerAddress = callerAddress;
             this.CallerNumber = callerNumber;
+            ApplyEventList(handläggareForm);
         }
         public void ApplyEventList(HandläggareForm handläggareForm)
         {
