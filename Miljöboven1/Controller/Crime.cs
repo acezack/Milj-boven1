@@ -7,6 +7,7 @@ using Miljöboven1.View;
 
 namespace Miljöboven1.Controller
 {
+    [Serializable]
     public class Crime
     {
         public Int32 CrimeType { get; set; }

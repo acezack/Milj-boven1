@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace Miljöboven1.Controller
 {
+    [Serializable()]
     public class UserList
     {
         List<User> userList = new List<User>();

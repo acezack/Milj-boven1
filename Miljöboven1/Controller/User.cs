@@ -7,6 +7,7 @@ using Miljöboven1.Controller;
 
 namespace Miljöboven1.Controller
 {
+    [Serializable]
     public class User
     {
         public String UserName { get; set; }
