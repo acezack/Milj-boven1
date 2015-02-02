@@ -62,6 +62,7 @@
             // 
             this.tbxAddUserPassword.Location = new System.Drawing.Point(113, 77);
             this.tbxAddUserPassword.Name = "tbxAddUserPassword";
+            this.tbxAddUserPassword.PasswordChar = '*';
             this.tbxAddUserPassword.Size = new System.Drawing.Size(100, 20);
             this.tbxAddUserPassword.TabIndex = 2;
             // 

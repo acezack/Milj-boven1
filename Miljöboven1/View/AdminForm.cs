@@ -22,6 +22,7 @@ namespace Miljöboven1.View
 			{
                 cbxRemoveUser.Items.Add(userList.GetUserName(index));
 			}
+            cbxAddUserType.Items.Add("Admin");
             cbxAddUserType.Items.Add("Chef");
             cbxAddUserType.Items.Add("Handläggare");
             cbxAddUserType.Items.Add("Miljösamordnare");
@@ -37,7 +38,7 @@ namespace Miljöboven1.View
         {
             if (MessageBox.Show("Vill du lägga till denna användare?", "Lägga till användare", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                userList.AddUser(new User(tbxAddUserUserName.Text, tbxAddUserPassword.Text, cbxAddUserType.SelectedIndex + 1, userList.GetCount()));
+                userList.AddUser(new User(tbxAddUserUserName.Text, tbxAddUserPassword.Text, cbxAddUserType.SelectedIndex, userList.GetCount()));
                 tbxAddUserUserName.Clear();
                 tbxAddUserPassword.Clear();
                 cbxRemoveUser.Items.Clear();

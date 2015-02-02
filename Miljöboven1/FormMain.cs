@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 using Miljöboven1.Controller;
 using Miljöboven1.View;
 
@@ -19,6 +21,18 @@ namespace Miljöboven1
 
         public FormMain()
         {
+            Stream fileStream;
+            if (File.Exists("data.txt"))
+            {
+                fileStream = File.OpenRead("data.txt");
+            }
+            else
+            {
+                fileStream = File.Create("data.txt");
+            }
+            BinaryFormatter serializer = new BinaryFormatter();
+            serializer.Serialize(fileStream, userList);
+            fileStream.Close();
             InitializeComponent();
             userList = new UserList();
 

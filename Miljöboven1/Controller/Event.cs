@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Miljöboven1.Controller
 {
+    [Serializable]
     public class Event
     {
         public String Kommentar { get; set; }
