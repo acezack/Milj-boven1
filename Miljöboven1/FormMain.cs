@@ -17,24 +17,25 @@ namespace Miljöboven1
     public partial class FormMain : Form
     {
 
-        UserList userList;
+        UserList userList = new UserList();
 
         public FormMain()
         {
-            //Stream fileStream;
-            //if (File.Exists("data.txt"))
-            //{
-            //    fileStream = File.OpenRead("data.txt");
-            //}
-            //else
-            //{
-            //    fileStream = File.Create("data.txt");
-            //}
-            //BinaryFormatter serializer = new BinaryFormatter();
-            //serializer.Serialize(fileStream, userList);
-            //fileStream.Close();
+            Stream fileStream;
+            if (File.Exists("data.txt"))
+            {
+                fileStream = File.OpenRead("data.txt");
+                BinaryFormatter deserializer = new BinaryFormatter();
+                userList = (UserList)(deserializer.Deserialize(fileStream));
+            }
+            else
+            {
+                fileStream = File.Create("data.txt");
+                BinaryFormatter serializer = new BinaryFormatter();
+                serializer.Serialize(fileStream, userList);
+                fileStream.Close();
+            }
             InitializeComponent();
-            userList = new UserList();
 
             userList.AddUser(new User("admin", "admin", 0, 0));
             userList.AddUser(new User("chef", "chef", 1, 0));
