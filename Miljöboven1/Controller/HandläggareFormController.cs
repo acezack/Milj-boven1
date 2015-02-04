@@ -7,7 +7,7 @@ using Miljöboven1.View;
 
 namespace Miljöboven1.Controller
 {
-    class HandläggareFormController
+    public class HandläggareFormController
     {
         HandläggareForm handläggareForm;
         CrimeList crimeList;
@@ -72,6 +72,13 @@ namespace Miljöboven1.Controller
             {
                 crimeList.GetCrime(i).ApplyEventList(handläggareForm);
             }
+        }
+
+        public void EditEvent(int eventId, int crimeId, string newComment, string date)
+        {
+            crimeList.GetCrime(crimeId).eventList.GetEvent(eventId).Kommentar = newComment;
+            crimeList.GetCrime(crimeId).eventList.GetEvent(eventId).Datum = date;
+            UpdateSelectedCrime(crimeId);
         }
     }
 }

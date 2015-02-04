@@ -42,5 +42,9 @@ namespace Miljöboven1.Controller
         {
             return eventList[id].Datum + "   " + eventList[id].Kommentar;
         }
+        public Event GetEvent(int id)
+        {
+            return eventList[id];
+        }
     }
 }

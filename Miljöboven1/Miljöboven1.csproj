@@ -76,6 +76,12 @@
     <Compile Include="View\ChefForm.designer.cs">
       <DependentUpon>ChefForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\HandläggarDatum.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\HandläggarDatum.Designer.cs">
+      <DependentUpon>HandläggarDatum.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\HandläggareForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +113,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\ChefForm.resx">
       <DependentUpon>ChefForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\HandläggarDatum.resx">
+      <DependentUpon>HandläggarDatum.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\HandläggareForm.resx">
       <DependentUpon>HandläggareForm.cs</DependentUpon>

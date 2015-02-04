@@ -75,5 +75,31 @@ namespace Miljöboven1.View
         {
             lbCrimes.SelectedIndex = lbCrimes.Items.Count - 1;
         }
+
+        private void btnRedigera_Click(object sender, EventArgs e)
+        {
+            if (lbEvent.SelectedIndex != -1)
+            {
+                DialogResult res = MessageBox.Show("Är du säker på att du vill ändra den här händelsen?", "Bekräfta", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                if (res == DialogResult.Yes)
+                {
+                    DialogResult res2 = MessageBox.Show("Vill du ändra det angivna datumet?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                    if (res2 == DialogResult.Yes)
+                    {
+                        HandläggarDatum handläggardatum = new HandläggarDatum(this, this.handläggarcontroller);
+                        handläggardatum.Show();
+                    }
+                    else
+                    {
+                        string date = lbEvent.Items[lbEvent.SelectedIndex].ToString().Split(' ')[0];
+                        
+                        handläggarcontroller.EditEvent(lbEvent.SelectedIndex, lbCrimes.SelectedIndex, rtbKommentar.Text, date);
+                    }
+                }
+                rtbKommentar.Clear();
+            }
+            else
+                MessageBox.Show("Du måste välja en händelse ifrån händelseförloppslistan först!", "Fel", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
     }
 }
