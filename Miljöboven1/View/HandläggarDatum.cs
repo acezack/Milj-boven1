@@ -29,7 +29,7 @@ namespace Miljöboven1.View
 
         private void button1_Click(object sender, EventArgs e)
         {
-            handläggarecontroller.EditEvent(handläggareform.lbEvent.SelectedIndex, handläggareform.lbCrimes.SelectedIndex, handläggareform.rtbKommentar.Text, this.dateTimePicker1.Value.ToString("yyyy/MM/dd"));
+            handläggarecontroller.EditEvents(handläggareform.lbEvent.SelectedIndex, handläggareform.lbCrimes.SelectedIndex, handläggareform.rtbKommentar.Text, this.dateTimePicker1.Value.ToString("yyyy/MM/dd"));
             this.Hide();
         }
     }

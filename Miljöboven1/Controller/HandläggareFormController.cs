@@ -44,7 +44,7 @@ namespace Miljöboven1.Controller
                 handläggareForm.lbEvent.Items.Clear();
                 for (int j = 0; j < crimeList.GetCrime(i).eventList.getCount(); j++)
                 {
-                    handläggareForm.lbEvent.Items.Add(crimeList.GetCrime(i).eventList.GetEventInfo(j));
+                    handläggareForm.lbEvent.Items.Add(crimeList.GetCrime(i).eventList.getEventInfo(j));
                 }
             }
             catch (Exception)
