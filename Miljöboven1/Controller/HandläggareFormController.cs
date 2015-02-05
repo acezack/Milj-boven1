@@ -44,7 +44,7 @@ namespace Miljöboven1.Controller
                 handläggareForm.lbEvent.Items.Clear();
                 for (int j = 0; j < crimeList.GetCrime(i).eventList.getCount(); j++)
                 {
-                    handläggareForm.lbEvent.Items.Add(crimeList.GetCrime(i).eventList.getEventInfo(j));
+                    handläggareForm.lbEvent.Items.Add(crimeList.GetCrime(i).eventList.GetEventInfo(j));
                 }
             }
             catch (Exception)
@@ -66,6 +66,12 @@ namespace Miljöboven1.Controller
             {
                 crimeList.GetCrime(i).ApplyEventList(handläggareForm);
             }
+        }
+
+        public void EditEvents(int eventID, int crimeID, string newComment, string date)
+        {
+            crimeList.GetCrime(crimeID).eventList.GetEvent(crimeID).Kommentar = newComment;
+            crimeList.GetCrime(crimeID).eventList.GetEvent(crimeID).Datum = date;
         }
     }
 }
