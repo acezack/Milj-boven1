@@ -14,7 +14,7 @@ using Miljöboven1.View;
 
 namespace Miljöboven1
 {
-    [Serializable()]
+    [Serializable]
     public partial class FormMain : Form
     {
 
@@ -24,7 +24,6 @@ namespace Miljöboven1
         public FormMain()
         {
             Stream userFileStream;
-            Stream crimeFileStream;
 
             userList.AddUser(new User("admin", "admin", 0, 0));
             userList.AddUser(new User("chef", "chef", 1, 0));
@@ -51,14 +50,14 @@ namespace Miljöboven1
 
             if (File.Exists("1crimeData.txt"))
             {
-                crimeFileStream = File.OpenRead("1crimeData.txt");
+                Stream crimeFileStream = File.OpenRead("1crimeData.txt");
                 BinaryFormatter deserializer = new BinaryFormatter();
                 crimeList = (CrimeList)(deserializer.Deserialize(crimeFileStream));
                 crimeFileStream.Close();
             }
             else
             {
-                crimeFileStream = File.Create("1crimeData.txt");
+                Stream crimeFileStream = File.Create("1crimeData.txt");
                 BinaryFormatter serializer = new BinaryFormatter();
                 serializer.Serialize(crimeFileStream, crimeList);
                 crimeFileStream.Close();

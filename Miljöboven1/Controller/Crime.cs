@@ -7,7 +7,7 @@ using Miljöboven1.View;
 
 namespace Miljöboven1.Controller
 {
-    [Serializable()]
+    [Serializable]
     public class Crime
     {
         public Int32 CrimeType { get; set; }
@@ -56,7 +56,7 @@ namespace Miljöboven1.Controller
         public void ApplyEventList(HandläggareForm handläggareForm)
         {
             this.handläggareForm = handläggareForm;
-            this.eventList = new EventList(handläggareForm);
+            this.eventList = new EventList();
         }
 
         public string GetÄrendeInformation()

@@ -11,10 +11,8 @@ namespace Miljöboven1.Controller
     public class EventList
     {
         List<Event> eventList;
-        HandläggareForm handläggareForm;
-        public EventList(HandläggareForm handläggareForm) 
+        public EventList() 
         {
-            this.handläggareForm = handläggareForm;
             this.eventList = new List<Event>();
             AddPreviousItemsToList();
         }
@@ -30,10 +28,17 @@ namespace Miljöboven1.Controller
             eventList.Add(ev);
         }
 
+        public string GetEventInfo(int id)
+        {
+            string svar = eventList[id].Datum + "   " + eventList[id].Kommentar;
+            return svar;
+        }
+
         public int getCount()
         {
             return eventList.Count();
         }
+
         public string getEventInfo(int id)
         {
             return eventList[id].Datum + "   " + eventList[id].Kommentar;

@@ -80,5 +80,10 @@ namespace Miljöboven1.View
         {
             lbCrimes.SelectedIndex = lbCrimes.Items.Count - 1;
         }
+
+        private void btnRedigera_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

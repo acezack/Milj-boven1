@@ -7,7 +7,7 @@ using Miljöboven1.View;
 
 namespace Miljöboven1.Controller
 {
-    class HandläggareFormController
+    public class HandläggareFormController
     {
         HandläggareForm handläggareForm;
         CrimeList crimeList;
