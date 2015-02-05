@@ -7,23 +7,16 @@ using Miljöboven1.View;
 
 namespace Miljöboven1.Controller
 {
-    public class HandläggareFormController
+    class HandläggareFormController
     {
         HandläggareForm handläggareForm;
         CrimeList crimeList;
-        public HandläggareFormController(HandläggareForm handläggarform)
+        public HandläggareFormController(HandläggareForm handläggarform, CrimeList crimeList)
         {
             this.handläggareForm = handläggarform;
-            this.crimeList = new CrimeList(handläggarform);
-            AddCurrentItemsToList();
+            this.crimeList = new CrimeList();
             AddPreviousEventsToEventLists();
             InitForm();
-        }
-
-        void AddCurrentItemsToList()
-        {
-            crimeList.Add(new Crime(0, DateTime.Now.ToString("MM/dd"), "Göteborgsgatan 23/3c", "Superadde", "Supergatan 1337", "07013371337"));
-            crimeList.Add(new Crime(1, DateTime.Now.ToString("MM/dd"), "Stockholmsgatan 29c", "Superkungen", "Superkunggatan 1337", "07013391339"));
         }
 
         void InitForm()
@@ -37,6 +30,7 @@ namespace Miljöboven1.Controller
                 handläggareForm.lbCrimes.Items.Add(crimeList.GetCrimeTitle(i));
             }
         }
+
         public void CommentSelectedCrime()
         {
             crimeList.GetCrime(handläggareForm.lbCrimes.SelectedIndex).eventList.AddToList(new Event(handläggareForm.rtbKommentar.Text.Trim()));
@@ -72,13 +66,6 @@ namespace Miljöboven1.Controller
             {
                 crimeList.GetCrime(i).ApplyEventList(handläggareForm);
             }
-        }
-
-        public void EditEvent(int eventId, int crimeId, string newComment, string date)
-        {
-            crimeList.GetCrime(crimeId).eventList.GetEvent(eventId).Kommentar = newComment;
-            crimeList.GetCrime(crimeId).eventList.GetEvent(eventId).Datum = date;
-            UpdateSelectedCrime(crimeId);
         }
     }
 }

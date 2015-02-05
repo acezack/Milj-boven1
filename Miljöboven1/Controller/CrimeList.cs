@@ -7,19 +7,10 @@ using Miljöboven1.View;
 
 namespace Miljöboven1.Controller
 {
+    [Serializable]
     public class CrimeList
     {
-        HandläggareForm handläggareForm;
-        List<Crime> crimeList;
-
-
-        public CrimeList(HandläggareForm handläggareForm)
-        {
-            this.handläggareForm = handläggareForm;
-            this.crimeList = new List<Crime>();
-            
-            
-        }
+        List<Crime> crimeList = new List<Crime>();
 
         public void Add(Crime crime)
         {

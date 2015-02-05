@@ -14,10 +14,14 @@ namespace Miljöboven1.View
     public partial class MiljösamordnareForm : Form
     {
         UserList userList;
-        public MiljösamordnareForm(UserList userList)
+
+        CrimeList crimeList;
+
+        public MiljösamordnareForm(UserList userList, CrimeList crimeList)
         {
             InitializeComponent();
             this.userList = userList;
+            this.crimeList = crimeList;
         }
 
         private void MiljösamordnareForm_Load(object sender, EventArgs e)
@@ -27,7 +31,7 @@ namespace Miljöboven1.View
 
         private void MiljösamordnareForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            InloggningsForm inloggningsForm = new InloggningsForm(userList);
+            InloggningsForm inloggningsForm = new InloggningsForm(userList, crimeList);
             inloggningsForm.Show();
         }
     }

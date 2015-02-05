@@ -7,16 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Miljöboven1.Controller;
 
 namespace Miljöboven1.View
 {
     public partial class ChefForm : Form
     {
-        Controller.UserList userList;
-        public ChefForm(Controller.UserList userList)
+        UserList userList;
+        CrimeList crimeList;
+
+        public ChefForm(UserList userList, CrimeList crimeList)
         {
             InitializeComponent();
             this.userList = userList;
+            this.crimeList = crimeList;
         }
 
         private void ChefForm_Load(object sender, EventArgs e)
@@ -31,7 +35,7 @@ namespace Miljöboven1.View
 
         private void ChefForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            InloggningsForm inloggningsForm = new InloggningsForm(userList);
+            InloggningsForm inloggningsForm = new InloggningsForm(userList, crimeList);
             inloggningsForm.Show();
         }
     }

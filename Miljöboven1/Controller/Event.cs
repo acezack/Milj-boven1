@@ -10,6 +10,7 @@ namespace Miljöboven1.Controller
     public class Event
     {
         public String Kommentar { get; set; }
+
         public String Datum { get; set; }
 
         public Event(string kommentar)
@@ -17,10 +18,12 @@ namespace Miljöboven1.Controller
             this.Kommentar = kommentar;
             this.Datum = DateTime.Now.ToString("yyyy/MM/dd");
         }
+
         public string getKommentar()
         {
             return Kommentar;
         }
+
         public string getDatum() 
         {
             return Datum;
