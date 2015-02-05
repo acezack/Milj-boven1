@@ -37,25 +37,28 @@
             this.lbEvent = new System.Windows.Forms.ListBox();
             this.lbCrimes = new System.Windows.Forms.ListBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btnRedigera = new System.Windows.Forms.Button();
+            this.btnTaBort = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // rtbÄrenedeinformation
             // 
             this.rtbÄrenedeinformation.BackColor = System.Drawing.SystemColors.Window;
-            this.rtbÄrenedeinformation.Location = new System.Drawing.Point(189, 214);
+            this.rtbÄrenedeinformation.Location = new System.Drawing.Point(189, 38);
             this.rtbÄrenedeinformation.Name = "rtbÄrenedeinformation";
             this.rtbÄrenedeinformation.ReadOnly = true;
-            this.rtbÄrenedeinformation.Size = new System.Drawing.Size(170, 72);
+            this.rtbÄrenedeinformation.Size = new System.Drawing.Size(535, 44);
             this.rtbÄrenedeinformation.TabIndex = 0;
             this.rtbÄrenedeinformation.Text = "Info om ärendet\n";
             // 
             // btnSkicka
             // 
-            this.btnSkicka.Location = new System.Drawing.Point(619, 214);
+            this.btnSkicka.Location = new System.Drawing.Point(480, 284);
             this.btnSkicka.Name = "btnSkicka";
-            this.btnSkicka.Size = new System.Drawing.Size(105, 33);
+            this.btnSkicka.Size = new System.Drawing.Size(119, 37);
             this.btnSkicka.TabIndex = 0;
-            this.btnSkicka.Text = "Kommentera";
+            this.btnSkicka.Text = "Lägg till händelse";
             this.btnSkicka.UseVisualStyleBackColor = true;
             this.btnSkicka.Click += new System.EventHandler(this.btnSkicka_Click);
             // 
@@ -63,7 +66,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(365, 188);
+            this.label1.Location = new System.Drawing.Point(8, 265);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(94, 23);
             this.label1.TabIndex = 3;
@@ -71,19 +74,19 @@
             // 
             // rtbKommentar
             // 
-            this.rtbKommentar.Location = new System.Drawing.Point(369, 214);
+            this.rtbKommentar.Location = new System.Drawing.Point(12, 295);
             this.rtbKommentar.Name = "rtbKommentar";
-            this.rtbKommentar.Size = new System.Drawing.Size(244, 72);
+            this.rtbKommentar.Size = new System.Drawing.Size(462, 26);
             this.rtbKommentar.TabIndex = 0;
-            this.rtbKommentar.Text = "";
+            this.rtbKommentar.Text = "Kommentar";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(619, 253);
+            this.button1.Location = new System.Drawing.Point(12, 192);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(105, 33);
+            this.button1.Size = new System.Drawing.Size(171, 43);
             this.button1.TabIndex = 0;
-            this.button1.Text = "Slutför";
+            this.button1.Text = "Slutför Miljöbrott";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -91,10 +94,19 @@
             // 
             this.lbEvent.FormattingEnabled = true;
             this.lbEvent.Items.AddRange(new object[] {
-            "21 / 1 - 2015   Besökte platsen och fixade så att man kan se ifall det är bra"});
-            this.lbEvent.Location = new System.Drawing.Point(189, 12);
+            "21 / 1 - 2015   Besökte platsen och fixade så att man kan se ifall det är bra",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10"});
+            this.lbEvent.Location = new System.Drawing.Point(189, 114);
             this.lbEvent.Name = "lbEvent";
-            this.lbEvent.Size = new System.Drawing.Size(535, 160);
+            this.lbEvent.Size = new System.Drawing.Size(535, 121);
             this.lbEvent.TabIndex = 0;
             // 
             // lbCrimes
@@ -102,7 +114,7 @@
             this.lbCrimes.FormattingEnabled = true;
             this.lbCrimes.Location = new System.Drawing.Point(12, 12);
             this.lbCrimes.Name = "lbCrimes";
-            this.lbCrimes.Size = new System.Drawing.Size(171, 277);
+            this.lbCrimes.Size = new System.Drawing.Size(171, 173);
             this.lbCrimes.TabIndex = 0;
             this.lbCrimes.SelectedIndexChanged += new System.EventHandler(this.lbCrimes_SelectedIndexChanged);
             // 
@@ -110,24 +122,56 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(189, 188);
+            this.label2.Location = new System.Drawing.Point(189, 12);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(127, 23);
             this.label2.TabIndex = 4;
             this.label2.Text = "Brottsinformation:";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(189, 88);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(128, 23);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Händelseförlopp:";
+            // 
+            // btnRedigera
+            // 
+            this.btnRedigera.Location = new System.Drawing.Point(605, 284);
+            this.btnRedigera.Name = "btnRedigera";
+            this.btnRedigera.Size = new System.Drawing.Size(119, 37);
+            this.btnRedigera.TabIndex = 6;
+            this.btnRedigera.Text = "Redigera händelse";
+            this.btnRedigera.UseVisualStyleBackColor = true;
+            this.btnRedigera.Click += new System.EventHandler(this.btnRedigera_Click);
+            // 
+            // btnTaBort
+            // 
+            this.btnTaBort.Location = new System.Drawing.Point(605, 241);
+            this.btnTaBort.Name = "btnTaBort";
+            this.btnTaBort.Size = new System.Drawing.Size(119, 37);
+            this.btnTaBort.TabIndex = 7;
+            this.btnTaBort.Text = "Ta bort händelse";
+            this.btnTaBort.UseVisualStyleBackColor = true;
+            // 
             // HandläggareForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(736, 303);
+            this.ClientSize = new System.Drawing.Size(736, 334);
+            this.Controls.Add(this.btnTaBort);
+            this.Controls.Add(this.btnRedigera);
+            this.Controls.Add(this.rtbKommentar);
+            this.Controls.Add(this.btnSkicka);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lbCrimes);
             this.Controls.Add(this.lbEvent);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.rtbKommentar);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnSkicka);
             this.Controls.Add(this.rtbÄrenedeinformation);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -150,5 +194,8 @@
         public System.Windows.Forms.ListBox lbEvent;
         public System.Windows.Forms.ListBox lbCrimes;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnRedigera;
+        private System.Windows.Forms.Button btnTaBort;
     }
 }
