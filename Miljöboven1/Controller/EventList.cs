@@ -7,20 +7,17 @@ using Miljöboven1.View;
 
 namespace Miljöboven1.Controller
 {
-    [Serializable()]
+    [Serializable]
     public class EventList
     {
         List<Event> eventList;
-
         HandläggareForm handläggareForm;
-
         public EventList(HandläggareForm handläggareForm) 
         {
             this.handläggareForm = handläggareForm;
             this.eventList = new List<Event>();
             AddPreviousItemsToList();
         }
-
         void AddPreviousItemsToList()
         {
             Event ev = new Event("Började projektet");
@@ -28,7 +25,6 @@ namespace Miljöboven1.Controller
             ev = new Event("Avslutade projektet");
             eventList.Add(ev);
         }
-
         public void AddToList(Event ev)
         {
             eventList.Add(ev);
@@ -38,12 +34,10 @@ namespace Miljöboven1.Controller
         {
             return eventList.Count();
         }
-
-        public string GetEventInfo(int id)
+        public string getEventInfo(int id)
         {
             return eventList[id].Datum + "   " + eventList[id].Kommentar;
         }
-
         public Event GetEvent(int id)
         {
             return eventList[id];
