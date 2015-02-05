@@ -29,11 +29,7 @@ namespace Miljöboven1.Controller
         {
             eventList.Add(ev);
         }
-        public string GetEventInfo(int id)
-        {
-            string svar = eventList[id].Datum + "   " + eventList[id].Kommentar;
-            return svar;
-        }
+
         public int getCount()
         {
             return eventList.Count();
