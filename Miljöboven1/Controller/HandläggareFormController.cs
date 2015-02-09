@@ -72,6 +72,7 @@ namespace Miljöboven1.Controller
         {
             crimeList.GetCrime(crimeID).eventList.GetEvent(crimeID).Kommentar = newComment;
             crimeList.GetCrime(crimeID).eventList.GetEvent(crimeID).Datum = date;
+            UpdateSelectedCrime(crimeID);
         }
     }
 }

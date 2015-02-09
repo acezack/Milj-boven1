@@ -39,7 +39,7 @@ namespace Miljöboven1.View
             {
                 if (rtbKommentar.Text.Trim() != String.Empty)
                 {
-                    DialogResult res = MessageBox.Show("Är du helt säker på att du vill kommentera?", "Bekräfta", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                    DialogResult res = MessageBox.Show("Är du helt säker på att du vill lägga till en händelse?", "Bekräfta", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                     if (res == DialogResult.Yes)
                     {
                         handläggarController.CommentSelectedCrime();
@@ -67,7 +67,7 @@ namespace Miljöboven1.View
             }
             else
             {
-                MessageBox.Show("Du måste välja ett brott ifrån listan till vänster först!", "Fel", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Du måste välja ett brott ifrån listan högst upp till vänster först!", "Fel", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -82,6 +82,27 @@ namespace Miljöboven1.View
         }
 
         private void btnRedigera_Click(object sender, EventArgs e)
+        {
+            if (lbEvent.SelectedIndex != -1)
+            {
+                    DialogResult res = MessageBox.Show("Bekräfta redigering", "Bekräfta", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                    if (res == DialogResult.Yes)
+                    {
+                        DialogResult res2 = MessageBox.Show("Vill du ändra datum?", "Bekräfta", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                        if (res2 == DialogResult.Yes)
+                        {
+                            HandläggarDatum hlg = new HandläggarDatum(this, handläggarController);
+                            hlg.Show();
+                        }
+                        else
+                            handläggarController.EditEvents(lbEvent.SelectedIndex, lbCrimes.SelectedIndex, rtbKommentar.Text.Trim(), DateTime.Now.ToString("yyyy/MM/dd"));
+                    }
+            }
+            else
+                MessageBox.Show("Du måste välja en händelse ifrån listan i mitten först!", "Fel", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
+        private void btnTaBort_Click(object sender, EventArgs e)
         {
 
         }

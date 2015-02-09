@@ -156,6 +156,7 @@
             this.btnTaBort.TabIndex = 7;
             this.btnTaBort.Text = "Ta bort händelse";
             this.btnTaBort.UseVisualStyleBackColor = true;
+            this.btnTaBort.Click += new System.EventHandler(this.btnTaBort_Click);
             // 
             // HandläggareForm
             // 

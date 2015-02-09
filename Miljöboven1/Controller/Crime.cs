@@ -61,7 +61,7 @@ namespace Miljöboven1.Controller
 
         public string GetÄrendeInformation()
         {
-            return DateTime.Now.ToString("MM/dd") + " " + Location + " " + CallerName + " " + CallerAddress + " " + CallerNumber;
+            return DateTime.Now.ToString("yyyy/MM/dd") + " " + Location + " " + CallerName + " " + CallerAddress + " " + CallerNumber;
         }
     }
 }

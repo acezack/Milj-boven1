@@ -23,45 +23,45 @@ namespace Miljöboven1
 
         public FormMain()
         {
-            Stream userFileStream;
+            //Stream userFileStream;
 
-            userList.AddUser(new User("admin", "admin", 0, 0));
-            userList.AddUser(new User("chef", "chef", 1, 0));
-            userList.AddUser(new User("hand", "hand", 2, 0));
-            userList.AddUser(new User("milj", "milj", 3, 0));
+            //userList.AddUser(new User("admin", "admin", 0, 0));
+            //userList.AddUser(new User("chef", "chef", 1, 0));
+            //userList.AddUser(new User("hand", "hand", 2, 0));
+            //userList.AddUser(new User("milj", "milj", 3, 0));
 
-            crimeList.Add(new Crime(0, DateTime.Now.ToString("MM/dd"), "Göteborgsgatan 23/3c", "Superadde", "Supergatan 1337", "07013371337", "asd", 0));
-            crimeList.Add(new Crime(1, DateTime.Now.ToString("MM/dd"), "Stockholmsgatan 29c", "Superkungen", "Superkunggatan 1337", "07013391339", "asd", 1));
+            //crimeList.Add(new Crime(0, DateTime.Now.ToString("MM/dd"), "Göteborgsgatan 23/3c", "Superadde", "Supergatan 1337", "07013371337", "asd", 0));
+            //crimeList.Add(new Crime(1, DateTime.Now.ToString("MM/dd"), "Stockholmsgatan 29c", "Superkungen", "Superkunggatan 1337", "07013391339", "asd", 1));
 
-            if (File.Exists("1userData.txt"))
-            {
-                userFileStream = File.OpenRead("1userData.txt");
-                BinaryFormatter deserializer = new BinaryFormatter();
-                userList = (UserList)(deserializer.Deserialize(userFileStream));
-                userFileStream.Close();
-            }
-            else
-            {
-                userFileStream = File.Create("1userData.txt");
-                BinaryFormatter serializer = new BinaryFormatter();
-                serializer.Serialize(userFileStream, userList);
-                userFileStream.Close();
-            }
+            //if (File.Exists("1userData.txt"))
+            //{
+            //    userFileStream = File.OpenRead("1userData.txt");
+            //    BinaryFormatter deserializer = new BinaryFormatter();
+            //    userList = (UserList)(deserializer.Deserialize(userFileStream));
+            //    userFileStream.Close();
+            //}
+            //else
+            //{
+            //    userFileStream = File.Create("1userData.txt");
+            //    BinaryFormatter serializer = new BinaryFormatter();
+            //    serializer.Serialize(userFileStream, userList);
+            //    userFileStream.Close();
+            //}
 
-            if (File.Exists("1crimeData.txt"))
-            {
-                Stream crimeFileStream = File.OpenRead("1crimeData.txt");
-                BinaryFormatter deserializer = new BinaryFormatter();
-                crimeList = (CrimeList)(deserializer.Deserialize(crimeFileStream));
-                crimeFileStream.Close();
-            }
-            else
-            {
-                Stream crimeFileStream = File.Create("1crimeData.txt");
-                BinaryFormatter serializer = new BinaryFormatter();
-                serializer.Serialize(crimeFileStream, crimeList);
-                crimeFileStream.Close();
-            }
+            //if (File.Exists("1crimeData.txt"))
+            //{
+            //    Stream crimeFileStream = File.OpenRead("1crimeData.txt");
+            //    BinaryFormatter deserializer = new BinaryFormatter();
+            //    crimeList = (CrimeList)(deserializer.Deserialize(crimeFileStream));
+            //    crimeFileStream.Close();
+            //}
+            //else
+            //{
+            //    Stream crimeFileStream = File.Create("1crimeData.txt");
+            //    BinaryFormatter serializer = new BinaryFormatter();
+            //    serializer.Serialize(crimeFileStream, crimeList);
+            //    crimeFileStream.Close();
+            //}
 
             InitializeComponent();
 
