@@ -70,9 +70,13 @@ namespace Miljöboven1.Controller
 
         public void EditEvents(int eventID, int crimeID, string newComment, string date)
         {
-            crimeList.GetCrime(crimeID).eventList.GetEvent(crimeID).Kommentar = newComment;
-            crimeList.GetCrime(crimeID).eventList.GetEvent(crimeID).Datum = date;
+            crimeList.GetCrime(crimeID).eventList.GetEvent(eventID).Kommentar = newComment;
+            crimeList.GetCrime(crimeID).eventList.GetEvent(eventID).Datum = date;
             UpdateSelectedCrime(crimeID);
+        }
+        public void RemoveEvent(int eventID, int crimeID)
+        {
+            crimeList.GetCrime(crimeID).eventList.RemoveEvent(eventID);
         }
     }
 }

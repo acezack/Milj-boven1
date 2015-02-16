@@ -104,7 +104,16 @@ namespace Miljöboven1.View
 
         private void btnTaBort_Click(object sender, EventArgs e)
         {
-
+            if (lbEvent.SelectedIndex != -1)
+            {
+                DialogResult res = MessageBox.Show("Bekräfta borttagning!", "Bekräfta", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                if (res == DialogResult.Yes)
+                {
+                    handläggarController.RemoveEvent(lbEvent.SelectedIndex, lbCrimes.SelectedIndex);
+                }
+            }
+            else
+                MessageBox.Show("Du måste välja en händelse ifrån listan i mitten först!", "Fel", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
     }
 }

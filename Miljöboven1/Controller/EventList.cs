@@ -47,5 +47,9 @@ namespace Miljöboven1.Controller
         {
             return eventList[id];
         }
+        public void RemoveEvent(int eventID)
+        {
+            eventList.RemoveAt(eventID);
+        }
     }
 }
