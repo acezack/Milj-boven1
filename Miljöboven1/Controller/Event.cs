@@ -13,20 +13,28 @@ namespace Miljöboven1.Controller
 
         public String Datum { get; set; }
 
-        public Event(string kommentar)
+        public Int32 ID { get; set; }
+
+        public Event(string kommentar, int id)
         {
             this.Kommentar = kommentar;
             this.Datum = DateTime.Now.ToString("yyyy/MM/dd");
+            this.ID = id;
         }
 
-        public string getKommentar()
+        public string GetKommentar()
         {
             return Kommentar;
         }
 
-        public string getDatum() 
+        public string GetDatum()
         {
             return Datum;
+        }
+
+        public int GetID()
+        {
+            return ID;
         }
     }
 }
