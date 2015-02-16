@@ -11,7 +11,7 @@ using Miljöboven1.Controller;
 
 namespace Miljöboven1.View
 {
-    [Serializable()]
+    [Serializable]
     public partial class HandläggareForm : Form
     {
         UserList userList;
@@ -42,8 +42,8 @@ namespace Miljöboven1.View
                     DialogResult res = MessageBox.Show("Är du helt säker på att du vill lägga till en händelse?", "Bekräfta", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                     if (res == DialogResult.Yes)
                     {
-                        handläggarController.CommentSelectedCrime();
-                        handläggarController.UpdateSelectedCrime(lbCrimes.SelectedIndex);
+                        //handläggarController.CommentSelectedCrime();
+                        //handläggarController.UpdateSelectedCrime(lbCrimes.SelectedIndex);
                         rtbKommentar.Clear();
                     }
                 }
@@ -61,7 +61,7 @@ namespace Miljöboven1.View
                 DialogResult res = MessageBox.Show("Är du helt säker på att jobbet har slutförts?", "Bekräfta", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (res == DialogResult.Yes)
                 {
-                    handläggarController.FinishCrime();
+                    //handläggarController.FinishCrime();
                 }
                 rtbKommentar.Clear();
             }
@@ -73,7 +73,7 @@ namespace Miljöboven1.View
 
         private void lbCrimes_SelectedIndexChanged(object sender, EventArgs e)
         {
-            handläggarController.UpdateSelectedCrime(lbCrimes.SelectedIndex);
+            //handläggarController.UpdateSelectedCrime(lbCrimes.SelectedIndex);
         }
 
         private void HandläggareForm_Load(object sender, EventArgs e)
@@ -94,8 +94,8 @@ namespace Miljöboven1.View
                             HandläggarDatum hlg = new HandläggarDatum(this, handläggarController);
                             hlg.Show();
                         }
-                        else
-                            handläggarController.EditEvents(lbEvent.SelectedIndex, lbCrimes.SelectedIndex, rtbKommentar.Text.Trim(), DateTime.Now.ToString("yyyy/MM/dd"));
+                        else { }
+                            //handläggarController.EditEvents(lbEvent.SelectedIndex, lbCrimes.SelectedIndex, rtbKommentar.Text.Trim(), DateTime.Now.ToString("yyyy/MM/dd"));
                     }
             }
             else
@@ -109,7 +109,7 @@ namespace Miljöboven1.View
                 DialogResult res = MessageBox.Show("Bekräfta borttagning!", "Bekräfta", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
                 if (res == DialogResult.Yes)
                 {
-                    handläggarController.RemoveEvent(lbEvent.SelectedIndex, lbCrimes.SelectedIndex);
+                    //handläggarController.RemoveEvent(lbEvent.SelectedIndex, lbCrimes.SelectedIndex);
                 }
             }
             else

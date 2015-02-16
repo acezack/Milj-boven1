@@ -28,10 +28,6 @@ namespace Miljöboven1.Controller
 
         public Int32 CrimeID { get; set; }
 
-        public EventList eventList;
-
-        public HandläggareForm handläggareForm;
-
         public Crime(int crimeType,
             string date,
             string location,
@@ -41,7 +37,6 @@ namespace Miljöboven1.Controller
             string handläggarUserName,
             int crimeID)
         {
-            this.Title = "brott";
             this.CrimeType = crimeType;
             this.Date = date;
             this.Location = location;
@@ -50,18 +45,6 @@ namespace Miljöboven1.Controller
             this.CallerNumber = callerNumber;
             this.HandläggarUserName = handläggarUserName;
             this.CrimeID = crimeID;
-            ApplyEventList(handläggareForm);
-        }
-
-        public void ApplyEventList(HandläggareForm handläggareForm)
-        {
-            this.handläggareForm = handläggareForm;
-            this.eventList = new EventList();
-        }
-
-        public string GetÄrendeInformation()
-        {
-            return DateTime.Now.ToString("yyyy/MM/dd") + " " + Location + " " + CallerName + " " + CallerAddress + " " + CallerNumber;
         }
     }
 }
