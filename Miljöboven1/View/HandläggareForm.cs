@@ -83,7 +83,7 @@ namespace Miljöboven1.View
 
         private void btnRedigera_Click(object sender, EventArgs e)
         {
-            if (lbEvent.SelectedIndex != -1)
+            if (lbxEvent.SelectedIndex != -1)
             {
                     DialogResult res = MessageBox.Show("Bekräfta redigering", "Bekräfta", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
                     if (res == DialogResult.Yes)
@@ -104,7 +104,7 @@ namespace Miljöboven1.View
 
         private void btnTaBort_Click(object sender, EventArgs e)
         {
-            if (lbEvent.SelectedIndex != -1)
+            if (lbxEvent.SelectedIndex != -1)
             {
                 DialogResult res = MessageBox.Show("Bekräfta borttagning!", "Bekräfta", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
                 if (res == DialogResult.Yes)

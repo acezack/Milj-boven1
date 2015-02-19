@@ -17,9 +17,29 @@ namespace Miljöboven1.Controller
             crimeList.Add(crime);
         }
 
+        public void RemoveAt(int index)
+        {
+            crimeList.RemoveAt(index);
+        }
+
         public int GetCount()
         {
             return crimeList.Count;
+        }
+
+        public Crime GetCrime(int index)
+        {
+            return crimeList[index];
+        }   
+
+        public int GetCrimeID(int index)
+        {
+            return crimeList[index].CrimeID;
+        }
+
+        public int GetCrimeStatus(int index)
+        {
+            return crimeList[index].CrimeStatus;
         }
 
         public string GetCrimeTitle(int index)
@@ -27,19 +47,34 @@ namespace Miljöboven1.Controller
             return crimeList[index].CrimeTitle;
         }
 
-        public Crime GetCrime(int index)
+        public string GetCrimeDate(int index)
         {
-            return crimeList[index];
+            return crimeList[index].CrimeDate;
         }
 
-        public void RemoveAt(int index)
+        public string GetCrimeLocation(int index)
         {
-            crimeList.RemoveAt(index);
+            return crimeList[index].CrimeLocation;
         }
 
-        public int GetCrimeStatus(int index)
+        public string GetCallerName(int index)
         {
-            return crimeList[index].CrimeStatus;
+            return crimeList[index].CallerName;
+        }
+
+        public string GetCallerAddress(int index)
+        {
+            return crimeList[index].CallerAddress;
+        }
+
+        public string GetCallerNumber(int index)
+        {
+            return crimeList[index].CallerNumber;
+        }
+
+        public string GetHandläggarUserName(int index)
+        {
+            return crimeList[index].HandläggarUserName;
         }
     }
 }

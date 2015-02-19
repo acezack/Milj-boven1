@@ -33,6 +33,8 @@
             this.lbxÄrenden = new System.Windows.Forms.ListBox();
             this.lblÄrendeinformation = new System.Windows.Forms.Label();
             this.rtbÄrendeinformation = new System.Windows.Forms.RichTextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lbx = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // lblÄrende
@@ -84,11 +86,35 @@
             this.rtbÄrendeinformation.TabIndex = 4;
             this.rtbÄrendeinformation.Text = "";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(199, 154);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(161, 22);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Ärendeinformation:";
+            // 
+            // lbx
+            // 
+            this.lbx.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.lbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbx.FormattingEnabled = true;
+            this.lbx.ItemHeight = 20;
+            this.lbx.Location = new System.Drawing.Point(203, 179);
+            this.lbx.Name = "lbx";
+            this.lbx.Size = new System.Drawing.Size(386, 264);
+            this.lbx.TabIndex = 6;
+            // 
             // ChefForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(601, 463);
+            this.Controls.Add(this.lbx);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.rtbÄrendeinformation);
             this.Controls.Add(this.lblÄrendeinformation);
             this.Controls.Add(this.lbxÄrenden);
@@ -109,5 +135,7 @@
         private System.Windows.Forms.ListBox lbxÄrenden;
         private System.Windows.Forms.Label lblÄrendeinformation;
         private System.Windows.Forms.RichTextBox rtbÄrendeinformation;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ListBox lbx;
     }
 }

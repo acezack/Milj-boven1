@@ -34,7 +34,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.rtbKommentar = new System.Windows.Forms.RichTextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.lbEvent = new System.Windows.Forms.ListBox();
+            this.lbxEvent = new System.Windows.Forms.ListBox();
             this.lbCrimes = new System.Windows.Forms.ListBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -90,10 +90,10 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // lbEvent
+            // lbxEvent
             // 
-            this.lbEvent.FormattingEnabled = true;
-            this.lbEvent.Items.AddRange(new object[] {
+            this.lbxEvent.FormattingEnabled = true;
+            this.lbxEvent.Items.AddRange(new object[] {
             "21 / 1 - 2015   Besökte platsen och fixade så att man kan se ifall det är bra",
             "2",
             "3",
@@ -104,10 +104,10 @@
             "8",
             "9",
             "10"});
-            this.lbEvent.Location = new System.Drawing.Point(189, 114);
-            this.lbEvent.Name = "lbEvent";
-            this.lbEvent.Size = new System.Drawing.Size(535, 121);
-            this.lbEvent.TabIndex = 0;
+            this.lbxEvent.Location = new System.Drawing.Point(189, 114);
+            this.lbxEvent.Name = "lbxEvent";
+            this.lbxEvent.Size = new System.Drawing.Size(535, 121);
+            this.lbxEvent.TabIndex = 0;
             // 
             // lbCrimes
             // 
@@ -171,7 +171,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lbCrimes);
-            this.Controls.Add(this.lbEvent);
+            this.Controls.Add(this.lbxEvent);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.rtbÄrendeinformation);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -192,7 +192,7 @@
         private System.Windows.Forms.Button button1;
         public System.Windows.Forms.RichTextBox rtbÄrendeinformation;
         public System.Windows.Forms.RichTextBox rtbKommentar;
-        public System.Windows.Forms.ListBox lbEvent;
+        public System.Windows.Forms.ListBox lbxEvent;
         public System.Windows.Forms.ListBox lbCrimes;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;

@@ -30,7 +30,7 @@ namespace Miljöboven1.Controller
 
         public string GetEventInfo(int id)
         {
-            string svar = eventList[id].Datum + "   " + eventList[id].Kommentar;
+            string svar = eventList[id].EventDatum + "   " + eventList[id].EventKommentar;
             return svar;
         }
 
@@ -41,7 +41,7 @@ namespace Miljöboven1.Controller
 
         public string getEventInfo(int id)
         {
-            return eventList[id].Datum + "   " + eventList[id].Kommentar;
+            return eventList[id].EventDatum + "   " + eventList[id].EventKommentar;
         }
         public Event GetEvent(int id)
         {

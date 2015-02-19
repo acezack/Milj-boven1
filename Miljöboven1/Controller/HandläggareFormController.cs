@@ -24,7 +24,7 @@ namespace Miljöboven1.Controller
             handläggareForm.rtbÄrendeinformation.Text = "";
             handläggareForm.rtbKommentar.Text = "";
             handläggareForm.lbCrimes.Items.Clear();
-            handläggareForm.lbEvent.Items.Clear();
+            handläggareForm.lbxEvent.Items.Clear();
             for (int i = 0; i < crimeList.GetCount(); i++)
             {
                 handläggareForm.lbCrimes.Items.Add(crimeList.GetCrimeTitle(i));
