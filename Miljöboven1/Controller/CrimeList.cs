@@ -18,13 +18,13 @@ namespace Miljöboven1.Controller
         }
 
         public int GetCount()
-        { 
-            return crimeList.Count; 
+        {
+            return crimeList.Count;
         }
 
         public string GetCrimeTitle(int index)
         {
-            return crimeList[index].Title;
+            return crimeList[index].CrimeTitle;
         }
 
         public Crime GetCrime(int index)
@@ -35,6 +35,11 @@ namespace Miljöboven1.Controller
         public void RemoveAt(int index)
         {
             crimeList.RemoveAt(index);
+        }
+
+        public int GetCrimeStatus(int index)
+        {
+            return crimeList[index].CrimeStatus;
         }
     }
 }

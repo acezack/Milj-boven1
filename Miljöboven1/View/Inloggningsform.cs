@@ -81,11 +81,11 @@ namespace Miljöboven1.View
             {
                 tbxPassword.Clear();
                 MessageBox.Show("Fel användarnamn eller lösenord.");
+                tbxPassword.Focus();
             }
         }
         private void InloggningsForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-
             Application.Exit();
         }
 

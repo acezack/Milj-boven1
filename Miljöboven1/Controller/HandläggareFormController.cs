@@ -21,7 +21,7 @@ namespace Miljöboven1.Controller
 
         void InitForm()
         {
-            handläggareForm.rtbÄrenedeinformation.Text = "";
+            handläggareForm.rtbÄrendeinformation.Text = "";
             handläggareForm.rtbKommentar.Text = "";
             handläggareForm.lbCrimes.Items.Clear();
             handläggareForm.lbEvent.Items.Clear();

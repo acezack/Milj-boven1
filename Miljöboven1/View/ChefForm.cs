@@ -21,22 +21,63 @@ namespace Miljöboven1.View
             InitializeComponent();
             this.userList = userList;
             this.crimeList = crimeList;
-        }
-
-        private void ChefForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ChefForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            
+            cbxÄrendeStatus.Items.Add("Ej påbörjade");
+            cbxÄrendeStatus.Items.Add("Påbörjade");
+            cbxÄrendeStatus.Items.Add("Slutförda");
+            cbxÄrendeStatus.SelectedIndex = 0;
+            lbxÄrenden.Items.Clear();
+            for (int index = 0; index < crimeList.GetCount(); index++)
+            {
+                if (crimeList.GetCrimeStatus(index) == 0)
+                {
+                    lbxÄrenden.Items.Add(crimeList.GetCrimeTitle(index));
+                }
+            }
         }
 
         private void ChefForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             InloggningsForm inloggningsForm = new InloggningsForm(userList, crimeList);
             inloggningsForm.Show();
+        }
+
+        private void cbxÄrendeStatus_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbxÄrendeStatus.SelectedIndex == 0)
+            {
+                lbxÄrenden.Items.Clear();
+                for (int index = 0; index < crimeList.GetCount(); index++)
+                {
+                    if (crimeList.GetCrimeStatus(index) == 0)
+                    {
+                        lbxÄrenden.Items.Add(crimeList.GetCrimeTitle(index));
+                    }
+                }
+            }
+
+            if (cbxÄrendeStatus.SelectedIndex == 1)
+            {
+                lbxÄrenden.Items.Clear();
+                for (int index = 0; index < crimeList.GetCount(); index++)
+                {
+                    if (crimeList.GetCrimeStatus(index) == 1)
+                    {
+                        lbxÄrenden.Items.Add(crimeList.GetCrimeTitle(index));
+                    }
+                }
+            }
+
+            if (cbxÄrendeStatus.SelectedIndex == 2)
+            {
+                lbxÄrenden.Items.Clear();
+                for (int index = 0; index < crimeList.GetCount(); index++)
+                {
+                    if (crimeList.GetCrimeStatus(index) == 2)
+                    {
+                        lbxÄrenden.Items.Add(crimeList.GetCrimeTitle(index));
+                    }
+                }
+            }
         }
     }
 }

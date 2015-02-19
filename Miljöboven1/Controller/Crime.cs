@@ -12,11 +12,17 @@ namespace Miljöboven1.Controller
     {
         public Int32 CrimeType { get; set; }
 
-        public String Title { get; set; }
+        public Int32 CrimeID { get; set; }
 
-        public String Date { get; set; }
+        public Int32 CrimeStatus { get; set; }      //0=Ej påbörjad
+                                                    //1=Påbörjad
+                                                    //2=Slutförd
 
-        public String Location { get; set; }
+        public String CrimeTitle { get; set; }
+
+        public String CrimeDate { get; set; }
+
+        public String CrimeLocation { get; set; }
 
         public String CallerName { get; set; }
 
@@ -26,25 +32,27 @@ namespace Miljöboven1.Controller
 
         public String HandläggarUserName { get; set; }
 
-        public Int32 CrimeID { get; set; }
-
         public Crime(int crimeType,
-            string date,
-            string location,
+            int crimeID,
+            int crimeStatus,
+            string crimeTitle,
+            string crimeDate,
+            string crimeLocation,
             string callerName,
             string callerAddress,
             string callerNumber,
-            string handläggarUserName,
-            int crimeID)
+            string handläggarUserName)
         {
             this.CrimeType = crimeType;
-            this.Date = date;
-            this.Location = location;
+            this.CrimeID = crimeID;
+            this.CrimeStatus = crimeStatus;
+            this.CrimeTitle = crimeTitle;
+            this.CrimeDate = crimeDate;
+            this.CrimeLocation = crimeLocation;
             this.CallerName = callerName;
             this.CallerAddress = callerAddress;
             this.CallerNumber = callerNumber;
             this.HandläggarUserName = handläggarUserName;
-            this.CrimeID = crimeID;
         }
     }
 }
