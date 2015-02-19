@@ -12,12 +12,12 @@ namespace Miljöboven1.Controller
     {
         List<Crime> crimeList = new List<Crime>();
 
-        public void Add(Crime crime)
+        public void AddCrime(Crime crime)
         {
             crimeList.Add(crime);
         }
 
-        public void RemoveAt(int index)
+        public void RemoveCrimeAt(int index)
         {
             crimeList.RemoveAt(index);
         }
@@ -55,6 +55,11 @@ namespace Miljöboven1.Controller
         public string GetCrimeLocation(int index)
         {
             return crimeList[index].CrimeLocation;
+        }
+
+        public string GetCrimeInformation(int index)
+        {
+            return crimeList[index].CrimeInformation;
         }
 
         public string GetCallerName(int index)

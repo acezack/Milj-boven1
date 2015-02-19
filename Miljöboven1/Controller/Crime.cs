@@ -24,6 +24,8 @@ namespace Miljöboven1.Controller
 
         public String CrimeLocation { get; set; }
 
+        public String CrimeInformation { get; set; }
+
         public String CallerName { get; set; }
 
         public String CallerAddress { get; set; }
@@ -38,6 +40,7 @@ namespace Miljöboven1.Controller
             string crimeTitle,
             string crimeDate,
             string crimeLocation,
+            string crimeInformation,
             string callerName,
             string callerAddress,
             string callerNumber,
@@ -49,6 +52,7 @@ namespace Miljöboven1.Controller
             this.CrimeTitle = crimeTitle;
             this.CrimeDate = crimeDate;
             this.CrimeLocation = crimeLocation;
+            this.CrimeInformation = crimeInformation;
             this.CallerName = callerName;
             this.CallerAddress = callerAddress;
             this.CallerNumber = callerNumber;

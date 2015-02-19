@@ -10,46 +10,46 @@ namespace Miljöboven1.Controller
     [Serializable]
     public class EventList
     {
-        List<Event> eventList;
-        public EventList() 
+        List<Event> eventList = new List<Event>();
+
+        public void AddEvent(Event newEvent)
         {
-            this.eventList = new List<Event>();
-            AddPreviousItemsToList();
-        }
-        void AddPreviousItemsToList()
-        {
-            Event ev = new Event("Började projektet", 0);
-            eventList.Add(ev);
-            ev = new Event("Avslutade projektet", 0);
-            eventList.Add(ev);
-        }
-        public void AddToList(Event ev)
-        {
-            eventList.Add(ev);
+            eventList.Add(newEvent);
         }
 
-        public string GetEventInfo(int id)
+        public void RemoveEventAt(int eventID)
         {
-            string svar = eventList[id].EventDatum + "   " + eventList[id].EventKommentar;
-            return svar;
+            eventList.RemoveAt(eventID);
         }
 
-        public int getCount()
+        public int GetCount()
         {
             return eventList.Count();
         }
 
-        public string getEventInfo(int id)
+        public Event GetEvent(int index)
         {
-            return eventList[id].EventDatum + "   " + eventList[id].EventKommentar;
+            return eventList[index];
         }
-        public Event GetEvent(int id)
+
+        public string GetEventComment(int index)
         {
-            return eventList[id];
+            return eventList[index].EventComment;
         }
-        public void RemoveEvent(int eventID)
+
+        public string GetEventDate(int index)
         {
-            eventList.RemoveAt(eventID);
+            return eventList[index].EventDate;
+        }
+
+        public int GetEventID(int index)
+        {
+            return eventList[index].EventID;
+        }
+
+        public int GetCrimeID(int index)
+        {
+            return eventList[index].CrimeID;
         }
     }
 }

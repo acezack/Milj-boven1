@@ -29,12 +29,14 @@
         private void InitializeComponent()
         {
             this.lblÄrende = new System.Windows.Forms.Label();
-            this.cbxÄrendeStatus = new System.Windows.Forms.ComboBox();
+            this.cbxCrimeStatus = new System.Windows.Forms.ComboBox();
             this.lbxÄrenden = new System.Windows.Forms.ListBox();
-            this.lblÄrendeinformation = new System.Windows.Forms.Label();
+            this.lblÄrendesinformation = new System.Windows.Forms.Label();
             this.rtbÄrendeinformation = new System.Windows.Forms.RichTextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lbx = new System.Windows.Forms.ListBox();
+            this.lblHändelseförlopp = new System.Windows.Forms.Label();
+            this.lbxEvent = new System.Windows.Forms.ListBox();
+            this.lblHandläggare = new System.Windows.Forms.Label();
+            this.cbxHandläggare = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // lblÄrende
@@ -47,79 +49,101 @@
             this.lblÄrende.TabIndex = 0;
             this.lblÄrende.Text = "Ärenden:";
             // 
-            // cbxÄrendeStatus
+            // cbxCrimeStatus
             // 
-            this.cbxÄrendeStatus.FormattingEnabled = true;
-            this.cbxÄrendeStatus.Location = new System.Drawing.Point(111, 12);
-            this.cbxÄrendeStatus.Name = "cbxÄrendeStatus";
-            this.cbxÄrendeStatus.Size = new System.Drawing.Size(82, 21);
-            this.cbxÄrendeStatus.TabIndex = 1;
-            this.cbxÄrendeStatus.SelectedIndexChanged += new System.EventHandler(this.cbxÄrendeStatus_SelectedIndexChanged);
+            this.cbxCrimeStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxCrimeStatus.FormattingEnabled = true;
+            this.cbxCrimeStatus.Location = new System.Drawing.Point(111, 12);
+            this.cbxCrimeStatus.Name = "cbxCrimeStatus";
+            this.cbxCrimeStatus.Size = new System.Drawing.Size(82, 21);
+            this.cbxCrimeStatus.TabIndex = 1;
+            this.cbxCrimeStatus.SelectedIndexChanged += new System.EventHandler(this.cbxÄrendeStatus_SelectedIndexChanged);
             // 
             // lbxÄrenden
             // 
-            this.lbxÄrenden.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.lbxÄrenden.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbxÄrenden.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbxÄrenden.FormattingEnabled = true;
-            this.lbxÄrenden.ItemHeight = 20;
-            this.lbxÄrenden.Location = new System.Drawing.Point(17, 39);
+            this.lbxÄrenden.ItemHeight = 24;
+            this.lbxÄrenden.Location = new System.Drawing.Point(17, 63);
             this.lbxÄrenden.Name = "lbxÄrenden";
-            this.lbxÄrenden.Size = new System.Drawing.Size(176, 404);
+            this.lbxÄrenden.Size = new System.Drawing.Size(176, 340);
             this.lbxÄrenden.TabIndex = 2;
+            this.lbxÄrenden.SelectedIndexChanged += new System.EventHandler(this.lbxÄrenden_SelectedIndexChanged);
             // 
-            // lblÄrendeinformation
+            // lblÄrendesinformation
             // 
-            this.lblÄrendeinformation.AutoSize = true;
-            this.lblÄrendeinformation.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblÄrendeinformation.Location = new System.Drawing.Point(199, 39);
-            this.lblÄrendeinformation.Name = "lblÄrendeinformation";
-            this.lblÄrendeinformation.Size = new System.Drawing.Size(161, 22);
-            this.lblÄrendeinformation.TabIndex = 3;
-            this.lblÄrendeinformation.Text = "Ärendeinformation:";
+            this.lblÄrendesinformation.AutoSize = true;
+            this.lblÄrendesinformation.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblÄrendesinformation.Location = new System.Drawing.Point(199, 39);
+            this.lblÄrendesinformation.Name = "lblÄrendesinformation";
+            this.lblÄrendesinformation.Size = new System.Drawing.Size(170, 22);
+            this.lblÄrendesinformation.TabIndex = 3;
+            this.lblÄrendesinformation.Text = "Ärendesinformation:";
             // 
             // rtbÄrendeinformation
             // 
+            this.rtbÄrendeinformation.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rtbÄrendeinformation.Location = new System.Drawing.Point(203, 64);
             this.rtbÄrendeinformation.Name = "rtbÄrendeinformation";
-            this.rtbÄrendeinformation.Size = new System.Drawing.Size(386, 66);
+            this.rtbÄrendeinformation.Size = new System.Drawing.Size(553, 66);
             this.rtbÄrendeinformation.TabIndex = 4;
             this.rtbÄrendeinformation.Text = "";
             // 
-            // label1
+            // lblHändelseförlopp
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(199, 154);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(161, 22);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Ärendeinformation:";
+            this.lblHändelseförlopp.AutoSize = true;
+            this.lblHändelseförlopp.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHändelseförlopp.Location = new System.Drawing.Point(199, 150);
+            this.lblHändelseförlopp.Name = "lblHändelseförlopp";
+            this.lblHändelseförlopp.Size = new System.Drawing.Size(141, 22);
+            this.lblHändelseförlopp.TabIndex = 5;
+            this.lblHändelseförlopp.Text = "Händesleförlopp";
             // 
-            // lbx
+            // lbxEvent
             // 
-            this.lbx.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.lbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbx.FormattingEnabled = true;
-            this.lbx.ItemHeight = 20;
-            this.lbx.Location = new System.Drawing.Point(203, 179);
-            this.lbx.Name = "lbx";
-            this.lbx.Size = new System.Drawing.Size(386, 264);
-            this.lbx.TabIndex = 6;
+            this.lbxEvent.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbxEvent.FormattingEnabled = true;
+            this.lbxEvent.ItemHeight = 16;
+            this.lbxEvent.Location = new System.Drawing.Point(203, 175);
+            this.lbxEvent.Name = "lbxEvent";
+            this.lbxEvent.Size = new System.Drawing.Size(553, 228);
+            this.lbxEvent.TabIndex = 6;
+            // 
+            // lblHandläggare
+            // 
+            this.lblHandläggare.AutoSize = true;
+            this.lblHandläggare.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHandläggare.Location = new System.Drawing.Point(14, 39);
+            this.lblHandläggare.Name = "lblHandläggare";
+            this.lblHandläggare.Size = new System.Drawing.Size(82, 15);
+            this.lblHandläggare.TabIndex = 7;
+            this.lblHandläggare.Text = "Handläggare:";
+            // 
+            // cbxHandläggare
+            // 
+            this.cbxHandläggare.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxHandläggare.FormattingEnabled = true;
+            this.cbxHandläggare.Location = new System.Drawing.Point(111, 36);
+            this.cbxHandläggare.Name = "cbxHandläggare";
+            this.cbxHandläggare.Size = new System.Drawing.Size(82, 21);
+            this.cbxHandläggare.TabIndex = 8;
+            this.cbxHandläggare.SelectedIndexChanged += new System.EventHandler(this.cbxHandläggare_SelectedIndexChanged);
             // 
             // ChefForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(601, 463);
-            this.Controls.Add(this.lbx);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(768, 421);
+            this.Controls.Add(this.cbxHandläggare);
+            this.Controls.Add(this.lblHandläggare);
+            this.Controls.Add(this.lbxEvent);
+            this.Controls.Add(this.lblHändelseförlopp);
             this.Controls.Add(this.rtbÄrendeinformation);
-            this.Controls.Add(this.lblÄrendeinformation);
+            this.Controls.Add(this.lblÄrendesinformation);
             this.Controls.Add(this.lbxÄrenden);
-            this.Controls.Add(this.cbxÄrendeStatus);
+            this.Controls.Add(this.cbxCrimeStatus);
             this.Controls.Add(this.lblÄrende);
+            this.DoubleBuffered = true;
             this.Name = "ChefForm";
             this.Text = "Chefform";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ChefForm_FormClosed);
@@ -131,11 +155,13 @@
         #endregion
 
         private System.Windows.Forms.Label lblÄrende;
-        private System.Windows.Forms.ComboBox cbxÄrendeStatus;
+        private System.Windows.Forms.ComboBox cbxCrimeStatus;
         private System.Windows.Forms.ListBox lbxÄrenden;
-        private System.Windows.Forms.Label lblÄrendeinformation;
+        private System.Windows.Forms.Label lblÄrendesinformation;
         private System.Windows.Forms.RichTextBox rtbÄrendeinformation;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ListBox lbx;
+        private System.Windows.Forms.Label lblHändelseförlopp;
+        private System.Windows.Forms.ListBox lbxEvent;
+        private System.Windows.Forms.Label lblHandläggare;
+        private System.Windows.Forms.ComboBox cbxHandläggare;
     }
 }

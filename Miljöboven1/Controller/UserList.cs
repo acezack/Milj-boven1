@@ -17,9 +17,19 @@ namespace Miljöboven1.Controller
             userList.Add(user);
         }
 
+        public void RemoveUser(int index)
+        {
+            userList.RemoveAt(index);
+        }
+
         public int GetCount()
         {
             return userList.Count();
+        }
+
+        public User GetUser(int index)
+        {
+            return userList[index];
         }
 
         public string GetUserName(int index)
@@ -40,11 +50,6 @@ namespace Miljöboven1.Controller
         public int GetID(int index)
         {
             return userList[index].ID;
-        }
-
-        public void RemoveUser(int index)
-        {
-            userList.RemoveAt(index);
         }
 
         public void ChangeUserPassword(int index, string newPassword)

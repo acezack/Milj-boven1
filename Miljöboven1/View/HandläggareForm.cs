@@ -15,17 +15,24 @@ namespace Miljöboven1.View
     public partial class HandläggareForm : Form
     {
         UserList userList;
+
         CrimeList crimeList;
+
+        EventList eventList;
+
         InloggningsForm inloggningsForm;
+
         HandläggareFormController handläggarController;
 
-        public HandläggareForm(UserList userList, CrimeList crimeList)
+
+        public HandläggareForm(UserList userList, CrimeList crimeList, EventList eventList)
         {
             InitializeComponent();
             this.userList = userList;
             this.crimeList = crimeList;
+            this.eventList = eventList;
             this.handläggarController = new HandläggareFormController(this, this.crimeList);
-            inloggningsForm = new InloggningsForm(userList, crimeList);
+            inloggningsForm = new InloggningsForm(userList, crimeList, eventList);
         }
 
         private void HandläggareForm_FormClosed(object sender, FormClosedEventArgs e)

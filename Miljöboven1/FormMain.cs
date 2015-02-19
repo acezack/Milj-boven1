@@ -18,7 +18,10 @@ namespace Miljöboven1
     {
 
         UserList userList = new UserList();
+
         CrimeList crimeList = new CrimeList();
+
+        EventList eventList = new EventList();
 
         public FormMain()
         {
@@ -27,15 +30,68 @@ namespace Miljöboven1
             userList.AddUser(new User("admin", "admin", 0, 0));
             userList.AddUser(new User("chef", "chef", 1, 0));
             userList.AddUser(new User("hand", "hand", 2, 0));
+            userList.AddUser(new User("hand1", "hand", 2, 1));
             userList.AddUser(new User("milj", "milj", 3, 0));
 
             if (crimeList.GetCount() == 0)
             {
-                crimeList.Add(new Crime(1, 0, 0, (DateTime.Now.ToString("yy") + "-35-" + crimeList.GetCount().ToString("00#")), DateTime.Now.ToString("MM/dd"), "Någonstansivärlden 1", "Någon", "Någongana 1", "070137137", "asd"));
+                crimeList.AddCrime(new Crime(1, 
+                    0, 
+                    0, //Ej påbörjad
+                    DateTime.Now.ToString("yy") + "-35-" + crimeList.GetCount().ToString("00#"), 
+                    DateTime.Now.ToString("MM/dd"), 
+                    "Någonstansivärlden 1", 
+                    "Brottet ID = 0 verkar vem fan bryr sig om den här texten",
+                    "Någon", 
+                    "Någongana 1", 
+                    "070137137", 
+                    "hand1"));
             }
-            crimeList.Add(new Crime(0, crimeList.GetCount(), 1, (DateTime.Today.ToString("yy") + "-35-" + crimeList.GetCount().ToString("00#")), DateTime.Now.ToString("yyyy/MM/dd"), "Göteborgsgatan 23/3c", "Superadde", "Supergatan 1337", "07013371337", "asd"));
-            crimeList.Add(new Crime(1, crimeList.GetCount(), 0, (DateTime.Today.ToString("yy") + "-35-" + crimeList.GetCount().ToString("00#")), DateTime.Now.ToString("yyyy/MM/dd"), "Stockholmsgatan 29c", "Superungen", "Superkunggatan 13", "070139139", "asd"));
-            crimeList.Add(new Crime(2, crimeList.GetCount(), 2, (DateTime.Today.ToString("yy") + "-35-" + crimeList.GetCount().ToString("00#")), DateTime.Now.ToString("yyyy/MM/dd"), "Hejsangatan 2", "Apan", "SuperVÄGEN 37", "070187137", "asd"));
+            crimeList.AddCrime(new Crime(0, 
+                crimeList.GetCount(), 
+                1, //Påbörjad
+                DateTime.Today.ToString("yy") + "-35-" + crimeList.GetCount().ToString("00#"), 
+                DateTime.Now.ToString("yyyy/MM/dd"), 
+                "Göteborgsgatan 23/3c",
+                "Brottet ID = 1 verkar vem fan bryr sig om den här texten",
+                "Superadde", 
+                "Supergatan 1337", 
+                "07013371337", 
+                "hand"));
+            crimeList.AddCrime(new Crime(1, 
+                crimeList.GetCount(), 
+                0, //Ej påbörjad
+                DateTime.Today.ToString("yy") + "-35-" + crimeList.GetCount().ToString("00#"), 
+                DateTime.Now.ToString("yyyy/MM/dd"), 
+                "Stockholmsgatan 29c",
+                "Brottet ID = 2 verkar vem fan bryr sig om den här texten",
+                "Superungen", 
+                "Superkunggatan 13", 
+                "070139139", 
+                "hand1"));
+            crimeList.AddCrime(new Crime(2, 
+                crimeList.GetCount(), 
+                2, //Slutförd
+                DateTime.Today.ToString("yy") + "-35-" + crimeList.GetCount().ToString("00#"), 
+                DateTime.Now.ToString("yyyy/MM/dd"), 
+                "Hejsangatan 2",
+                "Brottet ID = 3 verkar vem fan bryr sig om den här texten",
+                "Apan", 
+                "SuperVÄGEN 37", 
+                "070187137", 
+                "hand"));
+
+            if (eventList.GetCount() == 0)
+            {
+                eventList.AddEvent(new Event("MOTHERFUCKER", 0, 1));
+            }
+            eventList.AddEvent(new Event("MOTHERFUCKER1", eventList.GetCount(), 1));
+            eventList.AddEvent(new Event("MOTHERFUCKER2", eventList.GetCount(), 1));
+            eventList.AddEvent(new Event("MOTHERFUCKER3", eventList.GetCount(), 1));
+            eventList.AddEvent(new Event("MOTHERFUCKER4", eventList.GetCount(), 1));
+            eventList.AddEvent(new Event("MOTHERFUCKER5", eventList.GetCount(), 1));
+            eventList.AddEvent(new Event("MOTHERFUCKER6", eventList.GetCount(), 1));
+            eventList.AddEvent(new Event("MOTHERFUCKER7", eventList.GetCount(), 1));
 
             //if (File.Exists("1userData.txt"))
             //{
@@ -67,6 +123,21 @@ namespace Miljöboven1
             //    crimeFileStream.Close();
             //}
 
+            //if (File.Exists("1eventData.txt"))
+            //{
+            //    Stream eventFileStream = File.OpenRead("1eventData.txt");
+            //    BinaryFormatter deserializer = new BinaryFormatter();
+            //    eventList = (EventList)(deserializer.Deserialize(eventFileStream));
+            //    eventFileStream.Close();
+            //}
+            //else
+            //{
+            //    Stream eventFileStream = File.Create("1eventData.txt");
+            //    BinaryFormatter serializer = new BinaryFormatter();
+            //    serializer.Serialize(eventFileStream, eventList);
+            //    eventFileStream.Close();
+            //}
+
             InitializeComponent();
 
 
@@ -74,7 +145,7 @@ namespace Miljöboven1
             this.WindowState = FormWindowState.Minimized;
             this.FormBorderStyle = FormBorderStyle.FixedToolWindow;
             this.Hide();
-            View.InloggningsForm inloggningsForm = new View.InloggningsForm(userList, crimeList);
+            View.InloggningsForm inloggningsForm = new View.InloggningsForm(userList, crimeList, eventList);
             inloggningsForm.ShowDialog();
         }
     }
