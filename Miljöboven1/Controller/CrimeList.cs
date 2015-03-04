@@ -36,5 +36,9 @@ namespace Miljöboven1.Controller
         {
             crimeList.RemoveAt(index);
         }
+        public string GetÄrendeInformation(int id)
+        {
+            return crimeList[id].CallerName + " " + crimeList[id].CallerAddress + " " + crimeList[id].CallerNumber;
+        }
     }
 }

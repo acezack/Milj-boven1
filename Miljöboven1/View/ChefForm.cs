@@ -15,12 +15,14 @@ namespace Miljöboven1.View
     {
         UserList userList;
         CrimeList crimeList;
+        EventList eventList;
 
-        public ChefForm(UserList userList, CrimeList crimeList)
+        public ChefForm(UserList userList, CrimeList crimeList, EventList eventList)
         {
             InitializeComponent();
             this.userList = userList;
             this.crimeList = crimeList;
+            this.eventList = eventList;
         }
 
         private void ChefForm_Load(object sender, EventArgs e)
@@ -35,7 +37,7 @@ namespace Miljöboven1.View
 
         private void ChefForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            InloggningsForm inloggningsForm = new InloggningsForm(userList, crimeList);
+            InloggningsForm inloggningsForm = new InloggningsForm(userList, crimeList, eventList);
             inloggningsForm.Show();
         }
     }

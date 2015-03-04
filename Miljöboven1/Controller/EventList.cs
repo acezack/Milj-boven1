@@ -11,27 +11,18 @@ namespace Miljöboven1.Controller
     public class EventList
     {
         List<Event> eventList;
-        public EventList() 
+        public EventList()
         {
             this.eventList = new List<Event>();
             AddPreviousItemsToList();
         }
         void AddPreviousItemsToList()
         {
-            Event ev = new Event("Började projektet");
-            eventList.Add(ev);
-            ev = new Event("Avslutade projektet");
-            eventList.Add(ev);
+            //adda det som redan finns (ifrån databasen/filen)
         }
         public void AddToList(Event ev)
         {
             eventList.Add(ev);
-        }
-
-        public string GetEventInfo(int id)
-        {
-            string svar = eventList[id].Datum + "   " + eventList[id].Kommentar;
-            return svar;
         }
 
         public int getCount()
@@ -39,17 +30,50 @@ namespace Miljöboven1.Controller
             return eventList.Count();
         }
 
-        public string getEventInfo(int id)
+        public string GetEventInfo(int eventID, int crimeID)
         {
-            return eventList[id].Datum + "   " + eventList[id].Kommentar;
+            foreach (Event ev in eventList)
+            {
+                if (ev.CrimeID == crimeID && ev.EventID == eventID)
+                {
+                    return ev.Datum + "   " + ev.Kommentar;
+                }
+            }
+            return "";
         }
-        public Event GetEvent(int id)
+        public Event GetEvent(int eventID, int crimeID)
         {
-            return eventList[id];
+            foreach (Event ev in eventList)
+            {
+                if (ev.CrimeID == crimeID && ev.EventID == eventID)
+                {
+                    return ev;
+                }
+            }
+            return null;
         }
-        public void RemoveEvent(int eventID)
+        public void RemoveEvent(int eventID, int crimeID)
         {
-            eventList.RemoveAt(eventID);
+            foreach (Event ev in eventList)
+            {
+                if (crimeID == ev.CrimeID && eventID == ev.EventID)
+                {
+                    eventList.Remove(ev);
+                    break;
+                }
+            }
+        }
+        public int GetNumberOfEvents(int crimeID)
+        {
+            int returning = 0;
+            foreach (Event ev in eventList)
+            {
+                if (ev.CrimeID == crimeID)
+                {
+                    returning++;
+                }
+            }
+            return returning;
         }
     }
 }

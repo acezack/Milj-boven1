@@ -14,16 +14,17 @@ namespace Miljöboven1.View
     public partial class InloggningsForm : Form
     {
         UserList userList;
-
+        EventList eventList;
         CrimeList crimeList;
 
         public Boolean loggedIn;
-        public InloggningsForm(UserList userList, CrimeList crimeList)
+        public InloggningsForm(UserList userList, CrimeList crimeList, EventList eventList)
         {
             InitializeComponent();
             loggedIn = false;
             this.userList = userList;
             this.crimeList = crimeList;
+            this.eventList = eventList;
         }
 
         private void btnLoggaIn_Click(object sender, EventArgs e)
@@ -35,7 +36,7 @@ namespace Miljöboven1.View
                     if (userList.GetType(index) == 0)//admin
                     {
                         this.Hide();
-                        AdminForm adminForm = new AdminForm(userList, crimeList);
+                        AdminForm adminForm = new AdminForm(userList, crimeList, eventList);
                         adminForm.Show();
                         loggedIn = true;
                         tbxUsername.Clear();
@@ -45,7 +46,7 @@ namespace Miljöboven1.View
                     else if (userList.GetType(index) == 1)//chef
                     {
                         this.Hide();
-                        ChefForm chefForm = new ChefForm(userList, crimeList);
+                        ChefForm chefForm = new ChefForm(userList, crimeList, eventList);
                         chefForm.Show();
                         loggedIn = true;
                         tbxUsername.Clear();
@@ -55,7 +56,7 @@ namespace Miljöboven1.View
                     else if (userList.GetType(index) == 2)//handläggare
                     {
                         this.Hide();
-                        HandläggareForm handläggareForm = new HandläggareForm(userList, crimeList);
+                        HandläggareForm handläggareForm = new HandläggareForm(userList, crimeList, eventList);
                         handläggareForm.Show();
                         loggedIn = true;
                         tbxUsername.Clear();
@@ -65,7 +66,7 @@ namespace Miljöboven1.View
                     else if (userList.GetType(index) == 3)//miljösamordnare
                     {
                         this.Hide();
-                        MiljösamordnareForm miljösamordnareForm = new MiljösamordnareForm(userList, crimeList);
+                        MiljösamordnareForm miljösamordnareForm = new MiljösamordnareForm(userList, crimeList, eventList);
                         miljösamordnareForm.Show();
                         loggedIn = true;
                         tbxUsername.Clear();

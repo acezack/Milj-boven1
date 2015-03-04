@@ -11,8 +11,10 @@ namespace Miljöboven1.Controller
     {
         HandläggareForm handläggareForm;
         CrimeList crimeList;
-        public HandläggareFormController(HandläggareForm handläggarform, CrimeList crimeList)
+        EventList eventList;
+        public HandläggareFormController(HandläggareForm handläggarform, CrimeList crimeList, EventList eventList)
         {
+            this.eventList = eventList;
             this.handläggareForm = handläggarform;
             this.crimeList = new CrimeList();
             //AddPreviousEventsToEventLists();
@@ -31,34 +33,34 @@ namespace Miljöboven1.Controller
             }
         }
 
-        //public void CommentSelectedCrime()
-        //{
-        //    crimeList.GetCrime(handläggareForm.lbCrimes.SelectedIndex).eventList.AddToList(new Event(handläggareForm.rtbKommentar.Text.Trim()));
-        //}
+        public void CommentSelectedCrime()
+        {
+            eventList.AddToList(new Event(handläggareForm.rtbKommentar.Text.Trim(), handläggareForm.lbCrimes.SelectedIndex, eventList.GetNumberOfEvents(handläggareForm.lbCrimes.SelectedIndex) + 1));
+        }
 
-        //public void UpdateSelectedCrime(int i)
-        //{
-        //    try
-        //    {
-        //        handläggareForm.rtbÄrenedeinformation.Text = crimeList.GetCrime(i).GetÄrendeInformation();
-        //        handläggareForm.lbEvent.Items.Clear();
-        //        for (int j = 0; j < crimeList.GetCrime(i).eventList.getCount(); j++)
-        //        {
-        //            handläggareForm.lbEvent.Items.Add(crimeList.GetCrime(i).eventList.getEventInfo(j));
-        //        }
-        //    }
-        //    catch (Exception)
-        //    { }
-        //}
+        public void UpdateSelectedCrime(int i)
+        {
+            try
+            {
+                handläggareForm.rtbÄrenedeinformation.Text = crimeList.GetÄrendeInformation(i);
+                handläggareForm.lbEvent.Items.Clear();
+                for (int j = 0; j < eventList.GetNumberOfEvents(i); j++)
+                {
+                    handläggareForm.lbEvent.Items.Add(eventList.GetEventInfo(j, i));
+                }
+            }
+            catch (Exception)
+            { }
+        }
 
-        //public void FinishCrime()
-        //{
-        //    int i = handläggareForm.lbCrimes.SelectedIndex;
-        //    handläggareForm.lbCrimes.Items.RemoveAt(i);
-        //    crimeList.RemoveAt(i);
-        //    handläggareForm.rtbÄrenedeinformation.Text = "";
-        //    handläggareForm.lbEvent.Items.Clear();
-        //}
+        public void FinishCrime()
+        {
+            int i = handläggareForm.lbCrimes.SelectedIndex;
+            handläggareForm.lbCrimes.Items.RemoveAt(i);
+            crimeList.RemoveAt(i);
+            handläggareForm.rtbÄrenedeinformation.Text = "";
+            handläggareForm.lbEvent.Items.Clear();
+        }
 
         //public void AddPreviousEventsToEventLists()
         //{
@@ -68,15 +70,15 @@ namespace Miljöboven1.Controller
         //    }
         //}
 
-        //public void EditEvents(int eventID, int crimeID, string newComment, string date)
-        //{
-        //    crimeList.GetCrime(crimeID).eventList.GetEvent(eventID).Kommentar = newComment;
-        //    crimeList.GetCrime(crimeID).eventList.GetEvent(eventID).Datum = date;
-        //    UpdateSelectedCrime(crimeID);
-        //}
-        //public void RemoveEvent(int eventID, int crimeID)
-        //{
-        //    crimeList.GetCrime(crimeID).eventList.RemoveEvent(eventID);
-        //}
+        public void EditEvents(int eventID, int crimeID, string newComment, string date)
+        {
+            eventList.GetEvent(eventID, crimeID).Kommentar = newComment;
+            eventList.GetEvent(eventID, crimeID).Datum = date;
+            UpdateSelectedCrime(crimeID);
+        }
+        public void RemoveEvent(int eventID, int crimeID)
+        {
+            eventList.RemoveEvent(eventID, crimeID);
+        }
     }
 }

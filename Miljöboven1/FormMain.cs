@@ -20,7 +20,7 @@ namespace Miljöboven1
 
         UserList userList = new UserList();
         CrimeList crimeList = new CrimeList();
-
+        EventList eventList = new EventList();
         public FormMain()
         {
             Stream userFileStream;
@@ -85,7 +85,7 @@ namespace Miljöboven1
             this.ShowInTaskbar = false;
             this.WindowState = FormWindowState.Minimized;
             this.FormBorderStyle = FormBorderStyle.FixedToolWindow;
-            View.InloggningsForm inloggningsForm = new View.InloggningsForm(userList, crimeList);
+            View.InloggningsForm inloggningsForm = new View.InloggningsForm(userList, crimeList, eventList);
             inloggningsForm.ShowDialog();
         }
     }
