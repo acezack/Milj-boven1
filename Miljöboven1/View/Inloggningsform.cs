@@ -14,8 +14,10 @@ namespace Miljöboven1.View
     public partial class InloggningsForm : Form
     {
         UserList userList;
-        EventList eventList;
+
         CrimeList crimeList;
+
+        EventList eventList;
 
         public Boolean loggedIn;
         public InloggningsForm(UserList userList, CrimeList crimeList, EventList eventList)
@@ -82,11 +84,11 @@ namespace Miljöboven1.View
             {
                 tbxPassword.Clear();
                 MessageBox.Show("Fel användarnamn eller lösenord.");
+                tbxPassword.Focus();
             }
         }
         private void InloggningsForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-
             Application.Exit();
         }
 

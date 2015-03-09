@@ -14,8 +14,11 @@ namespace Miljöboven1.View
     public partial class AdminForm : Form
     {
         UserList userList;
+
         CrimeList crimeList;
+
         EventList eventList;
+
         public AdminForm(UserList userList, CrimeList crimeList, EventList eventList)
         {
             InitializeComponent();

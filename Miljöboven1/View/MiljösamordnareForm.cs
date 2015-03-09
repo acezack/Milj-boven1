@@ -14,8 +14,10 @@ namespace Miljöboven1.View
     public partial class MiljösamordnareForm : Form
     {
         UserList userList;
-        EventList eventList;
+
         CrimeList crimeList;
+
+        EventList eventList;
 
         public MiljösamordnareForm(UserList userList, CrimeList crimeList, EventList eventList)
         {

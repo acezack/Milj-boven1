@@ -85,7 +85,7 @@ namespace Miljöboven1.View
 
         private void btnRedigera_Click(object sender, EventArgs e)
         {
-            if (lbEvent.SelectedIndex != -1)
+            if (lbxEvent.SelectedIndex != -1)
             {
                     DialogResult res = MessageBox.Show("Bekräfta redigering", "Bekräfta", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
                     if (res == DialogResult.Yes)
@@ -97,7 +97,7 @@ namespace Miljöboven1.View
                             hlg.Show();
                         }
                         else { }
-                            handläggarController.EditEvents(lbEvent.SelectedIndex, lbCrimes.SelectedIndex, rtbKommentar.Text.Trim(), DateTime.Now.ToString("yyyy/MM/dd"));
+                            handläggarController.EditEvents(lbxEvent.SelectedIndex, lbCrimes.SelectedIndex, rtbKommentar.Text.Trim(), DateTime.Now.ToString("yyyy/MM/dd"));
                     }
             }
             else
@@ -106,12 +106,12 @@ namespace Miljöboven1.View
 
         private void btnTaBort_Click(object sender, EventArgs e)
         {
-            if (lbEvent.SelectedIndex != -1)
+            if (lbxEvent.SelectedIndex != -1)
             {
                 DialogResult res = MessageBox.Show("Bekräfta borttagning!", "Bekräfta", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
                 if (res == DialogResult.Yes)
                 {
-                    handläggarController.RemoveEvent(lbEvent.SelectedIndex, lbCrimes.SelectedIndex);
+                    handläggarController.RemoveEvent(lbxEvent.SelectedIndex, lbCrimes.SelectedIndex);
                 }
             }
             else

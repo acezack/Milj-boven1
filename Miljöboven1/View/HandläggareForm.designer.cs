@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HandläggareForm));
-            this.rtbÄrenedeinformation = new System.Windows.Forms.RichTextBox();
+            this.rtbÄrendeinformation = new System.Windows.Forms.RichTextBox();
             this.btnSkicka = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.rtbKommentar = new System.Windows.Forms.RichTextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.lbEvent = new System.Windows.Forms.ListBox();
+            this.lbxEvent = new System.Windows.Forms.ListBox();
             this.lbCrimes = new System.Windows.Forms.ListBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -42,15 +42,15 @@
             this.btnTaBort = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // rtbÄrenedeinformation
+            // rtbÄrendeinformation
             // 
-            this.rtbÄrenedeinformation.BackColor = System.Drawing.SystemColors.Window;
-            this.rtbÄrenedeinformation.Location = new System.Drawing.Point(189, 38);
-            this.rtbÄrenedeinformation.Name = "rtbÄrenedeinformation";
-            this.rtbÄrenedeinformation.ReadOnly = true;
-            this.rtbÄrenedeinformation.Size = new System.Drawing.Size(535, 44);
-            this.rtbÄrenedeinformation.TabIndex = 0;
-            this.rtbÄrenedeinformation.Text = "Info om ärendet\n";
+            this.rtbÄrendeinformation.BackColor = System.Drawing.SystemColors.Window;
+            this.rtbÄrendeinformation.Location = new System.Drawing.Point(189, 38);
+            this.rtbÄrendeinformation.Name = "rtbÄrendeinformation";
+            this.rtbÄrendeinformation.ReadOnly = true;
+            this.rtbÄrendeinformation.Size = new System.Drawing.Size(535, 44);
+            this.rtbÄrendeinformation.TabIndex = 0;
+            this.rtbÄrendeinformation.Text = "Info om ärendet\n";
             // 
             // btnSkicka
             // 
@@ -90,10 +90,10 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // lbEvent
+            // lbxEvent
             // 
-            this.lbEvent.FormattingEnabled = true;
-            this.lbEvent.Items.AddRange(new object[] {
+            this.lbxEvent.FormattingEnabled = true;
+            this.lbxEvent.Items.AddRange(new object[] {
             "21 / 1 - 2015   Besökte platsen och fixade så att man kan se ifall det är bra",
             "2",
             "3",
@@ -104,10 +104,10 @@
             "8",
             "9",
             "10"});
-            this.lbEvent.Location = new System.Drawing.Point(189, 114);
-            this.lbEvent.Name = "lbEvent";
-            this.lbEvent.Size = new System.Drawing.Size(535, 121);
-            this.lbEvent.TabIndex = 0;
+            this.lbxEvent.Location = new System.Drawing.Point(189, 114);
+            this.lbxEvent.Name = "lbxEvent";
+            this.lbxEvent.Size = new System.Drawing.Size(535, 121);
+            this.lbxEvent.TabIndex = 0;
             // 
             // lbCrimes
             // 
@@ -124,9 +124,9 @@
             this.label2.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(189, 12);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(127, 23);
+            this.label2.Size = new System.Drawing.Size(148, 23);
             this.label2.TabIndex = 4;
-            this.label2.Text = "Brottsinformation:";
+            this.label2.Text = "Ärendesinformation:";
             // 
             // label3
             // 
@@ -171,9 +171,9 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lbCrimes);
-            this.Controls.Add(this.lbEvent);
+            this.Controls.Add(this.lbxEvent);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.rtbÄrenedeinformation);
+            this.Controls.Add(this.rtbÄrendeinformation);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -190,9 +190,9 @@
         private System.Windows.Forms.Button btnSkicka;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
-        public System.Windows.Forms.RichTextBox rtbÄrenedeinformation;
+        public System.Windows.Forms.RichTextBox rtbÄrendeinformation;
         public System.Windows.Forms.RichTextBox rtbKommentar;
-        public System.Windows.Forms.ListBox lbEvent;
+        public System.Windows.Forms.ListBox lbxEvent;
         public System.Windows.Forms.ListBox lbCrimes;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;

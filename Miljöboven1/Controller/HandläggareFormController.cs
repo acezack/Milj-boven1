@@ -23,10 +23,10 @@ namespace Miljöboven1.Controller
 
         void InitForm()
         {
-            handläggareForm.rtbÄrenedeinformation.Text = "";
+            handläggareForm.rtbÄrendeinformation.Text = "";
             handläggareForm.rtbKommentar.Text = "";
             handläggareForm.lbCrimes.Items.Clear();
-            handläggareForm.lbEvent.Items.Clear();
+            handläggareForm.lbxEvent.Items.Clear();
             for (int i = 0; i < crimeList.GetCount(); i++)
             {
                 handläggareForm.lbCrimes.Items.Add(crimeList.GetCrimeTitle(i));
@@ -42,11 +42,11 @@ namespace Miljöboven1.Controller
         {
             try
             {
-                handläggareForm.rtbÄrenedeinformation.Text = crimeList.GetÄrendeInformation(i);
-                handläggareForm.lbEvent.Items.Clear();
+                handläggareForm.rtbÄrendeinformation.Text = crimeList.GetÄrendeInformation(i);
+                handläggareForm.lbxEvent.Items.Clear();
                 for (int j = 0; j < eventList.GetNumberOfEvents(i); j++)
                 {
-                    handläggareForm.lbEvent.Items.Add(eventList.GetEventInfo(j, i));
+                    handläggareForm.lbxEvent.Items.Add(eventList.GetEventInfo(j, i));
                 }
             }
             catch (Exception)
@@ -57,9 +57,9 @@ namespace Miljöboven1.Controller
         {
             int i = handläggareForm.lbCrimes.SelectedIndex;
             handläggareForm.lbCrimes.Items.RemoveAt(i);
-            crimeList.RemoveAt(i);
-            handläggareForm.rtbÄrenedeinformation.Text = "";
-            handläggareForm.lbEvent.Items.Clear();
+            crimeList.RemoveCrimeAt(i);
+            handläggareForm.rtbÄrendeinformation.Text = "";
+            handläggareForm.lbxEvent.Items.Clear();
         }
 
         //public void AddPreviousEventsToEventLists()

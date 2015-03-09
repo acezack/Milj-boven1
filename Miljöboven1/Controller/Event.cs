@@ -9,28 +9,20 @@ namespace Miljöboven1.Controller
     [Serializable]
     public class Event
     {
-        public String Kommentar { get; set; }
+        public String EventComment { get; set; }
 
-        public String Datum { get; set; }
+        public String EventDate { get; set; }
 
-        public Int32 CrimeID { get; private set; }
         public Int32 EventID { get; set; }
-        public Event(string kommentar, int crimeId, int eventId)
-        {
-            this.EventID = eventId;
-            this.Kommentar = kommentar;
-            this.Datum = DateTime.Now.ToString("yyyy/MM/dd");
-            this.CrimeID = crimeId;
-        }
 
-        public string GetKommentar()
-        {
-            return Kommentar;
-        }
+        public Int32 CrimeID { get; set; }
 
-        public string GetDatum()
+        public Event(string eventComment, int eventID, int crimeID)
         {
-            return Datum;
+            this.EventComment = eventComment;
+            this.EventDate = DateTime.Now.ToString("yyyy/MM/dd");
+            this.EventID = eventID;
+            this.CrimeID = crimeID;
         }
     }
 }
