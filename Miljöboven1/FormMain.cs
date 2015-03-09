@@ -85,7 +85,7 @@ namespace Miljöboven1
             {
                 eventList.AddEvent(new Event("MOTHERFUCKER", 0, 1));
             }
-            eventList.AddEvent(new Event("MOTHERFUCKER1", eventList.GetCount(), 1));
+            eventList.AddToList(new Event("MOTHERFUCKER1", eventList.GetCount(), 1));
             eventList.AddEvent(new Event("MOTHERFUCKER2", eventList.GetCount(), 1));
             eventList.AddEvent(new Event("MOTHERFUCKER3", eventList.GetCount(), 1));
             eventList.AddEvent(new Event("MOTHERFUCKER4", eventList.GetCount(), 1));

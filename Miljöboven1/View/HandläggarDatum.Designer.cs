@@ -71,6 +71,7 @@
             this.Name = "HandläggarDatum";
             this.ShowIcon = false;
             this.Text = "Välj datum";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.HandläggarDatum_FormClosed);
             this.Load += new System.EventHandler(this.HandläggarDatum_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -88,16 +88,17 @@ namespace Miljöboven1.View
             if (lbxEvent.SelectedIndex != -1)
             {
                     DialogResult res = MessageBox.Show("Bekräfta redigering", "Bekräfta", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
-                    if (res == DialogResult.Yes)
+                    if (res == DialogResult.OK)
                     {
                         DialogResult res2 = MessageBox.Show("Vill du ändra datum?", "Bekräfta", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                         if (res2 == DialogResult.Yes)
                         {
-                            HandläggarDatum hlg = new HandläggarDatum(this, handläggarController);
+                            HandläggarDatum hlg = new HandläggarDatum(this, handläggarController, rtbKommentar.Text.Trim(), lbxEvent.SelectedIndex, lbCrimes.SelectedIndex);
                             hlg.Show();
+                            this.Hide();
                         }
                         else { }
-                            handläggarController.EditEvents(lbxEvent.SelectedIndex, lbCrimes.SelectedIndex, rtbKommentar.Text.Trim(), DateTime.Now.ToString("yyyy/MM/dd"));
+                            handläggarController.EditEvents(lbxEvent.SelectedIndex, lbCrimes.SelectedIndex, rtbKommentar.Text.Trim());
                     }
             }
             else

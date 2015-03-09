@@ -25,7 +25,21 @@ namespace Miljöboven1.Controller
             eventList.Add(ev);
         }
 
-        public int getCount()
+        public void AddEvent(Event ev)
+        {
+            eventList.Add(ev);
+        }
+
+        public string GetEventDate(int index)
+        {
+            return eventList[index].EventDate;
+        }
+
+        public string GetEventComment(int index)
+        {
+            return eventList[index].EventComment;
+        }
+        public int GetCount()
         {
             return eventList.Count();
         }
@@ -36,7 +50,7 @@ namespace Miljöboven1.Controller
             {
                 if (ev.CrimeID == crimeID && ev.EventID == eventID)
                 {
-                    return ev.Datum + "   " + ev.Kommentar;
+                    return ev.EventDate + "   " + ev.EventComment;
                 }
             }
             return "";
@@ -74,6 +88,11 @@ namespace Miljöboven1.Controller
                 }
             }
             return returning;
+        }
+
+        public int GetCrimeID(int index)
+        {
+            return eventList[index].CrimeID;
         }
     }
 }
