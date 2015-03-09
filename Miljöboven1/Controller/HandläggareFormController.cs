@@ -10,15 +10,18 @@ namespace Miljöboven1.Controller
     public class HandläggareFormController
     {
         HandläggareForm handläggareForm;
+
         CrimeList crimeList;
+
         EventList eventList;
+
         public HandläggareFormController(HandläggareForm handläggarform, CrimeList crimeList, EventList eventList)
         {
             this.eventList = eventList;
             this.handläggareForm = handläggarform;
             this.crimeList = new CrimeList();
             //AddPreviousEventsToEventLists();
-            testdata();
+            //testdata();
             InitForm();
 
         }
