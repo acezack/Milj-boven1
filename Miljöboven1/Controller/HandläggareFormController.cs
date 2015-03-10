@@ -48,6 +48,7 @@ namespace Miljöboven1.Controller
             eventList.AddToList(new Event(handläggareForm.rtbKommentar.Text.Trim(), eventList.GetNumberOfEvents(handläggareForm.lbCrimes.SelectedIndex), handläggareForm.lbCrimes.SelectedIndex));
         }
 
+
         public void UpdateSelectedCrime(int i)
         {
             try
