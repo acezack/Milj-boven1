@@ -14,13 +14,17 @@ namespace Miljöboven1.View
     public partial class AdminForm : Form
     {
         UserList userList;
+
         CrimeList crimeList;
 
-        public AdminForm(UserList userList, CrimeList crimeList)
+        EventList eventList;
+
+        public AdminForm(UserList userList, CrimeList crimeList, EventList eventList)
         {
             InitializeComponent();
             this.userList = userList;
             this.crimeList = crimeList;
+            this.eventList = eventList;
             for (int index = 0; index < userList.GetCount(); index++)
 			{
                 cbxRemoveUser.Items.Add(userList.GetUserName(index));
@@ -79,7 +83,7 @@ namespace Miljöboven1.View
 
         private void AdminForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            InloggningsForm inloggningsForm = new InloggningsForm(userList, crimeList);
+            InloggningsForm inloggningsForm = new InloggningsForm(userList, crimeList, eventList);
             inloggningsForm.Show();
         }
     }

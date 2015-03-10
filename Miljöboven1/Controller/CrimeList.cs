@@ -12,29 +12,78 @@ namespace Miljöboven1.Controller
     {
         List<Crime> crimeList = new List<Crime>();
 
-        public void Add(Crime crime)
+        public void AddCrime(Crime crime)
         {
             crimeList.Add(crime);
         }
 
-        public int GetCount()
-        { 
-            return crimeList.Count; 
+        public void RemoveCrimeAt(int index)
+        {
+            crimeList.RemoveAt(index);
         }
 
-        public string GetCrimeTitle(int index)
+        public int GetCount()
         {
-            return crimeList[index].Title;
+            return crimeList.Count;
         }
 
         public Crime GetCrime(int index)
         {
             return crimeList[index];
+        }   
+
+        public int GetCrimeID(int index)
+        {
+            return crimeList[index].CrimeID;
         }
 
-        public void RemoveAt(int index)
+        public int GetCrimeStatus(int index)
         {
-            crimeList.RemoveAt(index);
+            return crimeList[index].CrimeStatus;
+        }
+
+        public string GetCrimeTitle(int index)
+        {
+            return crimeList[index].CrimeTitle;
+        }
+
+        public string GetCrimeDate(int index)
+        {
+            return crimeList[index].CrimeDate;
+        }
+
+        public string GetCrimeLocation(int index)
+        {
+            return crimeList[index].CrimeLocation;
+        }
+
+        public string GetCrimeInformation(int index)
+        {
+            return crimeList[index].CrimeInformation;
+        }
+
+        public string GetCallerName(int index)
+        {
+            return crimeList[index].CallerName;
+        }
+
+        public string GetCallerAddress(int index)
+        {
+            return crimeList[index].CallerAddress;
+        }
+
+        public string GetCallerNumber(int index)
+        {
+            return crimeList[index].CallerNumber;
+        }
+
+        public string GetHandläggarUserName(int index)
+        {
+            return crimeList[index].HandläggarUserName;
+        }
+        public string GetÄrendeInformation(int id)
+        {
+            return crimeList[id].CallerName + " " + crimeList[id].CallerAddress + " " + crimeList[id].CallerNumber;
         }
     }
 }

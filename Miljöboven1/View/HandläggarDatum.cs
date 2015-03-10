@@ -15,11 +15,17 @@ namespace Miljöboven1.View
     {
         HandläggareForm handläggareform;
         HandläggareFormController handläggarecontroller;
-        public HandläggarDatum(HandläggareForm handläggareform, HandläggareFormController handläggarecontroller)
+        int crimeID;
+        int eventID;
+        string newComment;
+        public HandläggarDatum(HandläggareForm handläggareform, HandläggareFormController handläggarecontroller, string newComment, int eventID, int crimeID)
         {
             InitializeComponent();
             this.handläggareform = handläggareform;
             this.handläggarecontroller = handläggarecontroller;
+            this.crimeID = crimeID;
+            this.eventID = eventID;
+            this.newComment = newComment;
         }
 
         private void HandläggarDatum_Load(object sender, EventArgs e)
@@ -29,8 +35,15 @@ namespace Miljöboven1.View
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //handläggarecontroller.EditEvents(handläggareform.lbEvent.SelectedIndex, handläggareform.lbCrimes.SelectedIndex, handläggareform.rtbKommentar.Text, this.dateTimePicker1.Value.ToString("yyyy/MM/dd"));
+            handläggarecontroller.EditEvents(eventID, crimeID, newComment, this.dateTimePicker1.Value.ToString("yyyy/MM/dd"));
             this.Hide();
+            handläggareform.Show();
+        }
+
+        private void HandläggarDatum_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Hide();
+            handläggareform.Show();
         }
     }
 }

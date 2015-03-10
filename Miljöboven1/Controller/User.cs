@@ -14,7 +14,10 @@ namespace Miljöboven1.Controller
 
         public String Password { get; set; }
 
-        public Int32 Type { get; set; } //0=admin, 1=chef, 2=handläggare, 3=miljösamordnare
+        public Int32 Type { get; set; } //0=admin 
+                                        //1=chef
+                                        //2=handläggare
+                                        //3=miljösamordnare
 
         public Int32 ID { get; set; }
         

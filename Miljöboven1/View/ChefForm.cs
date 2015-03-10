@@ -14,29 +14,191 @@ namespace Miljöboven1.View
     public partial class ChefForm : Form
     {
         UserList userList;
+
         CrimeList crimeList;
 
-        public ChefForm(UserList userList, CrimeList crimeList)
+        EventList eventList;
+
+        public ChefForm(UserList userList, CrimeList crimeList, EventList eventList)
         {
             InitializeComponent();
+
             this.userList = userList;
             this.crimeList = crimeList;
-        }
+            this.eventList = eventList;
 
-        private void ChefForm_Load(object sender, EventArgs e)
-        {
+            cbxCrimeStatus.Items.Add("Alla");
+            cbxCrimeStatus.Items.Add("Ej påbörjade");
+            cbxCrimeStatus.Items.Add("Påbörjade");
+            cbxCrimeStatus.Items.Add("Slutförda");
 
-        }
+            cbxHandläggare.Items.Add("Alla");
+            for (int index = 0; index < userList.GetCount(); index++)
+            {
+                if (userList.GetUser(index).Type == 2)
+                {
+                    cbxHandläggare.Items.Add(userList.GetUser(index).UserName);
+                }
+            }
 
-        private void ChefForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            
+            lbxÄrenden.Items.Clear();
+
+            lbxEvent.Items.Clear();
+
+            for (int index = 0; index < crimeList.GetCount(); index++)
+            {
+                lbxÄrenden.Items.Add(crimeList.GetCrimeTitle(index));
+            }
+
+            cbxHandläggare.SelectedIndex = 0;
+
+            cbxCrimeStatus.SelectedIndex = 0;
         }
 
         private void ChefForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            InloggningsForm inloggningsForm = new InloggningsForm(userList, crimeList);
+            InloggningsForm inloggningsForm = new InloggningsForm(userList, crimeList, eventList);
             inloggningsForm.Show();
+        }
+
+        private void cbxÄrendeStatus_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbxCrimeStatus.SelectedIndex == 0)
+            {
+                lbxÄrenden.Items.Clear();
+                if (cbxHandläggare.SelectedIndex == 0)
+                {
+                    for (int index = 0; index < crimeList.GetCount(); index++)
+                    {
+                        lbxÄrenden.Items.Add(crimeList.GetCrimeTitle(index));
+                    }
+                }
+            }
+            if (cbxCrimeStatus.SelectedIndex == 1)
+            {
+                lbxÄrenden.Items.Clear();
+                if (cbxHandläggare.SelectedIndex != 0)
+                {
+                    for (int index = 0; index < crimeList.GetCount(); index++)
+                    {
+                        if (cbxHandläggare.Items[cbxHandläggare.SelectedIndex].ToString() == crimeList.GetHandläggarUserName(index) &&
+                            crimeList.GetCrimeStatus(index) - 1 == 0)
+                        {
+                            lbxÄrenden.Items.Add(crimeList.GetCrimeTitle(index));
+                        }
+                    }
+                }
+                else
+                {
+                    for (int index = 0; index < crimeList.GetCount(); index++)
+                    {
+                        if (crimeList.GetCrimeStatus(index) - 1 == 0)
+                        {
+                            lbxÄrenden.Items.Add(crimeList.GetCrimeTitle(index));
+                        }
+                    }
+                }
+            }
+
+            if (cbxCrimeStatus.SelectedIndex == 2)
+            {
+                lbxÄrenden.Items.Clear();
+                if (cbxHandläggare.SelectedIndex != 0)
+                {
+                    for (int index = 0; index < crimeList.GetCount(); index++)
+                    {
+                        if (cbxHandläggare.Items[cbxHandläggare.SelectedIndex].ToString() == crimeList.GetHandläggarUserName(index) &&
+                            crimeList.GetCrimeStatus(index) - 1 == 1)
+                        {
+                            lbxÄrenden.Items.Add(crimeList.GetCrimeTitle(index));
+                        }
+                    }
+                }
+                else
+                {
+                    for (int index = 0; index < crimeList.GetCount(); index++)
+                    {
+                        if (crimeList.GetCrimeStatus(index) - 1 == 1)
+                        {
+                            lbxÄrenden.Items.Add(crimeList.GetCrimeTitle(index));
+                        }
+                    }
+                }
+            }
+
+            if (cbxCrimeStatus.SelectedIndex == 3)
+            {
+                lbxÄrenden.Items.Clear();
+                if (cbxHandläggare.SelectedIndex != 0)
+                {
+                    for (int index = 0; index < crimeList.GetCount(); index++)
+                    {
+                        if (cbxHandläggare.Items[cbxHandläggare.SelectedIndex].ToString() == crimeList.GetHandläggarUserName(index) &&
+                            crimeList.GetCrimeStatus(index) - 1 == 2)
+                        {
+                            lbxÄrenden.Items.Add(crimeList.GetCrimeTitle(index));
+                        }
+                    }
+                }
+                else
+                {
+                    for (int index = 0; index < crimeList.GetCount(); index++)
+                    {
+                        if (crimeList.GetCrimeStatus(index) - 1 == 2)
+                        {
+                            lbxÄrenden.Items.Add(crimeList.GetCrimeTitle(index));
+                        }
+                    }
+                }
+            }
+            rtbÄrendeinformation.Clear();
+            lbxEvent.Items.Clear();
+        }
+
+        private void cbxHandläggare_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            for (int backIndex = 0; backIndex < userList.GetCount(); backIndex++)
+            {
+                if (cbxHandläggare.SelectedIndex == backIndex)
+                {
+                    lbxÄrenden.Items.Clear();
+                    if (cbxHandläggare.SelectedIndex != 0)
+                    {
+                        for (int index = 0; index < crimeList.GetCount(); index++)
+                        {
+                            if (cbxHandläggare.Items[cbxHandläggare.SelectedIndex].ToString() == crimeList.GetHandläggarUserName(index) &&
+                                crimeList.GetCrimeStatus(index) == backIndex)
+                            {
+                                lbxÄrenden.Items.Add(crimeList.GetCrimeTitle(index));
+                            }
+                        }
+                    }
+                    else
+                    {
+                        for (int index = 0; index < crimeList.GetCount(); index++)
+                        {
+                            if (crimeList.GetCrimeStatus(index) == backIndex)
+                            {
+                                lbxÄrenden.Items.Add(crimeList.GetCrimeTitle(index));
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        private void lbxÄrenden_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            rtbÄrendeinformation.Text = crimeList.GetCrimeInformation(Convert.ToInt32(lbxÄrenden.Items[lbxÄrenden.SelectedIndex].ToString().Substring(6)));
+            lbxEvent.Items.Clear();
+            for (int index = 0; index < eventList.GetCount(); index++)
+            {
+                if (eventList.GetCrimeID(Convert.ToInt32(lbxÄrenden.Items[lbxÄrenden.SelectedIndex].ToString().Substring(6))) == crimeList.GetCrimeID(Convert.ToInt32(lbxÄrenden.Items[lbxÄrenden.SelectedIndex].ToString().Substring(6)))
+                    )
+                {
+                    lbxEvent.Items.Add(eventList.GetEventDate(index) + "   " + eventList.GetEventComment(index));
+                }
+            }
         }
     }
 }
