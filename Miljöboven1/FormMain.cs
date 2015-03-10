@@ -52,36 +52,20 @@ namespace Miljöboven1
             {
                 Stream crimeFileStream = File.OpenRead("1crimeData.txt");
                 BinaryFormatter deserializer = new BinaryFormatter();
-                try
-                {
                 crimeList = (CrimeList)(deserializer.Deserialize(crimeFileStream));
-                }
-                catch(Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
                 crimeFileStream.Close();
             }
             else
             {
                 Stream crimeFileStream = File.Create("1crimeData.txt");
                 BinaryFormatter serializer = new BinaryFormatter();
-                try
-                {
-                    serializer.Serialize(crimeFileStream, crimeList);
-                }
-                catch (Exception ex)
-                {
-
-                    MessageBox.Show(ex.Message);
-                }
-               
+                serializer.Serialize(crimeFileStream, crimeList);
                 crimeFileStream.Close();
             }
 
             InitializeComponent();
 
-            
+
             this.ShowInTaskbar = false;
             this.WindowState = FormWindowState.Minimized;
             this.FormBorderStyle = FormBorderStyle.FixedToolWindow;

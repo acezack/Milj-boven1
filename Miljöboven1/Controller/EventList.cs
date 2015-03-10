@@ -18,10 +18,7 @@ namespace Miljöboven1.Controller
         }
         void AddPreviousItemsToList()
         {
-            Event ev = new Event("Började projektet");
-            eventList.Add(ev);
-            ev = new Event("Avslutade projektet");
-            eventList.Add(ev);
+
         }
         public void AddToList(Event ev)
         {
