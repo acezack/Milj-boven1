@@ -35,47 +35,47 @@ namespace Miljöboven1
 
             if (crimeList.GetCount() == 0)
             {
-                crimeList.AddCrime(new Crime(1,
+                crimeList.AddCrime(new Crime(35,
                     0,
                     0, //Ej påbörjad
                     DateTime.Now.ToString("yy") + "-35-" + crimeList.GetCount().ToString("00#"),
                     DateTime.Now.ToString("MM/dd"),
                     "Någonstansivärlden 1",
-                    "Brottet ID = 0 verkar vem fan bryr sig om den här texten",
+                    "Brottet ID = 0 verkar vem fan bryr HAND1 sig om den här texten Ej påbörjad",
                     "Någon",
                     "Någongana 1",
                     "070137137",
                     "hand1"));
             }
-            crimeList.AddCrime(new Crime(0,
+            crimeList.AddCrime(new Crime(35,
                 crimeList.GetCount(),
                 1, //Påbörjad
                 DateTime.Today.ToString("yy") + "-35-" + crimeList.GetCount().ToString("00#"),
                 DateTime.Now.ToString("yyyy/MM/dd"),
                 "Göteborgsgatan 23/3c",
-                "Brottet ID = 1 verkar vem fan bryr sig om den här texten",
+                "Brottet ID = 1 verkar vem fan bryr HAND sig om den här texten Påbörjad",
                 "Superadde",
                 "Supergatan 1337",
                 "07013371337",
                 "hand"));
-            crimeList.AddCrime(new Crime(1,
+            crimeList.AddCrime(new Crime(35,
                 crimeList.GetCount(),
                 0, //Ej påbörjad
                 DateTime.Today.ToString("yy") + "-35-" + crimeList.GetCount().ToString("00#"),
                 DateTime.Now.ToString("yyyy/MM/dd"),
                 "Stockholmsgatan 29c",
-                "Brottet ID = 2 verkar vem fan bryr sig om den här texten",
+                "Brottet ID = 2 verkar vem fan bryr HAND1 sig om den här texten Ej påbörjad",
                 "Superungen",
                 "Superkunggatan 13",
                 "070139139",
                 "hand1"));
-            crimeList.AddCrime(new Crime(2,
+            crimeList.AddCrime(new Crime(35,
                 crimeList.GetCount(),
                 2, //Slutförd
                 DateTime.Today.ToString("yy") + "-35-" + crimeList.GetCount().ToString("00#"),
                 DateTime.Now.ToString("yyyy/MM/dd"),
                 "Hejsangatan 2",
-                "Brottet ID = 3 verkar vem fan bryr sig om den här texten",
+                "Brottet ID = 3 verkar vem fan bryr HAND sig om den här texten Slutförd",
                 "Apan",
                 "SuperVÄGEN 37",
                 "070187137",

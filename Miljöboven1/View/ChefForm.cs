@@ -74,6 +74,7 @@ namespace Miljöboven1.View
                     }
                 }
             }
+
             if (cbxCrimeStatus.SelectedIndex == 1)
             {
                 lbxÄrenden.Items.Clear();
@@ -82,17 +83,17 @@ namespace Miljöboven1.View
                     for (int index = 0; index < crimeList.GetCount(); index++)
                     {
                         if (cbxHandläggare.Items[cbxHandläggare.SelectedIndex].ToString() == crimeList.GetHandläggarUserName(index) &&
-                            crimeList.GetCrimeStatus(index) - 1 == 0)
+                            crimeList.GetCrimeStatus(index) == 0)
                         {
                             lbxÄrenden.Items.Add(crimeList.GetCrimeTitle(index));
                         }
                     }
                 }
                 else
-                {
+               {
                     for (int index = 0; index < crimeList.GetCount(); index++)
                     {
-                        if (crimeList.GetCrimeStatus(index) - 1 == 0)
+                        if (crimeList.GetCrimeStatus(index) == 0)
                         {
                             lbxÄrenden.Items.Add(crimeList.GetCrimeTitle(index));
                         }
@@ -108,7 +109,7 @@ namespace Miljöboven1.View
                     for (int index = 0; index < crimeList.GetCount(); index++)
                     {
                         if (cbxHandläggare.Items[cbxHandläggare.SelectedIndex].ToString() == crimeList.GetHandläggarUserName(index) &&
-                            crimeList.GetCrimeStatus(index) - 1 == 1)
+                            crimeList.GetCrimeStatus(index) == 1)
                         {
                             lbxÄrenden.Items.Add(crimeList.GetCrimeTitle(index));
                         }
@@ -118,7 +119,7 @@ namespace Miljöboven1.View
                 {
                     for (int index = 0; index < crimeList.GetCount(); index++)
                     {
-                        if (crimeList.GetCrimeStatus(index) - 1 == 1)
+                        if (crimeList.GetCrimeStatus(index) == 1)
                         {
                             lbxÄrenden.Items.Add(crimeList.GetCrimeTitle(index));
                         }
@@ -134,7 +135,7 @@ namespace Miljöboven1.View
                     for (int index = 0; index < crimeList.GetCount(); index++)
                     {
                         if (cbxHandläggare.Items[cbxHandläggare.SelectedIndex].ToString() == crimeList.GetHandläggarUserName(index) &&
-                            crimeList.GetCrimeStatus(index) - 1 == 2)
+                            crimeList.GetCrimeStatus(index) == 2)
                         {
                             lbxÄrenden.Items.Add(crimeList.GetCrimeTitle(index));
                         }
@@ -144,7 +145,7 @@ namespace Miljöboven1.View
                 {
                     for (int index = 0; index < crimeList.GetCount(); index++)
                     {
-                        if (crimeList.GetCrimeStatus(index) - 1 == 2)
+                        if (crimeList.GetCrimeStatus(index) == 2)
                         {
                             lbxÄrenden.Items.Add(crimeList.GetCrimeTitle(index));
                         }
@@ -162,7 +163,7 @@ namespace Miljöboven1.View
                 if (cbxHandläggare.SelectedIndex == backIndex)
                 {
                     lbxÄrenden.Items.Clear();
-                    if (cbxHandläggare.SelectedIndex != 0)
+                    if (cbxCrimeStatus.SelectedIndex != 0)
                     {
                         for (int index = 0; index < crimeList.GetCount(); index++)
                         {

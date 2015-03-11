@@ -37,5 +37,20 @@ namespace Miljöboven1.View
             InloggningsForm inloggningsForm = new InloggningsForm(userList, crimeList, eventList);
             inloggningsForm.Show();
         }
+
+        private void btnAddCrime_Click(object sender, EventArgs e)
+        {
+            crimeList.AddCrime(new Crime(35,
+                crimeList.GetCount(),
+                0,
+                DateTime.Today.ToString("yy") + "-35-" + crimeList.GetCount().ToString("00#"),
+                DateTime.Now.ToString("yyyy/MM/dd"),
+                tbxCrimeLocation.Text,
+                tbxCrimeInformation.Text,
+                tbxCallerName.Text,
+                tbxCallerAddress.Text,
+                tbxCallerName.Text,
+                null));
+        }
     }
 }
