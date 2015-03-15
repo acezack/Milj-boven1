@@ -40,17 +40,35 @@ namespace Miljöboven1.View
 
         private void btnAddCrime_Click(object sender, EventArgs e)
         {
-            crimeList.AddCrime(new Crime(35,
-                crimeList.GetCount(),
-                0,
-                DateTime.Today.ToString("yy") + "-35-" + crimeList.GetCount().ToString("00#"),
-                DateTime.Now.ToString("yyyy/MM/dd"),
-                tbxCrimeLocation.Text,
-                tbxCrimeInformation.Text,
-                tbxCallerName.Text,
-                tbxCallerAddress.Text,
-                tbxCallerName.Text,
-                null));
+            if (MessageBox.Show("Är du säker på att du vill lägga till detta ärende?", "Lägga till ärende", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                crimeList.AddCrime(new Crime(35,
+                    crimeList.GetCount(),
+                    0,
+                    DateTime.Today.ToString("yy") + "-35-" + crimeList.GetCount().ToString("00#"),
+                    DateTime.Now.ToString("yyyy/MM/dd"),
+                    tbxCrimeLocation.Text,
+                    tbxCrimeInformation.Text,
+                    tbxCallerName.Text,
+                    tbxCallerAddress.Text,
+                    tbxCallerNumber.Text,
+                    null));
+
+                tbxCrimeLocation.Clear();
+                tbxCrimeInformation.Clear();
+                tbxCallerName.Clear();
+                tbxCallerAddress.Clear();
+                tbxCallerNumber.Clear();
+            }
+        }
+
+        private void tbxClearText_Click(object sender, EventArgs e)
+        {
+            tbxCrimeLocation.Clear();
+            tbxCrimeInformation.Clear();
+            tbxCallerName.Clear();
+            tbxCallerAddress.Clear();
+            tbxCallerNumber.Clear();
         }
     }
 }

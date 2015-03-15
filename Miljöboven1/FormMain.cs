@@ -39,7 +39,7 @@ namespace Miljöboven1
                     0,
                     0, //Ej påbörjad
                     DateTime.Now.ToString("yy") + "-35-" + crimeList.GetCount().ToString("00#"),
-                    DateTime.Now.ToString("MM/dd"),
+                    DateTime.Now.ToString("yyyy/MM/dd"),
                     "Någonstansivärlden 1",
                     "Brottet ID = 0 verkar vem fan bryr HAND1 sig om den här texten Ej påbörjad",
                     "Någon",
@@ -80,6 +80,17 @@ namespace Miljöboven1
                 "SuperVÄGEN 37",
                 "070187137",
                 "hand"));
+            crimeList.AddCrime(new Crime(35,
+                crimeList.GetCount(),
+                0,
+                DateTime.Today.ToString("yy") + "-35-" + crimeList.GetCount().ToString("00#"),
+                DateTime.Now.ToString("yyyy/MM/dd"),
+                "a",
+                "a",
+                "a",
+                "a",
+                "a",
+                null));
 
             if (eventList.GetCount() == 0)
             {
@@ -143,7 +154,7 @@ namespace Miljöboven1
 
             this.ShowInTaskbar = false;
             this.WindowState = FormWindowState.Minimized;
-            this.FormBorderStyle = FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = FormBorderStyle.None;
             this.Hide();
             View.InloggningsForm inloggningsForm = new View.InloggningsForm(userList, crimeList, eventList);
             inloggningsForm.ShowDialog();

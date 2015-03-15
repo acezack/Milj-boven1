@@ -152,7 +152,7 @@ namespace Miljöboven1.View
                     }
                 }
             }
-            rtbÄrendeinformation.Clear();
+            rtbCrimeInformation.Clear();
             lbxEvent.Items.Clear();
         }
 
@@ -190,7 +190,14 @@ namespace Miljöboven1.View
 
         private void lbxÄrenden_SelectedIndexChanged(object sender, EventArgs e)
         {
-            rtbÄrendeinformation.Text = crimeList.GetCrimeInformation(Convert.ToInt32(lbxÄrenden.Items[lbxÄrenden.SelectedIndex].ToString().Substring(6)));
+            rtbCrimeInformation.Text = crimeList.GetCrimeInformation(Convert.ToInt32(lbxÄrenden.Items[lbxÄrenden.SelectedIndex].ToString().Substring(6)));
+            tbxCrimeDate.Text = crimeList.GetCrimeDate(Convert.ToInt32(lbxÄrenden.Items[lbxÄrenden.SelectedIndex].ToString().Substring(6)));
+            tbxCrimeLocation.Text = crimeList.GetCrimeLocation(Convert.ToInt32(lbxÄrenden.Items[lbxÄrenden.SelectedIndex].ToString().Substring(6)));
+            tbxCallerName.Text = crimeList.GetCallerName(Convert.ToInt32(lbxÄrenden.Items[lbxÄrenden.SelectedIndex].ToString().Substring(6)));
+            tbxCallerAddress.Text = crimeList.GetCallerAddress(Convert.ToInt32(lbxÄrenden.Items[lbxÄrenden.SelectedIndex].ToString().Substring(6)));
+            tbxCallerNumber.Text = crimeList.GetCallerNumber(Convert.ToInt32(lbxÄrenden.Items[lbxÄrenden.SelectedIndex].ToString().Substring(6)));
+            tbxHandläggare.Text = crimeList.GetHandläggarUserName(Convert.ToInt32(lbxÄrenden.Items[lbxÄrenden.SelectedIndex].ToString().Substring(6)));
+
             lbxEvent.Items.Clear();
             for (int index = 0; index < eventList.GetCount(); index++)
             {
@@ -200,6 +207,12 @@ namespace Miljöboven1.View
                     lbxEvent.Items.Add(eventList.GetEventDate(index) + "   " + eventList.GetEventComment(index));
                 }
             }
+        }
+
+        private void btnAssignCrime_Click(object sender, EventArgs e)
+        {
+            ChefTilldelaÄrendeForm chefTilldelaÄrendeForm = new ChefTilldelaÄrendeForm(userList, crimeList);
+            chefTilldelaÄrendeForm.Show();
         }
     }
 }

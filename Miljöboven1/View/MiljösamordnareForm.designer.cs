@@ -39,6 +39,7 @@
             this.lblCallerName = new System.Windows.Forms.Label();
             this.lblCallerAddress = new System.Windows.Forms.Label();
             this.lblCallerNumber = new System.Windows.Forms.Label();
+            this.tbxClearText = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnAddCrime
@@ -46,8 +47,8 @@
             this.btnAddCrime.Location = new System.Drawing.Point(123, 325);
             this.btnAddCrime.Name = "btnAddCrime";
             this.btnAddCrime.Size = new System.Drawing.Size(175, 23);
-            this.btnAddCrime.TabIndex = 0;
-            this.btnAddCrime.Text = "Add Crime";
+            this.btnAddCrime.TabIndex = 98;
+            this.btnAddCrime.Text = "Lägg till ärende";
             this.btnAddCrime.UseVisualStyleBackColor = true;
             this.btnAddCrime.Click += new System.EventHandler(this.btnAddCrime_Click);
             // 
@@ -56,7 +57,7 @@
             this.tbxCrimeLocation.Location = new System.Drawing.Point(123, 32);
             this.tbxCrimeLocation.Name = "tbxCrimeLocation";
             this.tbxCrimeLocation.Size = new System.Drawing.Size(175, 20);
-            this.tbxCrimeLocation.TabIndex = 1;
+            this.tbxCrimeLocation.TabIndex = 0;
             // 
             // tbxCrimeInformation
             // 
@@ -80,9 +81,9 @@
             this.lblCrimeInformation.AutoSize = true;
             this.lblCrimeInformation.Location = new System.Drawing.Point(12, 61);
             this.lblCrimeInformation.Name = "lblCrimeInformation";
-            this.lblCrimeInformation.Size = new System.Drawing.Size(54, 13);
+            this.lblCrimeInformation.Size = new System.Drawing.Size(56, 26);
             this.lblCrimeInformation.TabIndex = 4;
-            this.lblCrimeInformation.Text = "Brottsinfo:";
+            this.lblCrimeInformation.Text = "Brottsinfo:\r\n(eventuell)";
             // 
             // tbxCallerName
             // 
@@ -132,11 +133,22 @@
             this.lblCallerNumber.TabIndex = 10;
             this.lblCallerNumber.Text = "Anmälarens nummer:";
             // 
+            // tbxClearText
+            // 
+            this.tbxClearText.Location = new System.Drawing.Point(304, 297);
+            this.tbxClearText.Name = "tbxClearText";
+            this.tbxClearText.Size = new System.Drawing.Size(46, 23);
+            this.tbxClearText.TabIndex = 99;
+            this.tbxClearText.Text = "Rensa";
+            this.tbxClearText.UseVisualStyleBackColor = true;
+            this.tbxClearText.Click += new System.EventHandler(this.tbxClearText_Click);
+            // 
             // MiljösamordnareForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(426, 475);
+            this.Controls.Add(this.tbxClearText);
             this.Controls.Add(this.lblCallerNumber);
             this.Controls.Add(this.lblCallerAddress);
             this.Controls.Add(this.lblCallerName);
@@ -170,5 +182,6 @@
         private System.Windows.Forms.Label lblCallerName;
         private System.Windows.Forms.Label lblCallerAddress;
         private System.Windows.Forms.Label lblCallerNumber;
+        private System.Windows.Forms.Button tbxClearText;
     }
 }
