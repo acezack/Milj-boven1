@@ -16,7 +16,6 @@ namespace Miljöboven1
 {
     public partial class FormMain : Form
     {
-
         UserList userList = new UserList();
 
         CrimeList crimeList = new CrimeList();
@@ -25,6 +24,11 @@ namespace Miljöboven1
 
         public FormMain()
         {
+            int adde = 0;
+            if (adde == 0)
+            {
+                adde = 0;
+            }
             Stream userFileStream;
 
             userList.AddUser(new User("admin", "admin", 0, 0));
