@@ -24,11 +24,6 @@ namespace Miljöboven1
 
         public FormMain()
         {
-            int adde = 0;
-            if (adde == 0)
-            {
-                adde = 0;
-            }
             Stream userFileStream;
 
             userList.AddUser(new User("admin", "admin", 0, 0));

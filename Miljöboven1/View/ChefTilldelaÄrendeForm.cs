@@ -63,6 +63,26 @@ namespace Miljöboven1.View
                                     crimeList.ChangeHandläggare(index, lbxHandläggare.Items[lbxHandläggare.SelectedIndex].ToString());
                                     lbxUnassignedCrimes.SelectedIndex = -1;
                                     lbxHandläggare.SelectedIndex = -1;
+
+                                    lbxUnassignedCrimes.Items.Clear();
+
+                                    lbxHandläggare.Items.Clear();
+
+                                    for (int index2 = 0; index2 < crimeList.GetCount(); index2++)
+                                    {
+                                        if (crimeList.GetCrime(index2).HandläggarUserName == null)
+                                        {
+                                            lbxUnassignedCrimes.Items.Add(crimeList.GetCrime(index2).CrimeTitle);
+                                        }
+                                    }
+
+                                    for (int index2 = 0; index2 < userList.GetCount(); index2++)
+                                    {
+                                        if (userList.GetType(index2) == 2)
+                                        {
+                                            lbxHandläggare.Items.Add(userList.GetUserName(index2));
+                                        }
+                                    }
                                     break;
                                 }
                             }
