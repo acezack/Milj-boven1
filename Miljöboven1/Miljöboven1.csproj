@@ -146,6 +146,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\Debug\1crimeData.txt" />
+    <Content Include="bin\Debug\1eventData.txt" />
+    <Content Include="bin\Debug\1userData.txt" />
     <Content Include="tjuv.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

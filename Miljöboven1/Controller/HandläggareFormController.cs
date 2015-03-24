@@ -22,16 +22,8 @@ namespace Miljöboven1.Controller
             this.eventList = eventList;
             this.handläggareForm = handläggarform;
             this.crimeList = crimeList;
-            //AddPreviousEventsToEventLists();
-            //testdata();
             this.handläggarusername = handläggarusername;
             InitForm();
-
-        }
-
-        void testdata()
-        {
-            crimeList.AddCrime(new Crime(1, 0, 2, "miljöbrott", "2014:06:07", "brunstavägen", "brottet är viktigt", "adrian", "super", "098", "ragmar"));
         }
 
         void InitForm()
@@ -51,7 +43,6 @@ namespace Miljöboven1.Controller
         {
             eventList.AddToList(new Event(handläggareForm.rtbKommentar.Text.Trim(), eventList.GetNumberOfEvents(handläggareForm.lbCrimes.SelectedIndex), handläggareForm.lbCrimes.SelectedIndex));
         }
-
 
         public void UpdateSelectedCrime(int i)
         {
@@ -77,25 +68,19 @@ namespace Miljöboven1.Controller
             handläggareForm.lbxEvent.Items.Clear();
         }
 
-        //public void AddPreviousEventsToEventLists()
-        //{
-        //    for (int i = 0; i < crimeList.GetCount(); i++)
-        //    {
-        //        crimeList.GetCrime(i).ApplyEventList(handläggareForm);
-        //    }
-        //}
-
         public void EditEvents(int eventID, int crimeID, string newComment)
         {
             eventList.GetEvent(eventID, crimeID).EventComment = newComment;
             UpdateSelectedCrime(crimeID);
         }
+
         public void EditEvents(int eventID, int crimeID, string newComment, string newDate)
         {
             eventList.GetEvent(eventID, crimeID).EventComment = newComment;
             eventList.GetEvent(eventID, crimeID).EventDate = newDate;
             UpdateSelectedCrime(crimeID);
         }
+
         public void RemoveEvent(int eventID, int crimeID)
         {
             eventList.RemoveEvent(eventID, crimeID);

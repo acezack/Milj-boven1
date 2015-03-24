@@ -14,12 +14,8 @@ namespace Miljöboven1.Controller
         public EventList()
         {
             this.eventList = new List<Event>();
-            AddPreviousItemsToList();
         }
-        void AddPreviousItemsToList()
-        {
-            //adda det som redan finns (ifrån databasen/filen)
-        }
+
         public void AddToList(Event ev)
         {
             eventList.Add(ev);
