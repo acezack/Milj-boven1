@@ -15,13 +15,16 @@ namespace Miljöboven1.Controller
 
         EventList eventList;
 
-        public HandläggareFormController(HandläggareForm handläggarform, CrimeList crimeList, EventList eventList)
+        string handläggarusername;
+
+        public HandläggareFormController(HandläggareForm handläggarform, CrimeList crimeList, EventList eventList, string handläggarusername)
         {
             this.eventList = eventList;
             this.handläggareForm = handläggarform;
-            this.crimeList = new CrimeList();
+            this.crimeList = crimeList;
             //AddPreviousEventsToEventLists();
             //testdata();
+            this.handläggarusername = handläggarusername;
             InitForm();
 
         }
@@ -39,7 +42,8 @@ namespace Miljöboven1.Controller
             handläggareForm.lbxEvent.Items.Clear();
             for (int i = 0; i < crimeList.GetCount(); i++)
             {
-                handläggareForm.lbCrimes.Items.Add(crimeList.GetCrimeTitle(i));
+                if (crimeList.GetCrime(i).HandläggarUserName == this.handläggarusername)
+                    handläggareForm.lbCrimes.Items.Add(crimeList.GetCrimeTitle(i));
             }
         }
 

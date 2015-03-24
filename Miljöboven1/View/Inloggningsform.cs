@@ -58,7 +58,7 @@ namespace Miljöboven1.View
                     else if (userList.GetType(index) == 2)//handläggare
                     {
                         this.Hide();
-                        HandläggareForm handläggareForm = new HandläggareForm(userList, crimeList, eventList);
+                        HandläggareForm handläggareForm = new HandläggareForm(userList, crimeList, eventList, tbxUsername.Text);
                         handläggareForm.Show();
                         loggedIn = true;
                         tbxUsername.Clear();

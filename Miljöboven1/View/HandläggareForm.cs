@@ -20,13 +20,13 @@ namespace Miljöboven1.View
         InloggningsForm inloggningsForm;
         HandläggareFormController handläggarController;
 
-        public HandläggareForm(UserList userList, CrimeList crimeList, EventList eventList)
+        public HandläggareForm(UserList userList, CrimeList crimeList, EventList eventList, string handläggarusername)
         {
             InitializeComponent();
             this.userList = userList;
             this.eventList = eventList;
             this.crimeList = crimeList;
-            this.handläggarController = new HandläggareFormController(this, this.crimeList, eventList);
+            this.handläggarController = new HandläggareFormController(this, this.crimeList, eventList, handläggarusername);
             inloggningsForm = new InloggningsForm(userList, crimeList, eventList);
         }
 
