@@ -102,9 +102,6 @@ namespace Miljöboven1
             //eventList.AddEvent(new Event("MOTHERFUCKER2", eventList.GetCount(), 1));
             //eventList.AddEvent(new Event("MOTHERFUCKER3", eventList.GetCount(), 1));
             //eventList.AddEvent(new Event("MOTHERFUCKER4", eventList.GetCount(), 1));
-            //eventList.AddEvent(new Event("MOTHERFUCKER5", eventList.GetCount(), 1));
-            //eventList.AddEvent(new Event("MOTHERFUCKER6", eventList.GetCount(), 1));
-            //eventList.AddEvent(new Event("MOTHERFUCKER7", eventList.GetCount(), 1));
 
                 if (File.Exists("1userData.txt"))
                 {

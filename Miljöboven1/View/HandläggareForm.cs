@@ -75,7 +75,7 @@ namespace Miljöboven1.View
 
         private void lbCrimes_SelectedIndexChanged(object sender, EventArgs e)
         {
-            handläggarController.UpdateSelectedCrime(lbCrimes.SelectedIndex);
+            handläggarController.UpdateSelectedCrime(Convert.ToInt32((lbCrimes.Items[lbCrimes.SelectedIndex].ToString().Substring(6))));
         }
 
         private void HandläggareForm_Load(object sender, EventArgs e)
