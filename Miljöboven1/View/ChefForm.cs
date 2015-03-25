@@ -201,8 +201,7 @@ namespace Miljöboven1.View
             lbxEvent.Items.Clear();
             for (int index = 0; index < eventList.GetCount(); index++)
             {
-                if (eventList.GetCrimeID(Convert.ToInt32(lbxÄrenden.Items[lbxÄrenden.SelectedIndex].ToString().Substring(6))) == crimeList.GetCrimeID(Convert.ToInt32(lbxÄrenden.Items[lbxÄrenden.SelectedIndex].ToString().Substring(6)))
-                    )
+                if (eventList.GetCrimeID(Convert.ToInt32(lbxÄrenden.Items[lbxÄrenden.SelectedIndex].ToString().Substring(6))) == crimeList.GetCrimeID(Convert.ToInt32(lbxÄrenden.Items[lbxÄrenden.SelectedIndex].ToString().Substring(6))))
                 {
                     lbxEvent.Items.Add(eventList.GetEventDate(index) + "   " + eventList.GetEventComment(index));
                 }
