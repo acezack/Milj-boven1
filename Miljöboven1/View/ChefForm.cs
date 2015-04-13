@@ -73,6 +73,16 @@ namespace Miljöboven1.View
                         lbxÄrenden.Items.Add(crimeList.GetCrimeTitle(index));
                     }
                 }
+                else
+                {
+                    for (int index = 0; index < crimeList.GetCount(); index++)
+                    {
+                        if (crimeList.GetCrimeStatus(index) == 0)
+                        {
+                            lbxÄrenden.Items.Add(crimeList.GetCrimeTitle(index));
+                        }
+                    }
+                }
             }
 
             if (cbxCrimeStatus.SelectedIndex == 1)
@@ -90,7 +100,7 @@ namespace Miljöboven1.View
                     }
                 }
                 else
-               {
+                {
                     for (int index = 0; index < crimeList.GetCount(); index++)
                     {
                         if (crimeList.GetCrimeStatus(index) == 0)
@@ -158,34 +168,35 @@ namespace Miljöboven1.View
 
         private void cbxHandläggare_SelectedIndexChanged(object sender, EventArgs e)
         {
-            for (int backIndex = 0; backIndex < userList.GetCount(); backIndex++)
-            {
-                if (cbxHandläggare.SelectedIndex == backIndex)
-                {
-                    lbxÄrenden.Items.Clear();
-                    if (cbxCrimeStatus.SelectedIndex != 0)
-                    {
-                        for (int index = 0; index < crimeList.GetCount(); index++)
-                        {
-                            if (cbxHandläggare.Items[cbxHandläggare.SelectedIndex].ToString() == crimeList.GetHandläggarUserName(index) &&
-                                crimeList.GetCrimeStatus(index) == backIndex)
-                            {
-                                lbxÄrenden.Items.Add(crimeList.GetCrimeTitle(index));
-                            }
-                        }
-                    }
-                    else
-                    {
-                        for (int index = 0; index < crimeList.GetCount(); index++)
-                        {
-                            if (crimeList.GetCrimeStatus(index) == backIndex)
-                            {
-                                lbxÄrenden.Items.Add(crimeList.GetCrimeTitle(index));
-                            }
-                        }
-                    }
-                }
-            }
+            //for (int backIndex = 0; backIndex < userList.GetCount(); backIndex++)
+            //{
+            //    if (cbxHandläggare.SelectedIndex == backIndex)
+            //    {
+            //        lbxÄrenden.Items.Clear();
+            //        if (cbxCrimeStatus.SelectedIndex != 0)
+            //        {
+            //            for (int index = 0; index < crimeList.GetCount(); index++)
+            //            {
+            //                if (cbxHandläggare.Items[cbxHandläggare.SelectedIndex].ToString() == crimeList.GetHandläggarUserName(index) &&
+            //                    crimeList.GetCrimeStatus(index) == backIndex)
+            //                {
+            //                    lbxÄrenden.Items.Add(crimeList.GetCrimeTitle(index));
+            //                }
+            //            }
+            //        }
+            //        else
+            //        {
+            //            for (int index = 0; index < crimeList.GetCount(); index++)
+            //            {
+            //                if (crimeList.GetCrimeStatus(index) == backIndex)
+            //                {
+            //                    lbxÄrenden.Items.Add(crimeList.GetCrimeTitle(index));
+            //                }
+            //            }
+            //        }
+            //    }
+            //}
+
         }
 
         private void lbxÄrenden_SelectedIndexChanged(object sender, EventArgs e)
@@ -201,7 +212,7 @@ namespace Miljöboven1.View
             lbxEvent.Items.Clear();
             for (int index = 0; index < eventList.GetCount(); index++)
             {
-                if (eventList.GetCrimeID(Convert.ToInt32(lbxÄrenden.Items[lbxÄrenden.SelectedIndex].ToString().Substring(6))) == crimeList.GetCrimeID(Convert.ToInt32(lbxÄrenden.Items[lbxÄrenden.SelectedIndex].ToString().Substring(6))))
+                if (eventList.GetCrimeID(index) == crimeList.GetCrimeID(Convert.ToInt32(lbxÄrenden.Items[lbxÄrenden.SelectedIndex].ToString().Substring(6))))
                 {
                     lbxEvent.Items.Add(eventList.GetEventDate(index) + "   " + eventList.GetEventComment(index));
                 }

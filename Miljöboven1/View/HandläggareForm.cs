@@ -93,12 +93,12 @@ namespace Miljöboven1.View
                         DialogResult res2 = MessageBox.Show("Vill du ändra datum?", "Bekräfta", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                         if (res2 == DialogResult.Yes)
                         {
-                            HandläggarDatum hlg = new HandläggarDatum(this, handläggarController, rtbKommentar.Text.Trim(), lbxEvent.SelectedIndex, lbCrimes.SelectedIndex);
+                            HandläggarDatum hlg = new HandläggarDatum(this, handläggarController, rtbKommentar.Text.Trim(), Convert.ToInt32(lbxEvent.Items[lbxEvent.SelectedIndex].ToString().Substring(6)), Convert.ToInt32(lbCrimes.Items[lbCrimes.SelectedIndex].ToString().Substring(6)));
                             hlg.Show();
                             this.Hide();
                         }
-                        else { }
-                            handläggarController.EditEvents(lbxEvent.SelectedIndex, lbCrimes.SelectedIndex, rtbKommentar.Text.Trim());
+                        else
+                            handläggarController.EditEvents(Convert.ToInt32(lbxEvent.Items[lbxEvent.SelectedIndex].ToString().Substring(6)), Convert.ToInt32(lbCrimes.Items[lbCrimes.SelectedIndex].ToString().Substring(6)), rtbKommentar.Text.Trim());
                     }
             }
             else
@@ -112,7 +112,7 @@ namespace Miljöboven1.View
                 DialogResult res = MessageBox.Show("Bekräfta borttagning!", "Bekräfta", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
                 if (res == DialogResult.Yes)
                 {
-                    handläggarController.RemoveEvent(lbxEvent.SelectedIndex, lbCrimes.SelectedIndex);
+                    handläggarController.RemoveEvent(Convert.ToInt32(lbxEvent.Items[lbxEvent.SelectedIndex].ToString().Substring(6)), lbCrimes.SelectedIndex);
                 }
             }
             else
