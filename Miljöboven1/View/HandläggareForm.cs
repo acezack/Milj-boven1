@@ -44,8 +44,12 @@ namespace Miljöboven1.View
                     DialogResult res = MessageBox.Show("Är du helt säker på att du vill lägga till en händelse?", "Bekräfta", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                     if (res == DialogResult.Yes)
                     {
+                        if (crimeList.GetCrimeStatus(Convert.ToInt32((lbCrimes.Items[lbCrimes.SelectedIndex].ToString().Substring(6)))) == 0)
+                        {
+                            crimeList.ChangeCrimeStatus(Convert.ToInt32((lbCrimes.Items[lbCrimes.SelectedIndex].ToString().Substring(6))), 1);
+                        }
                         handläggarController.CommentSelectedCrime();
-                        handläggarController.UpdateSelectedCrime(lbCrimes.SelectedIndex);
+                        handläggarController.UpdateSelectedCrime(Convert.ToInt32((lbCrimes.Items[lbCrimes.SelectedIndex].ToString().Substring(6))));
                         rtbKommentar.Clear();
                     }
                 }
@@ -63,6 +67,10 @@ namespace Miljöboven1.View
                 DialogResult res = MessageBox.Show("Är du helt säker på att jobbet har slutförts?", "Bekräfta", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (res == DialogResult.Yes)
                 {
+                    if (crimeList.GetCrimeStatus(Convert.ToInt32((lbCrimes.Items[lbCrimes.SelectedIndex].ToString().Substring(6)))) == 1)
+                    {
+                        crimeList.ChangeCrimeStatus(Convert.ToInt32((lbCrimes.Items[lbCrimes.SelectedIndex].ToString().Substring(6))), 2);
+                    }
                     handläggarController.FinishCrime();
                 }
                 rtbKommentar.Clear();
@@ -112,7 +120,7 @@ namespace Miljöboven1.View
                 DialogResult res = MessageBox.Show("Bekräfta borttagning!", "Bekräfta", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
                 if (res == DialogResult.Yes)
                 {
-                    handläggarController.RemoveEvent(Convert.ToInt32(lbxEvent.Items[lbxEvent.SelectedIndex].ToString().Substring(6)), lbCrimes.SelectedIndex);
+                    handläggarController.RemoveEvent(Convert.ToInt32(lbxEvent.Items[lbxEvent.SelectedIndex].ToString().Substring(6)), Convert.ToInt32((lbCrimes.Items[lbCrimes.SelectedIndex].ToString().Substring(6))));
                 }
             }
             else

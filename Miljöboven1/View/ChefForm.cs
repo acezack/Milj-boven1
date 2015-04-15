@@ -77,12 +77,29 @@ namespace Miljöboven1.View
                 {
                     for (int index = 0; index < crimeList.GetCount(); index++)
                     {
-                        if (crimeList.GetCrimeStatus(index) == 0)
+                        if (cbxHandläggare.Items[cbxHandläggare.SelectedIndex].ToString() == crimeList.GetHandläggarUserName(index))
                         {
                             lbxÄrenden.Items.Add(crimeList.GetCrimeTitle(index));
                         }
                     }
                 }
+                //if (cbxHandläggare.SelectedIndex == 0)
+                //{
+                //    for (int index = 0; index < crimeList.GetCount(); index++)
+                //    {
+                //        lbxÄrenden.Items.Add(crimeList.GetCrimeTitle(index));
+                //    }
+                //}
+                //else
+                //{
+                //    for (int index = 0; index < crimeList.GetCount(); index++)
+                //    {
+                //        if (crimeList.GetCrimeStatus(index) == 0)
+                //        {
+                //            lbxÄrenden.Items.Add(crimeList.GetCrimeTitle(index));
+                //        }
+                //    }
+                //}
             }
 
             if (cbxCrimeStatus.SelectedIndex == 1)
@@ -208,6 +225,14 @@ namespace Miljöboven1.View
             tbxCallerAddress.Text = crimeList.GetCallerAddress(Convert.ToInt32(lbxÄrenden.Items[lbxÄrenden.SelectedIndex].ToString().Substring(6)));
             tbxCallerNumber.Text = crimeList.GetCallerNumber(Convert.ToInt32(lbxÄrenden.Items[lbxÄrenden.SelectedIndex].ToString().Substring(6)));
             tbxHandläggare.Text = crimeList.GetHandläggarUserName(Convert.ToInt32(lbxÄrenden.Items[lbxÄrenden.SelectedIndex].ToString().Substring(6)));
+            if (crimeList.GetCrimeStatus(Convert.ToInt32(lbxÄrenden.Items[lbxÄrenden.SelectedIndex].ToString().Substring(6))) == 0)
+                tbxBrottsstatus.Text = "Ej påbörjad";
+            if (crimeList.GetCrimeStatus(Convert.ToInt32(lbxÄrenden.Items[lbxÄrenden.SelectedIndex].ToString().Substring(6))) == 1)
+                tbxBrottsstatus.Text = "Påbörjad";
+            if (crimeList.GetCrimeStatus(Convert.ToInt32(lbxÄrenden.Items[lbxÄrenden.SelectedIndex].ToString().Substring(6))) == 2)
+                tbxBrottsstatus.Text = "Slutförd";
+
+
 
             lbxEvent.Items.Clear();
             for (int index = 0; index < eventList.GetCount(); index++)

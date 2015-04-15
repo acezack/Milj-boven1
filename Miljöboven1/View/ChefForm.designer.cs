@@ -50,6 +50,9 @@
             this.btnAssignCrime = new System.Windows.Forms.Button();
             this.labelHandläggare = new System.Windows.Forms.Label();
             this.tbxHandläggare = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.tbxBrottsstatus = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblÄrende
@@ -79,7 +82,7 @@
             this.lbxÄrenden.ItemHeight = 24;
             this.lbxÄrenden.Location = new System.Drawing.Point(17, 63);
             this.lbxÄrenden.Name = "lbxÄrenden";
-            this.lbxÄrenden.Size = new System.Drawing.Size(176, 340);
+            this.lbxÄrenden.Size = new System.Drawing.Size(176, 364);
             this.lbxÄrenden.TabIndex = 2;
             this.lbxÄrenden.SelectedIndexChanged += new System.EventHandler(this.lbxÄrenden_SelectedIndexChanged);
             // 
@@ -106,7 +109,7 @@
             // 
             this.lblHändelseförlopp.AutoSize = true;
             this.lblHändelseförlopp.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHändelseförlopp.Location = new System.Drawing.Point(199, 262);
+            this.lblHändelseförlopp.Location = new System.Drawing.Point(199, 286);
             this.lblHändelseförlopp.Name = "lblHändelseförlopp";
             this.lblHändelseförlopp.Size = new System.Drawing.Size(141, 22);
             this.lblHändelseförlopp.TabIndex = 5;
@@ -117,7 +120,7 @@
             this.lbxEvent.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbxEvent.FormattingEnabled = true;
             this.lbxEvent.ItemHeight = 16;
-            this.lbxEvent.Location = new System.Drawing.Point(203, 287);
+            this.lbxEvent.Location = new System.Drawing.Point(203, 311);
             this.lbxEvent.Name = "lbxEvent";
             this.lbxEvent.Size = new System.Drawing.Size(553, 116);
             this.lbxEvent.TabIndex = 6;
@@ -255,17 +258,46 @@
             this.tbxHandläggare.Size = new System.Drawing.Size(175, 20);
             this.tbxHandläggare.TabIndex = 18;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(470, 243);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(105, 13);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "Anmälarens nummer:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(200, 269);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(65, 13);
+            this.label2.TabIndex = 17;
+            this.label2.Text = "Brottsstatus:";
+            // 
+            // tbxBrottsstatus
+            // 
+            this.tbxBrottsstatus.Location = new System.Drawing.Point(277, 266);
+            this.tbxBrottsstatus.Name = "tbxBrottsstatus";
+            this.tbxBrottsstatus.ReadOnly = true;
+            this.tbxBrottsstatus.Size = new System.Drawing.Size(175, 20);
+            this.tbxBrottsstatus.TabIndex = 18;
+            // 
             // ChefForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(768, 421);
+            this.ClientSize = new System.Drawing.Size(768, 437);
             this.Controls.Add(this.btnAssignCrime);
             this.Controls.Add(this.tbxHandläggare);
             this.Controls.Add(this.tbxCrimeLocation);
             this.Controls.Add(this.tbxCrimeDate);
             this.Controls.Add(this.tbxCallerAddress);
+            this.Controls.Add(this.tbxBrottsstatus);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.tbxCallerNumber);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.tbxCallerName);
             this.Controls.Add(this.lblCallerNumber);
             this.Controls.Add(this.lblCallerAddress);
@@ -315,5 +347,8 @@
         private System.Windows.Forms.Button btnAssignCrime;
         private System.Windows.Forms.Label labelHandläggare;
         private System.Windows.Forms.TextBox tbxHandläggare;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox tbxBrottsstatus;
     }
 }

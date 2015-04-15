@@ -15,7 +15,8 @@ namespace Miljöboven1.Controller
         public Int32 CrimeID { get; set; }
 
         public Int32 CrimeStatus { get; set; }      //0=Ej påbörjad
-                                                    //1=Påbörjad                                         //2=Slutförd
+                                                    //1=Påbörjad        
+                                                    //2=Slutförd
 
         public String CrimeTitle { get; set; }
 

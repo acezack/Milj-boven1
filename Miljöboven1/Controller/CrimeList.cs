@@ -90,5 +90,10 @@ namespace Miljöboven1.Controller
         {
             crimeList[index].HandläggarUserName = newHandläggare;
         }
+
+        public void ChangeCrimeStatus(int index, int newStatus)
+        {
+            crimeList[index].CrimeStatus = newStatus;
+        }
     }
 }
