@@ -35,11 +35,11 @@ namespace Miljöboven1.View
             inloggningsForm.Show();
         }
 
-        private void btnSkicka_Click(object sender, EventArgs e)
+        private void btnAddEvent_Click(object sender, EventArgs e)
         {
             if (lbCrimes.SelectedIndex != -1)
             {
-                if (rtbKommentar.Text.Trim() != String.Empty)
+                if (rtbEvent.Text.Trim() != String.Empty)
                 {
                     DialogResult res = MessageBox.Show("Är du helt säker på att du vill lägga till en händelse?", "Bekräfta", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                     if (res == DialogResult.Yes)
@@ -48,9 +48,9 @@ namespace Miljöboven1.View
                         {
                             crimeList.ChangeCrimeStatus(Convert.ToInt32((lbCrimes.Items[lbCrimes.SelectedIndex].ToString().Substring(6))), 1);
                         }
-                        handläggarController.CommentSelectedCrime();
+                        handläggarController.AddEvent();
                         handläggarController.UpdateSelectedCrime(Convert.ToInt32((lbCrimes.Items[lbCrimes.SelectedIndex].ToString().Substring(6))));
-                        rtbKommentar.Clear();
+                        rtbEvent.Clear();
                     }
                 }
                 else
@@ -60,7 +60,7 @@ namespace Miljöboven1.View
                 MessageBox.Show("Du måste välja ett brott ifrån listan till vänster först!", "Fel", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnFinishCrime_Click(object sender, EventArgs e)
         {
             if (lbCrimes.SelectedIndex != -1)
             {
@@ -73,7 +73,7 @@ namespace Miljöboven1.View
                     }
                     handläggarController.FinishCrime();
                 }
-                rtbKommentar.Clear();
+                rtbEvent.Clear();
             }
             else
             {
@@ -91,7 +91,7 @@ namespace Miljöboven1.View
             lbCrimes.SelectedIndex = lbCrimes.Items.Count - 1;
         }
 
-        private void btnRedigera_Click(object sender, EventArgs e)
+        private void btnEditEvents_Click(object sender, EventArgs e)
         {
             if (lbxEvent.SelectedIndex != -1)
             {
@@ -101,19 +101,19 @@ namespace Miljöboven1.View
                         DialogResult res2 = MessageBox.Show("Vill du ändra datum?", "Bekräfta", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                         if (res2 == DialogResult.Yes)
                         {
-                            HandläggarDatum hlg = new HandläggarDatum(this, handläggarController, rtbKommentar.Text.Trim(), Convert.ToInt32(lbxEvent.Items[lbxEvent.SelectedIndex].ToString().Substring(6)), Convert.ToInt32(lbCrimes.Items[lbCrimes.SelectedIndex].ToString().Substring(6)));
+                            HandläggarDatum hlg = new HandläggarDatum(this, handläggarController, rtbEvent.Text.Trim(), Convert.ToInt32(lbxEvent.Items[lbxEvent.SelectedIndex].ToString().Substring(6)), Convert.ToInt32(lbCrimes.Items[lbCrimes.SelectedIndex].ToString().Substring(6)));
                             hlg.Show();
                             this.Hide();
                         }
                         else
-                            handläggarController.EditEvents(Convert.ToInt32(lbxEvent.Items[lbxEvent.SelectedIndex].ToString().Substring(6)), Convert.ToInt32(lbCrimes.Items[lbCrimes.SelectedIndex].ToString().Substring(6)), rtbKommentar.Text.Trim());
+                            handläggarController.EditEvents(Convert.ToInt32(lbxEvent.Items[lbxEvent.SelectedIndex].ToString().Substring(6)), Convert.ToInt32(lbCrimes.Items[lbCrimes.SelectedIndex].ToString().Substring(6)), rtbEvent.Text.Trim());
                     }
             }
             else
                 MessageBox.Show("Du måste välja en händelse ifrån listan i mitten först!", "Fel", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
-        private void btnTaBort_Click(object sender, EventArgs e)
+        private void btnRemove_Click(object sender, EventArgs e)
         {
             if (lbxEvent.SelectedIndex != -1)
             {

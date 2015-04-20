@@ -29,38 +29,38 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HandläggareForm));
-            this.rtbÄrendeinformation = new System.Windows.Forms.RichTextBox();
-            this.btnSkicka = new System.Windows.Forms.Button();
+            this.rtbCrimeInfo = new System.Windows.Forms.RichTextBox();
+            this.btnAddEvent = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.rtbKommentar = new System.Windows.Forms.RichTextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.rtbEvent = new System.Windows.Forms.RichTextBox();
+            this.btnFinishCrime = new System.Windows.Forms.Button();
             this.lbxEvent = new System.Windows.Forms.ListBox();
             this.lbCrimes = new System.Windows.Forms.ListBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnRedigera = new System.Windows.Forms.Button();
-            this.btnTaBort = new System.Windows.Forms.Button();
+            this.btnEditEvents = new System.Windows.Forms.Button();
+            this.btnRemove = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // rtbÄrendeinformation
+            // rtbCrimeInfo
             // 
-            this.rtbÄrendeinformation.BackColor = System.Drawing.SystemColors.Window;
-            this.rtbÄrendeinformation.Location = new System.Drawing.Point(189, 38);
-            this.rtbÄrendeinformation.Name = "rtbÄrendeinformation";
-            this.rtbÄrendeinformation.ReadOnly = true;
-            this.rtbÄrendeinformation.Size = new System.Drawing.Size(535, 44);
-            this.rtbÄrendeinformation.TabIndex = 0;
-            this.rtbÄrendeinformation.Text = "Info om ärendet\n";
+            this.rtbCrimeInfo.BackColor = System.Drawing.SystemColors.Window;
+            this.rtbCrimeInfo.Location = new System.Drawing.Point(189, 38);
+            this.rtbCrimeInfo.Name = "rtbCrimeInfo";
+            this.rtbCrimeInfo.ReadOnly = true;
+            this.rtbCrimeInfo.Size = new System.Drawing.Size(535, 44);
+            this.rtbCrimeInfo.TabIndex = 0;
+            this.rtbCrimeInfo.Text = "Info om ärendet\n";
             // 
-            // btnSkicka
+            // btnAddEvent
             // 
-            this.btnSkicka.Location = new System.Drawing.Point(480, 284);
-            this.btnSkicka.Name = "btnSkicka";
-            this.btnSkicka.Size = new System.Drawing.Size(119, 37);
-            this.btnSkicka.TabIndex = 0;
-            this.btnSkicka.Text = "Lägg till händelse";
-            this.btnSkicka.UseVisualStyleBackColor = true;
-            this.btnSkicka.Click += new System.EventHandler(this.btnSkicka_Click);
+            this.btnAddEvent.Location = new System.Drawing.Point(480, 284);
+            this.btnAddEvent.Name = "btnAddEvent";
+            this.btnAddEvent.Size = new System.Drawing.Size(119, 37);
+            this.btnAddEvent.TabIndex = 0;
+            this.btnAddEvent.Text = "Lägg till händelse";
+            this.btnAddEvent.UseVisualStyleBackColor = true;
+            this.btnAddEvent.Click += new System.EventHandler(this.btnAddEvent_Click);
             // 
             // label1
             // 
@@ -72,23 +72,23 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Kommentar:";
             // 
-            // rtbKommentar
+            // rtbEvent
             // 
-            this.rtbKommentar.Location = new System.Drawing.Point(12, 295);
-            this.rtbKommentar.Name = "rtbKommentar";
-            this.rtbKommentar.Size = new System.Drawing.Size(462, 26);
-            this.rtbKommentar.TabIndex = 0;
-            this.rtbKommentar.Text = "Kommentar";
+            this.rtbEvent.Location = new System.Drawing.Point(12, 295);
+            this.rtbEvent.Name = "rtbEvent";
+            this.rtbEvent.Size = new System.Drawing.Size(462, 26);
+            this.rtbEvent.TabIndex = 0;
+            this.rtbEvent.Text = "Kommentar";
             // 
-            // button1
+            // btnFinishCrime
             // 
-            this.button1.Location = new System.Drawing.Point(12, 192);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(171, 43);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Slutför Miljöbrott";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnFinishCrime.Location = new System.Drawing.Point(12, 192);
+            this.btnFinishCrime.Name = "btnFinishCrime";
+            this.btnFinishCrime.Size = new System.Drawing.Size(171, 43);
+            this.btnFinishCrime.TabIndex = 0;
+            this.btnFinishCrime.Text = "Slutför Miljöbrott";
+            this.btnFinishCrime.UseVisualStyleBackColor = true;
+            this.btnFinishCrime.Click += new System.EventHandler(this.btnFinishCrime_Click);
             // 
             // lbxEvent
             // 
@@ -138,42 +138,42 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "Händelseförlopp:";
             // 
-            // btnRedigera
+            // btnEditEvents
             // 
-            this.btnRedigera.Location = new System.Drawing.Point(605, 284);
-            this.btnRedigera.Name = "btnRedigera";
-            this.btnRedigera.Size = new System.Drawing.Size(119, 37);
-            this.btnRedigera.TabIndex = 6;
-            this.btnRedigera.Text = "Redigera händelse";
-            this.btnRedigera.UseVisualStyleBackColor = true;
-            this.btnRedigera.Click += new System.EventHandler(this.btnRedigera_Click);
+            this.btnEditEvents.Location = new System.Drawing.Point(605, 284);
+            this.btnEditEvents.Name = "btnEditEvents";
+            this.btnEditEvents.Size = new System.Drawing.Size(119, 37);
+            this.btnEditEvents.TabIndex = 6;
+            this.btnEditEvents.Text = "Redigera händelse";
+            this.btnEditEvents.UseVisualStyleBackColor = true;
+            this.btnEditEvents.Click += new System.EventHandler(this.btnEditEvents_Click);
             // 
-            // btnTaBort
+            // btnRemove
             // 
-            this.btnTaBort.Location = new System.Drawing.Point(605, 241);
-            this.btnTaBort.Name = "btnTaBort";
-            this.btnTaBort.Size = new System.Drawing.Size(119, 37);
-            this.btnTaBort.TabIndex = 7;
-            this.btnTaBort.Text = "Ta bort händelse";
-            this.btnTaBort.UseVisualStyleBackColor = true;
-            this.btnTaBort.Click += new System.EventHandler(this.btnTaBort_Click);
+            this.btnRemove.Location = new System.Drawing.Point(605, 241);
+            this.btnRemove.Name = "btnRemove";
+            this.btnRemove.Size = new System.Drawing.Size(119, 37);
+            this.btnRemove.TabIndex = 7;
+            this.btnRemove.Text = "Ta bort händelse";
+            this.btnRemove.UseVisualStyleBackColor = true;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
             // HandläggareForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(736, 334);
-            this.Controls.Add(this.btnTaBort);
-            this.Controls.Add(this.btnRedigera);
-            this.Controls.Add(this.rtbKommentar);
-            this.Controls.Add(this.btnSkicka);
+            this.Controls.Add(this.btnRemove);
+            this.Controls.Add(this.btnEditEvents);
+            this.Controls.Add(this.rtbEvent);
+            this.Controls.Add(this.btnAddEvent);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lbCrimes);
             this.Controls.Add(this.lbxEvent);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.rtbÄrendeinformation);
+            this.Controls.Add(this.btnFinishCrime);
+            this.Controls.Add(this.rtbCrimeInfo);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -187,16 +187,16 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnSkicka;
+        private System.Windows.Forms.Button btnAddEvent;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        public System.Windows.Forms.RichTextBox rtbÄrendeinformation;
-        public System.Windows.Forms.RichTextBox rtbKommentar;
+        private System.Windows.Forms.Button btnFinishCrime;
+        public System.Windows.Forms.RichTextBox rtbCrimeInfo;
+        public System.Windows.Forms.RichTextBox rtbEvent;
         public System.Windows.Forms.ListBox lbxEvent;
         public System.Windows.Forms.ListBox lbCrimes;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button btnRedigera;
-        private System.Windows.Forms.Button btnTaBort;
+        private System.Windows.Forms.Button btnEditEvents;
+        private System.Windows.Forms.Button btnRemove;
     }
 }

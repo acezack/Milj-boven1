@@ -18,7 +18,11 @@ namespace Miljöboven1.Controller
 
         string handläggarusername;
 
-        public HandläggareFormController(HandläggareForm handläggarform, CrimeList crimeList, EventList eventList, string handläggarusername)
+        public HandläggareFormController(
+            HandläggareForm handläggarform,
+            CrimeList crimeList,
+            EventList eventList,
+            string handläggarusername)
         {
             this.eventList = eventList;
             this.handläggareForm = handläggarform;
@@ -29,8 +33,8 @@ namespace Miljöboven1.Controller
 
         void InitForm()
         {
-            handläggareForm.rtbÄrendeinformation.Text = "";
-            handläggareForm.rtbKommentar.Text = "";
+            handläggareForm.rtbCrimeInfo.Text = "";
+            handläggareForm.rtbEvent.Text = "";
             handläggareForm.lbCrimes.Items.Clear();
             handläggareForm.lbxEvent.Items.Clear();
             for (int i = 0; i < crimeList.GetCount(); i++)
@@ -40,16 +44,16 @@ namespace Miljöboven1.Controller
             }
         }
 
-        public void CommentSelectedCrime()
+        public void AddEvent()
         {
-            eventList.AddToList(new Event(handläggareForm.rtbKommentar.Text.Trim(), eventList.GetNumberOfEvents(Convert.ToInt32((handläggareForm.lbCrimes.Items[handläggareForm.lbCrimes.SelectedIndex].ToString().Substring(6)))), Convert.ToInt32((handläggareForm.lbCrimes.Items[handläggareForm.lbCrimes.SelectedIndex].ToString().Substring(6)))));
+            eventList.AddToList(new Event(handläggareForm.rtbEvent.Text.Trim(), eventList.GetNumberOfEvents(Convert.ToInt32((handläggareForm.lbCrimes.Items[handläggareForm.lbCrimes.SelectedIndex].ToString().Substring(6)))), Convert.ToInt32((handläggareForm.lbCrimes.Items[handläggareForm.lbCrimes.SelectedIndex].ToString().Substring(6)))));
         }
 
         public void UpdateSelectedCrime(int i)
         {
             try
             {
-                handläggareForm.rtbÄrendeinformation.Text = crimeList.GetÄrendeInformation(i);
+                handläggareForm.rtbCrimeInfo.Text = crimeList.GetÄrendeInformation(i);
                 handläggareForm.lbxEvent.Items.Clear();
                 for (int j = 0; j < eventList.GetNumberOfEvents(i); j++)
                 {
@@ -65,7 +69,7 @@ namespace Miljöboven1.Controller
             int i = handläggareForm.lbCrimes.SelectedIndex;
             handläggareForm.lbCrimes.Items.RemoveAt(i);
             crimeList.RemoveCrimeAt(i);
-            handläggareForm.rtbÄrendeinformation.Text = "";
+            handläggareForm.rtbCrimeInfo.Text = "";
             handläggareForm.lbxEvent.Items.Clear();
         }
 
@@ -74,7 +78,6 @@ namespace Miljöboven1.Controller
             eventList.GetEvent(eventID, crimeID).EventComment = newComment;
             UpdateSelectedCrime(crimeID);
         }
-
         public void EditEvents(int eventID, int crimeID, string newComment, string newDate)
         {
             eventList.GetEvent(eventID, crimeID).EventComment = newComment;

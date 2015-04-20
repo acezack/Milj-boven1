@@ -11,13 +11,31 @@ using Miljöboven1.Controller;
 
 namespace Miljöboven1.View
 {
+    /// <summary>
+    /// Den här klassen är till för att ändra datumet för en vald händelse.
+    /// </summary>
     public partial class HandläggarDatum : Form
     {
+        #region Variables
+
         HandläggareForm handläggareform;
         HandläggareFormController handläggarecontroller;
         int crimeID;
         int eventID;
         string newComment;
+
+        #endregion
+
+        #region FormMethods
+
+        /// <summary>
+        /// Här initieras formen och alla värden sätts till de värden de bör vara för att formen skall kunna ändra datumet för händelsen.
+        /// </summary>
+        /// <param name="handläggareform">Handläggarformen</param>
+        /// <param name="handläggarecontroller">Handläggarkontrollen</param>
+        /// <param name="newComment">Den nya kommentaren till händelsen</param>
+        /// <param name="eventID">Används för att få rätt händelse</param>
+        /// <param name="crimeID">Används för att få rätt brott</param>
         public HandläggarDatum(HandläggareForm handläggareform, HandläggareFormController handläggarecontroller, string newComment, int eventID, int crimeID)
         {
             InitializeComponent();
@@ -28,22 +46,30 @@ namespace Miljöboven1.View
             this.newComment = newComment;
         }
 
-        private void HandläggarDatum_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Här anropas "EditEvents" metoden i handläggarkontrollen och ändrar händelsen med ett nytt datum och en ny kommentar.
+        /// Sen stängs fönstret och handläggarformen visas.
+        /// </summary>
+        /// <param name="sender">Object sender</param>
+        /// <param name="e">EventArgs e</param>
+        private void btnOk_Click(object sender, EventArgs e)
         {
             handläggarecontroller.EditEvents(eventID, crimeID, newComment, this.dateTimePicker1.Value.ToString("yyyy/MM/dd"));
             this.Hide();
             handläggareform.Show();
         }
 
+        /// <summary>
+        /// Om formen stängs göms den och sedan visas handläggarformen.
+        /// </summary>
+        /// <param name="sender">Object sender</param>
+        /// <param name="e">EventArgs e</param>
         private void HandläggarDatum_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.Hide();
             handläggareform.Show();
         }
+
+        #endregion
     }
 }

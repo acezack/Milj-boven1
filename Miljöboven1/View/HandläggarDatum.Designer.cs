@@ -58,7 +58,7 @@
             this.button1.TabIndex = 2;
             this.button1.Text = "Ok";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.btnOk_Click);
             // 
             // HandläggarDatum
             // 
@@ -72,7 +72,6 @@
             this.ShowIcon = false;
             this.Text = "Välj datum";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.HandläggarDatum_FormClosed);
-            this.Load += new System.EventHandler(this.HandläggarDatum_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
