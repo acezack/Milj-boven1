@@ -26,7 +26,7 @@ namespace Miljöboven1.View
 
         #endregion
 
-        #region FormMethods
+        #region Form Component Events
 
         /// <summary>
         /// Här initieras formen och alla värden sätts till de värden de bör vara för att formen skall kunna ändra datumet för händelsen.
@@ -50,8 +50,8 @@ namespace Miljöboven1.View
         /// Här anropas "EditEvents" metoden i handläggarkontrollen och ändrar händelsen med ett nytt datum och en ny kommentar.
         /// Sen stängs fönstret och handläggarformen visas.
         /// </summary>
-        /// <param name="sender">Object sender</param>
-        /// <param name="e">EventArgs e</param>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnOk_Click(object sender, EventArgs e)
         {
             handläggarecontroller.EditEvents(eventID, crimeID, newComment, this.dateTimePicker1.Value.ToString("yyyy/MM/dd"));
@@ -62,8 +62,8 @@ namespace Miljöboven1.View
         /// <summary>
         /// Om formen stängs göms den och sedan visas handläggarformen.
         /// </summary>
-        /// <param name="sender">Object sender</param>
-        /// <param name="e">EventArgs e</param>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void HandläggarDatum_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.Hide();
