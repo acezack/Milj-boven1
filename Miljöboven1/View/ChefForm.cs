@@ -19,6 +19,12 @@ namespace Miljöboven1.View
 
         EventList eventList;
 
+        /// <summary>
+        /// ChefFormen hanterar allt som chefen ska kunna göra. Här visas alla brott och all information relaterade till dessa.
+        /// </summary>
+        /// <param name="userList">Listan som hanterar alla användare och även alla metoder som används för användarhantering.</param>
+        /// <param name="crimeList">Listan som hanterar alla miljöbrott och även alla metoder som används för miljöbrottshantering.</param>
+        /// <param name="eventList">Listan som hanterar alla händelser och även alla metoder som används för händelsehantering.</param>
         public ChefForm(UserList userList, CrimeList crimeList, EventList eventList)
         {
             InitializeComponent();
@@ -53,12 +59,6 @@ namespace Miljöboven1.View
             cbxHandläggare.SelectedIndex = 0;
 
             cbxCrimeStatus.SelectedIndex = 0;
-        }
-
-        private void ChefForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            InloggningsForm inloggningsForm = new InloggningsForm(userList, crimeList, eventList);
-            inloggningsForm.Show();
         }
 
         private void cbxÄrendeStatus_SelectedIndexChanged(object sender, EventArgs e)
@@ -185,34 +185,34 @@ namespace Miljöboven1.View
 
         private void cbxHandläggare_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //for (int backIndex = 0; backIndex < userList.GetCount(); backIndex++)
-            //{
-            //    if (cbxHandläggare.SelectedIndex == backIndex)
-            //    {
-            //        lbxÄrenden.Items.Clear();
-            //        if (cbxCrimeStatus.SelectedIndex != 0)
-            //        {
-            //            for (int index = 0; index < crimeList.GetCount(); index++)
-            //            {
-            //                if (cbxHandläggare.Items[cbxHandläggare.SelectedIndex].ToString() == crimeList.GetHandläggarUserName(index) &&
-            //                    crimeList.GetCrimeStatus(index) == backIndex)
-            //                {
-            //                    lbxÄrenden.Items.Add(crimeList.GetCrimeTitle(index));
-            //                }
-            //            }
-            //        }
-            //        else
-            //        {
-            //            for (int index = 0; index < crimeList.GetCount(); index++)
-            //            {
-            //                if (crimeList.GetCrimeStatus(index) == backIndex)
-            //                {
-            //                    lbxÄrenden.Items.Add(crimeList.GetCrimeTitle(index));
-            //                }
-            //            }
-            //        }
-            //    }
-            //}
+            for (int backIndex = 0; backIndex < userList.GetCount(); backIndex++)
+            {
+                if (cbxHandläggare.SelectedIndex == backIndex)
+                {
+                    lbxÄrenden.Items.Clear();
+                    if (cbxCrimeStatus.SelectedIndex != 0)
+                    {
+                        for (int index = 0; index < crimeList.GetCount(); index++)
+                        {
+                            if (cbxHandläggare.Items[cbxHandläggare.SelectedIndex].ToString() == crimeList.GetHandläggarUserName(index) &&
+                                crimeList.GetCrimeStatus(index) == backIndex)
+                            {
+                                lbxÄrenden.Items.Add(crimeList.GetCrimeTitle(index));
+                            }
+                        }
+                    }
+                    else
+                    {
+                        for (int index = 0; index < crimeList.GetCount(); index++)
+                        {
+                            if (crimeList.GetCrimeStatus(index) == backIndex)
+                            {
+                                lbxÄrenden.Items.Add(crimeList.GetCrimeTitle(index));
+                            }
+                        }
+                    }
+                }
+            }
 
         }
 
@@ -248,6 +248,12 @@ namespace Miljöboven1.View
         {
             ChefTilldelaÄrendeForm chefTilldelaÄrendeForm = new ChefTilldelaÄrendeForm(userList, crimeList);
             chefTilldelaÄrendeForm.Show();
+        }
+
+        private void ChefForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            InloggningsForm inloggningsForm = new InloggningsForm(userList, crimeList, eventList);
+            inloggningsForm.Show();
         }
     }
 }
