@@ -7,16 +7,22 @@ using Miljöboven1.View;
 
 namespace Miljöboven1.Controller
 {
+    /// <summary>
+    /// Den här klassen är en model utav ett brott och används utav hela programmet.
+    /// </summary>
+    
     [Serializable]
     public class Crime
     {
+        #region Variables
+
         public Int32 CrimeType { get; set; }
 
         public Int32 CrimeID { get; set; }
 
         public Int32 CrimeStatus { get; set; }      //0=Ej påbörjad
-                                                    //1=Påbörjad        
-                                                    //2=Slutförd
+        //1=Påbörjad        
+        //2=Slutförd
 
         public String CrimeTitle { get; set; }
 
@@ -33,6 +39,10 @@ namespace Miljöboven1.Controller
         public String CallerNumber { get; set; }
 
         public String HandläggarUserName { get; set; }
+
+        #endregion
+
+        #region Contstuctor
 
         public Crime(int crimeType,
             int crimeID,
@@ -59,5 +69,7 @@ namespace Miljöboven1.Controller
             this.CallerNumber = callerNumber;
             this.HandläggarUserName = handläggarUserName;
         }
+
+        #endregion
     }
 }
