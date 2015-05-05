@@ -13,11 +13,17 @@ namespace Miljöboven1.View
 {
     public partial class AdminForm : Form
     {
+        #region Variables
+
         UserList userList;
 
         CrimeList crimeList;
 
         EventList eventList;
+
+        #endregion
+
+        #region Constructor
 
         /// <summary>
         /// AdminFormen är till för att kunna hantera användare, såsom att lägga till eller ta bort.
@@ -40,15 +46,23 @@ namespace Miljöboven1.View
             cbxAddUserType.Items.Add("Handläggare");
             cbxAddUserType.Items.Add("Miljösamordnare");
         }
-        
+
+        #endregion
+
+        #region Form_Load
+
         // Laddar in AdminFormen och visar två comboboxes men det första valet valt.
         private void AdminForm_Load(object sender, EventArgs e)
         {
             cbxAddUserType.SelectedIndex = 0;
             cbxRemoveUser.SelectedIndex = 0;
         }
-        
-        // Metoden som lägger till användare.
+
+        #endregion
+
+        #region Funtcions
+
+        // Funktionen som lägger till användare.
         private void btnAddUser_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Vill du lägga till denna användare?", "Lägga till användare", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
@@ -71,7 +85,7 @@ namespace Miljöboven1.View
             }
         }
 
-        // Metoden som tar bort användare.
+        // Funktionen som tar bort användare.
         private void btnRemoveUser_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Vill du ta bort denna användare?", "Ta bort användare", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
@@ -90,11 +104,17 @@ namespace Miljöboven1.View
             }
         }
 
-        // Öppnar InloggninsFormen som programmet förstöppnas in i.
+        #endregion
+
+        #region FormClosed
+
+        // Öppnar InloggninsFormen som programmet först öppnas in i.
         private void AdminForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             InloggningsForm inloggningsForm = new InloggningsForm(userList, crimeList, eventList);
             inloggningsForm.Show();
         }
+
+        #endregion
     }
 }

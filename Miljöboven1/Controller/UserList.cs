@@ -10,7 +10,11 @@ namespace Miljöboven1.Controller
     [Serializable()]
     public class UserList
     {
+        #region Variables
+
         List<User> userList = new List<User>();
+
+        #endregion
 
         public void AddUser(User user)
         {

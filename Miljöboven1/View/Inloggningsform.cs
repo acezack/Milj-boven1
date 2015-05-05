@@ -8,11 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Miljöboven1.Controller;
+using Miljöboven1.DAL;
 
 namespace Miljöboven1.View
 {
     public partial class InloggningsForm : Form
     {
+        #region Variables
+
         UserList userList;
 
         CrimeList crimeList;
@@ -20,6 +23,11 @@ namespace Miljöboven1.View
         EventList eventList;
 
         public Boolean loggedIn;
+
+        #endregion
+
+        #region Constructor
+
         public InloggningsForm(UserList userList, CrimeList crimeList, EventList eventList)
         {
             InitializeComponent();
@@ -29,6 +37,9 @@ namespace Miljöboven1.View
             this.eventList = eventList;
         }
 
+        #endregion
+
+        #region Logic for logging in
         private void btnLoggaIn_Click(object sender, EventArgs e)
         {
             for (int index = 0; index < userList.GetCount(); index++)
@@ -87,10 +98,19 @@ namespace Miljöboven1.View
                 tbxPassword.Focus();
             }
         }
+
+        #endregion
+
+        #region OnFormClosed
+
         private void InloggningsForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
         }
+
+        #endregion
+
+        #region KeyDown
 
         private void tbxPassword_KeyDown(object sender, KeyEventArgs e)
         {
@@ -98,6 +118,14 @@ namespace Miljöboven1.View
             {
                 btnLogIn.PerformClick();
             }
+        }
+
+        #endregion
+
+        private void exportToDatabaseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DataAccessLayerDBA db = new DataAccessLayerDBA();
+            db.SaveMoviesToDatabase();
         }
     }
 }

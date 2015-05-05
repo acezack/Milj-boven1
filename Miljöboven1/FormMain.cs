@@ -17,6 +17,8 @@ namespace Miljöboven1
 {
     public partial class FormMain : Form
     {
+        #region Variables
+
         UserList userList = new UserList();
 
         CrimeList crimeList = new CrimeList();
@@ -26,6 +28,10 @@ namespace Miljöboven1
         TestData testData = new TestData();
 
         BinarySerialization binarySerialization = new BinarySerialization();
+
+        #endregion
+
+        #region Constructor
 
         /// <summary>
         /// Initialiserar programmet och gömmer FormMain-fönstret.
@@ -47,6 +53,10 @@ namespace Miljöboven1
             inloggningsForm.ShowDialog();
         }
 
+        #endregion
+
+        #region FormClosing
+
         /// <summary>
         /// När programmet stängs ner sparas datan som har använts ner till filer på datorn så att när man öppnar programmet nästa gång har man datan man använde sist.
         /// </summary>
@@ -60,5 +70,7 @@ namespace Miljöboven1
 
             e.Cancel = false;
         }
+
+        #endregion
     }
 }

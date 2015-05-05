@@ -13,11 +13,17 @@ namespace Miljöboven1.View
 {
     public partial class MiljösamordnareForm : Form
     {
+        #region Variables
+
         UserList userList;
 
         CrimeList crimeList;
 
         EventList eventList;
+
+        #endregion
+
+        #region Constructor
 
         public MiljösamordnareForm(UserList userList, CrimeList crimeList, EventList eventList)
         {
@@ -27,16 +33,28 @@ namespace Miljöboven1.View
             this.eventList = eventList;
         }
 
+        #endregion
+
+        #region Form_Load
+
         private void MiljösamordnareForm_Load(object sender, EventArgs e)
         {
 
         }
+
+        #endregion
+
+        #region FormClosed
 
         private void MiljösamordnareForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             InloggningsForm inloggningsForm = new InloggningsForm(userList, crimeList, eventList);
             inloggningsForm.Show();
         }
+
+        #endregion
+
+        #region Functions
 
         private void btnAddCrime_Click(object sender, EventArgs e)
         {
@@ -70,5 +88,7 @@ namespace Miljöboven1.View
             tbxCallerAddress.Clear();
             tbxCallerNumber.Clear();
         }
+
+        #endregion
     }
 }

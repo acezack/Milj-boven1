@@ -35,7 +35,11 @@
             this.tbxUsername = new System.Windows.Forms.TextBox();
             this.tbxPassword = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exportToDatabaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnLogIn
@@ -87,12 +91,37 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Miljöboven1.Properties.Resources.tjuv;
-            this.pictureBox1.Location = new System.Drawing.Point(7, 7);
+            this.pictureBox1.Location = new System.Drawing.Point(7, 43);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(297, 320);
+            this.pictureBox1.Size = new System.Drawing.Size(297, 284);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(538, 24);
+            this.menuStrip1.TabIndex = 6;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.exportToDatabaseToolStripMenuItem});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Text = "File";
+            // 
+            // exportToDatabaseToolStripMenuItem
+            // 
+            this.exportToDatabaseToolStripMenuItem.Name = "exportToDatabaseToolStripMenuItem";
+            this.exportToDatabaseToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.exportToDatabaseToolStripMenuItem.Text = "Export to Database";
+            this.exportToDatabaseToolStripMenuItem.Click += new System.EventHandler(this.exportToDatabaseToolStripMenuItem_Click);
             // 
             // InloggningsForm
             // 
@@ -106,7 +135,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnLogIn);
+            this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(554, 430);
             this.MinimizeBox = false;
@@ -115,6 +146,8 @@
             this.Text = "Miljöboven";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.InloggningsForm_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -128,6 +161,9 @@
         public System.Windows.Forms.TextBox tbxUsername;
         public System.Windows.Forms.TextBox tbxPassword;
         public System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exportToDatabaseToolStripMenuItem;
 
     }
 }

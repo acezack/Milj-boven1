@@ -61,9 +61,10 @@ namespace Miljöboven1.View
             cbxCrimeStatus.SelectedIndex = 0;
         }
 
+        // Sorterar brotten som visas utefter vad chefen väljer i en ComboBox-meny
         private void cbxÄrendeStatus_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbxCrimeStatus.SelectedIndex == 0)
+            if (cbxCrimeStatus.SelectedIndex == 0) //Alla brott
             {
                 lbxÄrenden.Items.Clear();
                 if (cbxHandläggare.SelectedIndex == 0)
@@ -83,26 +84,9 @@ namespace Miljöboven1.View
                         }
                     }
                 }
-                //if (cbxHandläggare.SelectedIndex == 0)
-                //{
-                //    for (int index = 0; index < crimeList.GetCount(); index++)
-                //    {
-                //        lbxÄrenden.Items.Add(crimeList.GetCrimeTitle(index));
-                //    }
-                //}
-                //else
-                //{
-                //    for (int index = 0; index < crimeList.GetCount(); index++)
-                //    {
-                //        if (crimeList.GetCrimeStatus(index) == 0)
-                //        {
-                //            lbxÄrenden.Items.Add(crimeList.GetCrimeTitle(index));
-                //        }
-                //    }
-                //}
             }
 
-            if (cbxCrimeStatus.SelectedIndex == 1)
+            if (cbxCrimeStatus.SelectedIndex == 1) // Alla ej påbörjade brott
             {
                 lbxÄrenden.Items.Clear();
                 if (cbxHandläggare.SelectedIndex != 0)
@@ -128,7 +112,7 @@ namespace Miljöboven1.View
                 }
             }
 
-            if (cbxCrimeStatus.SelectedIndex == 2)
+            if (cbxCrimeStatus.SelectedIndex == 2) // Alla påbörjade brott
             {
                 lbxÄrenden.Items.Clear();
                 if (cbxHandläggare.SelectedIndex != 0)
@@ -154,7 +138,7 @@ namespace Miljöboven1.View
                 }
             }
 
-            if (cbxCrimeStatus.SelectedIndex == 3)
+            if (cbxCrimeStatus.SelectedIndex == 3) // Alla slutförda brott
             {
                 lbxÄrenden.Items.Clear();
                 if (cbxHandläggare.SelectedIndex != 0)
