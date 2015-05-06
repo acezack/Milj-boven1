@@ -8,7 +8,7 @@ using Miljöboven1.View;
 namespace Miljöboven1.Controller
 {
     /// <summary>
-    /// Den här klassen är en model utav ett brott och används utav hela programmet.
+    /// This class is a model for the crimes submitted.
     /// </summary>
     
     [Serializable]
@@ -20,9 +20,9 @@ namespace Miljöboven1.Controller
 
         public Int32 CrimeID { get; set; }
 
-        public Int32 CrimeStatus { get; set; }      //0=Ej påbörjad
-        //1=Påbörjad        
-        //2=Slutförd
+        public Int32 CrimeStatus { get; set; }      //0 = The crime hasn't begun.
+                                                    //1 = The crime has begun.
+                                                    //2 = The crime has been completed.
 
         public String CrimeTitle { get; set; }
 
@@ -42,8 +42,23 @@ namespace Miljöboven1.Controller
 
         #endregion
 
-        #region Contstuctor
+        #region Constructor
 
+        /// <summary>
+        /// This class is a model for the crimes submitted.
+        /// </summary>
+        /// <param name="crimeType">Static 35 for environment crimes.</param>
+        /// <param name="crimeID">The ID to recognise the crime.</param>
+        /// <param name="crimeStatus">Indicates the current status of the crime.</param>
+        /// <param name="crimeTitle">The name given to the crime as decided by the government.</param>
+        /// <param name="crimeDate">The date the crime was added to the database.</param>
+        /// <param name="crimeLocation">The location of crime as given by the caller.</param>
+        /// <param name="crimeInformation">Any other information the caller could give.</param>
+        /// <param name="callerName">The name of the caller.</param>
+        /// <param name="callerAddress">The address of the caller.</param>
+        /// <param name="callerNumber">The phonenumber of the caller.</param>
+        /// <param name="handläggarUserName">The investigator that handles the crime.
+        /// </param>
         public Crime(int crimeType,
             int crimeID,
             int crimeStatus,

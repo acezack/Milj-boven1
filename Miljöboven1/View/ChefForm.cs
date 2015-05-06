@@ -13,11 +13,17 @@ namespace Miljöboven1.View
 {
     public partial class ChefForm : Form
     {
+        #region variables
+
         UserList userList;
 
         CrimeList crimeList;
 
         EventList eventList;
+
+        #endregion
+
+        #region Constructor
 
         /// <summary>
         /// ChefFormen hanterar allt som chefen ska kunna göra. Här visas alla brott och all information relaterade till dessa.
@@ -60,6 +66,10 @@ namespace Miljöboven1.View
 
             cbxCrimeStatus.SelectedIndex = 0;
         }
+
+        #endregion
+
+        #region ÄrendeStatusComboBox logic
 
         // Sorterar brotten som visas utefter vad chefen väljer i en ComboBox-meny
         private void cbxÄrendeStatus_SelectedIndexChanged(object sender, EventArgs e)
@@ -167,6 +177,10 @@ namespace Miljöboven1.View
             lbxEvent.Items.Clear();
         }
 
+        #endregion
+
+        #region HandläggarComboBox logic
+
         private void cbxHandläggare_SelectedIndexChanged(object sender, EventArgs e)
         {
             for (int backIndex = 0; backIndex < userList.GetCount(); backIndex++)
@@ -197,8 +211,11 @@ namespace Miljöboven1.View
                     }
                 }
             }
-
         }
+
+        #endregion
+
+        #region ÄrendeListBox selection-logic
 
         private void lbxÄrenden_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -228,16 +245,26 @@ namespace Miljöboven1.View
             }
         }
 
+        #endregion
+
+        #region AssignCrime
+
         private void btnAssignCrime_Click(object sender, EventArgs e)
         {
             ChefTilldelaÄrendeForm chefTilldelaÄrendeForm = new ChefTilldelaÄrendeForm(userList, crimeList);
             chefTilldelaÄrendeForm.Show();
         }
 
+        #endregion
+
+        #region FromClosed
+
         private void ChefForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             InloggningsForm inloggningsForm = new InloggningsForm(userList, crimeList, eventList);
             inloggningsForm.Show();
         }
+
+        #endregion
     }
 }

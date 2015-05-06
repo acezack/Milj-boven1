@@ -122,10 +122,14 @@ namespace Miljöboven1.View
 
         #endregion
 
+        #region ExportToDB
+
         private void exportToDatabaseToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DataAccessLayerDBA db = new DataAccessLayerDBA();
             db.SaveMoviesToDatabase();
         }
+
+        #endregion
     }
 }

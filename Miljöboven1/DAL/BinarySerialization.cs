@@ -11,11 +11,11 @@ namespace Miljöboven1.DAL
 {
     class BinarySerialization
     {
-        UserList userList;
+        public UserList userList;
 
-        CrimeList crimeList;
+        public CrimeList crimeList;
 
-        EventList eventList;
+        public EventList eventList;
 
         /// <summary>
         /// Kollar om filer med data redan finns och om inte skapar nya filer med ny data och om det finns hämtar datan från filerna.

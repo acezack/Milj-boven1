@@ -59,7 +59,7 @@ namespace Miljöboven1.View
         private void btnAddCrime_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Är du säker på att du vill lägga till detta ärende?", "Lägga till ärende", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {
+            {                
                 crimeList.AddCrime(new Crime(35,
                     crimeList.GetCount(),
                     0,

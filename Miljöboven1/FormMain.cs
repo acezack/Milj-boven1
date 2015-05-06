@@ -43,6 +43,12 @@ namespace Miljöboven1
 
             binarySerialization.Deserialize();
 
+            userList = binarySerialization.userList;
+
+            crimeList = binarySerialization.crimeList;
+
+            eventList = binarySerialization.eventList;
+
             InitializeComponent();
 
             this.ShowInTaskbar = false;
