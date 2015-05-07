@@ -1,6 +1,6 @@
 ﻿namespace Miljöboven1.View
 {
-    partial class MiljösamordnareForm
+    partial class CoordinatorForm
     {
         /// <summary>
         /// Required designer variable.

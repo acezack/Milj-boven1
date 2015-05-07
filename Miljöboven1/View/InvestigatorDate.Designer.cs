@@ -1,6 +1,6 @@
 ﻿namespace Miljöboven1.View
 {
-    partial class HandläggarDatum
+    partial class InvestigatorDate
     {
         /// <summary>
         /// Required designer variable.

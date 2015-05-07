@@ -1,6 +1,6 @@
 ﻿namespace Miljöboven1.View
 {
-    partial class ChefTilldelaÄrendeForm
+    partial class ChefAssignCrime
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@
         {
             this.lbxUnassignedCrimes = new System.Windows.Forms.ListBox();
             this.lblUnassignedCrimes = new System.Windows.Forms.Label();
-            this.lbxHandläggare = new System.Windows.Forms.ListBox();
+            this.lbxInvestigator = new System.Windows.Forms.ListBox();
             this.lblHandläggare = new System.Windows.Forms.Label();
             this.btnAssign = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -57,13 +57,13 @@
             // 
             // lbxHandläggare
             // 
-            this.lbxHandläggare.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbxHandläggare.FormattingEnabled = true;
-            this.lbxHandläggare.ItemHeight = 24;
-            this.lbxHandläggare.Location = new System.Drawing.Point(272, 57);
-            this.lbxHandläggare.Name = "lbxHandläggare";
-            this.lbxHandläggare.Size = new System.Drawing.Size(240, 364);
-            this.lbxHandläggare.TabIndex = 0;
+            this.lbxInvestigator.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbxInvestigator.FormattingEnabled = true;
+            this.lbxInvestigator.ItemHeight = 24;
+            this.lbxInvestigator.Location = new System.Drawing.Point(272, 57);
+            this.lbxInvestigator.Name = "lbxHandläggare";
+            this.lbxInvestigator.Size = new System.Drawing.Size(240, 364);
+            this.lbxInvestigator.TabIndex = 0;
             // 
             // lblHandläggare
             // 
@@ -94,7 +94,7 @@
             this.Controls.Add(this.btnAssign);
             this.Controls.Add(this.lblHandläggare);
             this.Controls.Add(this.lblUnassignedCrimes);
-            this.Controls.Add(this.lbxHandläggare);
+            this.Controls.Add(this.lbxInvestigator);
             this.Controls.Add(this.lbxUnassignedCrimes);
             this.Name = "ChefTilldelaÄrendeForm";
             this.Text = "Tilldela ärende";
@@ -107,7 +107,7 @@
 
         private System.Windows.Forms.ListBox lbxUnassignedCrimes;
         private System.Windows.Forms.Label lblUnassignedCrimes;
-        private System.Windows.Forms.ListBox lbxHandläggare;
+        private System.Windows.Forms.ListBox lbxInvestigator;
         private System.Windows.Forms.Label lblHandläggare;
         private System.Windows.Forms.Button btnAssign;
     }

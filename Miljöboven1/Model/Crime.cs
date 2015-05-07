@@ -38,7 +38,7 @@ namespace Miljöboven1.Controller
 
         public String CallerNumber { get; set; }
 
-        public String HandläggarUserName { get; set; }
+        public String InvestigatorUserName { get; set; }
 
         #endregion
 
@@ -48,8 +48,8 @@ namespace Miljöboven1.Controller
         /// This class is a model for the crimes submitted.
         /// </summary>
         /// <param name="crimeType">Static 35 for environment crimes.</param>
-        /// <param name="crimeID">The ID to recognise the crime.</param>
-        /// <param name="crimeStatus">Indicates the current status of the crime.</param>
+        /// <param name="crimeID">The ID to recognise the crime in the crimeList. (each crime gets an individual ID by the program)</param>
+        /// <param name="crimeStatus">Indicates the current status of the crime. (0 = not begun, 1 = begun, 2 = completed)</param>
         /// <param name="crimeTitle">The name given to the crime as decided by the government.</param>
         /// <param name="crimeDate">The date the crime was added to the database.</param>
         /// <param name="crimeLocation">The location of crime as given by the caller.</param>
@@ -57,8 +57,7 @@ namespace Miljöboven1.Controller
         /// <param name="callerName">The name of the caller.</param>
         /// <param name="callerAddress">The address of the caller.</param>
         /// <param name="callerNumber">The phonenumber of the caller.</param>
-        /// <param name="handläggarUserName">The investigator that handles the crime.
-        /// </param>
+        /// <param name="investigatorUserName">The investigator that handles the crime.</param>
         public Crime(int crimeType,
             int crimeID,
             int crimeStatus,
@@ -69,7 +68,7 @@ namespace Miljöboven1.Controller
             string callerName,
             string callerAddress,
             string callerNumber,
-            string handläggarUserName
+            string investigatorUserName
             )
         {
             this.CrimeType = crimeType;
@@ -82,7 +81,7 @@ namespace Miljöboven1.Controller
             this.CallerName = callerName;
             this.CallerAddress = callerAddress;
             this.CallerNumber = callerNumber;
-            this.HandläggarUserName = handläggarUserName;
+            this.InvestigatorUserName = investigatorUserName;
         }
 
         #endregion

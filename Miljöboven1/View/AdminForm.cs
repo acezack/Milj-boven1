@@ -26,11 +26,11 @@ namespace Miljöboven1.View
         #region Constructor
 
         /// <summary>
-        /// AdminFormen är till för att kunna hantera användare, såsom att lägga till eller ta bort.
+        /// The AdminForm is there to handle users, such as adding or removing.
         /// </summary>
-        /// <param name="userList">Listan som hanterar alla användare och även alla metoder som används för användarhantering.</param>
-        /// <param name="crimeList">Listan som hanterar alla miljöbrott och även alla metoder som används för miljöbrottshantering.</param>
-        /// <param name="eventList">Listan som hanterar alla händelser och även alla metoder som används för händelsehantering.</param>
+        /// <param name="userList">The list that contains models and methods used to handle users.</param>
+        /// <param name="crimeList">The list that contains models and methods used to handle crimes.</param>
+        /// <param name="eventList">The list that contains models and methods used to handle events.</param>
         public AdminForm(UserList userList, CrimeList crimeList, EventList eventList)
         {
             InitializeComponent();
@@ -51,7 +51,7 @@ namespace Miljöboven1.View
 
         #region Form_Load
 
-        // Laddar in AdminFormen och visar två comboboxes men det första valet valt.
+        // Loads the AdminForm and sets the ComboBoxes' index to 0, targetting the first option in the ComboBox.
         private void AdminForm_Load(object sender, EventArgs e)
         {
             cbxAddUserType.SelectedIndex = 0;
@@ -60,7 +60,7 @@ namespace Miljöboven1.View
 
         #endregion
 
-        #region Funtcions
+        #region Functions
 
         // Funktionen som lägger till användare.
         private void btnAddUser_Click(object sender, EventArgs e)

@@ -11,13 +11,20 @@ using Miljöboven1.Controller;
 
 namespace Miljöboven1.View
 {
-    public partial class ChefTilldelaÄrendeForm : Form
+    public partial class ChefAssignCrime : Form
     {
+        #region Variables
+
         UserList userList;
 
         CrimeList crimeList;
 
-        public ChefTilldelaÄrendeForm(UserList userList, CrimeList crimeList)
+        #endregion
+
+        #region Constructor
+
+
+        public ChefAssignCrime(UserList userList, CrimeList crimeList)
         {
             InitializeComponent();
 
@@ -27,7 +34,7 @@ namespace Miljöboven1.View
 
             for (int index = 0; index < crimeList.GetCount(); index++)
             {
-                if (crimeList.GetCrime(index).HandläggarUserName == null)
+                if (crimeList.GetCrime(index).InvestigatorUserName == null)
                 {
                     lbxUnassignedCrimes.Items.Add(crimeList.GetCrime(index).CrimeTitle);
                 }
@@ -37,16 +44,20 @@ namespace Miljöboven1.View
             {
                 if (userList.GetType(index) == 2)
                 {
-                    lbxHandläggare.Items.Add(userList.GetUserName(index));
+                    lbxInvestigator.Items.Add(userList.GetUserName(index));
                 }
             }
         }
+
+        #endregion
+
+        #region buttonAssign_Click
 
         private void btnAssign_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Är du säker på att du vill tilldela valt ärende till vald handläggare?", "Konfirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                if (lbxHandläggare.SelectedIndex == -1 || lbxUnassignedCrimes.SelectedIndex == -1)
+                if (lbxInvestigator.SelectedIndex == -1 || lbxUnassignedCrimes.SelectedIndex == -1)
                 {
                     MessageBox.Show("Du har inte valt ett brott eller en handläggare.", "Fel");
                 }
@@ -58,19 +69,19 @@ namespace Miljöboven1.View
                         {
                             for (int index1 = 0; index1 < userList.GetCount(); index1++)
                             {
-                                if (userList.GetUserName(index1) == lbxHandläggare.Items[lbxHandläggare.SelectedIndex].ToString())
+                                if (userList.GetUserName(index1) == lbxInvestigator.Items[lbxInvestigator.SelectedIndex].ToString())
                                 {
-                                    crimeList.ChangeHandläggare(index, lbxHandläggare.Items[lbxHandläggare.SelectedIndex].ToString());
+                                    crimeList.ChangeInvestigator(index, lbxInvestigator.Items[lbxInvestigator.SelectedIndex].ToString());
                                     lbxUnassignedCrimes.SelectedIndex = -1;
-                                    lbxHandläggare.SelectedIndex = -1;
+                                    lbxInvestigator.SelectedIndex = -1;
 
                                     lbxUnassignedCrimes.Items.Clear();
 
-                                    lbxHandläggare.Items.Clear();
+                                    lbxInvestigator.Items.Clear();
 
                                     for (int index2 = 0; index2 < crimeList.GetCount(); index2++)
                                     {
-                                        if (crimeList.GetCrime(index2).HandläggarUserName == null)
+                                        if (crimeList.GetCrime(index2).InvestigatorUserName == null)
                                         {
                                             lbxUnassignedCrimes.Items.Add(crimeList.GetCrime(index2).CrimeTitle);
                                         }
@@ -80,7 +91,7 @@ namespace Miljöboven1.View
                                     {
                                         if (userList.GetType(index2) == 2)
                                         {
-                                            lbxHandläggare.Items.Add(userList.GetUserName(index2));
+                                            lbxInvestigator.Items.Add(userList.GetUserName(index2));
                                         }
                                     }
                                     break;
@@ -91,5 +102,6 @@ namespace Miljöboven1.View
                 }
             }
         }
+        #endregion
     }
 }

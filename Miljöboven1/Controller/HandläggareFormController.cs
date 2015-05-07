@@ -15,7 +15,7 @@ namespace Miljöboven1.Controller
     {
         #region Variables
 
-        HandläggareForm handläggareForm;
+        InvestigatorForm handläggareForm;
 
         CrimeList crimeList;
 
@@ -28,7 +28,7 @@ namespace Miljöboven1.Controller
         #region Constructor
 
         public HandläggareFormController(
-            HandläggareForm handläggarform,
+            InvestigatorForm handläggarform,
             CrimeList crimeList,
             EventList eventList,
             string handläggarusername)
@@ -55,7 +55,7 @@ namespace Miljöboven1.Controller
             handläggareForm.lbxEvent.Items.Clear();
             for (int i = 0; i < crimeList.GetCount(); i++)
             {
-                if (crimeList.GetCrime(i).HandläggarUserName == this.handläggarusername)
+                if (crimeList.GetCrime(i).InvestigatorUserName == this.handläggarusername)
                     handläggareForm.lbCrimes.Items.Add(crimeList.GetCrimeTitle(i));
             }
         }

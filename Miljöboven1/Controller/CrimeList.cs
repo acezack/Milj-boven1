@@ -8,8 +8,7 @@ using Miljöboven1.View;
 namespace Miljöboven1.Controller
 {
     /// <summary>
-    /// Den här kontrollen hanterar en lista av brotten. Listan av brotten kan användas för att bl.a.
-    /// få namn, address och brottstyp ifrån de olika brotten.
+    /// Den här kontrollen hanterar en lista av brotten. Listan av brotten kan användas för att bl.a. få namn, address och brottstyp ifrån de olika brotten.
     /// </summary>
     [Serializable]
     public class CrimeList
@@ -138,7 +137,7 @@ namespace Miljöboven1.Controller
         /// <returns>Den handläggare som satts till brottet</returns>
         public string GetHandläggarUserName(int index)
         {
-            return crimeList[index].HandläggarUserName;
+            return crimeList[index].InvestigatorUserName;
         }
 
         /// <summary>
@@ -178,9 +177,9 @@ namespace Miljöboven1.Controller
         /// </summary>
         /// <param name="index">Index som bestämmer vilket brott handläggaren ska ändras</param>
         /// <param name="newHandläggare">Den nya handläggaren som blir tilldelad ärendet</param>
-        public void ChangeHandläggare(int index, string newHandläggare)
+        public void ChangeInvestigator(int index, string newHandläggare)
         {
-            crimeList[index].HandläggarUserName = newHandläggare;
+            crimeList[index].InvestigatorUserName = newHandläggare;
         }
 
         /// <summary>

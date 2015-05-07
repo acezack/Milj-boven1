@@ -1,6 +1,6 @@
 ﻿namespace Miljöboven1.View
 {
-    partial class HandläggareForm
+    partial class InvestigatorForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HandläggareForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InvestigatorForm));
             this.rtbCrimeInfo = new System.Windows.Forms.RichTextBox();
             this.btnAddEvent = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();

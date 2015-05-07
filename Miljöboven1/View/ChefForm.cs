@@ -251,7 +251,7 @@ namespace Miljöboven1.View
 
         private void btnAssignCrime_Click(object sender, EventArgs e)
         {
-            ChefTilldelaÄrendeForm chefTilldelaÄrendeForm = new ChefTilldelaÄrendeForm(userList, crimeList);
+            ChefAssignCrime chefTilldelaÄrendeForm = new ChefAssignCrime(userList, crimeList);
             chefTilldelaÄrendeForm.Show();
         }
 

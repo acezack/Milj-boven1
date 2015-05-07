@@ -15,7 +15,7 @@ namespace Miljöboven1.View
     /// Den här klassen hanterar den grundliga funktionaliteten för handläggarformen.
     /// </summary>
     [Serializable]
-    public partial class HandläggareForm : Form
+    public partial class InvestigatorForm : Form
     {
 
         #region Variables
@@ -41,7 +41,7 @@ namespace Miljöboven1.View
         /// <param name="crimeList">Den korrekta listan med brott ifrån FormMain</param>
         /// <param name="eventList">Den korrekta listan med händelser ifrån FormMain</param>
         /// <param name="handläggarusername">Den användare som loggat in på handläggarFormen</param>
-        public HandläggareForm(UserList userList, CrimeList crimeList, EventList eventList, string handläggarusername)
+        public InvestigatorForm(UserList userList, CrimeList crimeList, EventList eventList, string handläggarusername)
         {
             InitializeComponent();
             this.userList = userList;
@@ -159,7 +159,7 @@ namespace Miljöboven1.View
                         DialogResult res2 = MessageBox.Show("Vill du ändra datum?", "Bekräfta", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                         if (res2 == DialogResult.Yes)
                         {
-                            HandläggarDatum hlg = new HandläggarDatum(this, handläggarController, rtbEvent.Text.Trim(), Convert.ToInt32(lbxEvent.Items[lbxEvent.SelectedIndex].ToString().Substring(6)), Convert.ToInt32(lbCrimes.Items[lbCrimes.SelectedIndex].ToString().Substring(6)));
+                            InvestigatorDate hlg = new InvestigatorDate(this, handläggarController, rtbEvent.Text.Trim(), Convert.ToInt32(lbxEvent.Items[lbxEvent.SelectedIndex].ToString().Substring(6)), Convert.ToInt32(lbCrimes.Items[lbCrimes.SelectedIndex].ToString().Substring(6)));
                             hlg.Show();
                             this.Hide();
                         }

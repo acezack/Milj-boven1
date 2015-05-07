@@ -69,7 +69,7 @@ namespace Miljöboven1.View
                     else if (userList.GetType(index) == 2)//handläggare
                     {
                         this.Hide();
-                        HandläggareForm handläggareForm = new HandläggareForm(userList, crimeList, eventList, tbxUsername.Text);
+                        InvestigatorForm handläggareForm = new InvestigatorForm(userList, crimeList, eventList, tbxUsername.Text);
                         handläggareForm.Show();
                         loggedIn = true;
                         tbxUsername.Clear();
@@ -79,7 +79,7 @@ namespace Miljöboven1.View
                     else if (userList.GetType(index) == 3)//miljösamordnare
                     {
                         this.Hide();
-                        MiljösamordnareForm miljösamordnareForm = new MiljösamordnareForm(userList, crimeList, eventList);
+                        CoordinatorForm miljösamordnareForm = new CoordinatorForm(userList, crimeList, eventList);
                         miljösamordnareForm.Show();
                         loggedIn = true;
                         tbxUsername.Clear();

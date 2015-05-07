@@ -79,23 +79,23 @@
     <Compile Include="View\ChefForm.designer.cs">
       <DependentUpon>ChefForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\ChefTilldelaÄrendeForm.cs">
+    <Compile Include="View\ChefAssignCrime.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\ChefTilldelaÄrendeForm.Designer.cs">
-      <DependentUpon>ChefTilldelaÄrendeForm.cs</DependentUpon>
+    <Compile Include="View\ChefAssignCrime.Designer.cs">
+      <DependentUpon>ChefAssignCrime.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\HandläggarDatum.cs">
+    <Compile Include="View\InvestigatorDate.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\HandläggarDatum.Designer.cs">
-      <DependentUpon>HandläggarDatum.cs</DependentUpon>
+    <Compile Include="View\InvestigatorDate.Designer.cs">
+      <DependentUpon>InvestigatorDate.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\HandläggareForm.cs">
+    <Compile Include="View\InvestigatorForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\HandläggareForm.designer.cs">
-      <DependentUpon>HandläggareForm.cs</DependentUpon>
+    <Compile Include="View\InvestigatorForm.designer.cs">
+      <DependentUpon>InvestigatorForm.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Inloggningsform.cs">
       <SubType>Form</SubType>
@@ -103,11 +103,11 @@
     <Compile Include="View\Inloggningsform.designer.cs">
       <DependentUpon>Inloggningsform.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\MiljösamordnareForm.cs">
+    <Compile Include="View\CoordinatorForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\MiljösamordnareForm.designer.cs">
-      <DependentUpon>MiljösamordnareForm.cs</DependentUpon>
+    <Compile Include="View\CoordinatorForm.designer.cs">
+      <DependentUpon>CoordinatorForm.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
@@ -123,20 +123,20 @@
     <EmbeddedResource Include="View\ChefForm.resx">
       <DependentUpon>ChefForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\ChefTilldelaÄrendeForm.resx">
-      <DependentUpon>ChefTilldelaÄrendeForm.cs</DependentUpon>
+    <EmbeddedResource Include="View\ChefAssignCrime.resx">
+      <DependentUpon>ChefAssignCrime.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\HandläggarDatum.resx">
-      <DependentUpon>HandläggarDatum.cs</DependentUpon>
+    <EmbeddedResource Include="View\InvestigatorDate.resx">
+      <DependentUpon>InvestigatorDate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\HandläggareForm.resx">
-      <DependentUpon>HandläggareForm.cs</DependentUpon>
+    <EmbeddedResource Include="View\InvestigatorForm.resx">
+      <DependentUpon>InvestigatorForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Inloggningsform.resx">
       <DependentUpon>Inloggningsform.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\MiljösamordnareForm.resx">
-      <DependentUpon>MiljösamordnareForm.cs</DependentUpon>
+    <EmbeddedResource Include="View\CoordinatorForm.resx">
+      <DependentUpon>CoordinatorForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

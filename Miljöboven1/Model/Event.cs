@@ -28,10 +28,10 @@ namespace Miljöboven1.Controller
         #region Contructor
 
         /// <summary>
-        /// Skapar en ny händelse
+        /// This class is a model for the events created for each crime.
         /// </summary>
-        /// <param name="eventComment">Den kommentar som händelsen får (kan vara t.ex. "påbörjade brottet" eller "rengjorde övre delen av bron")</param>
-        /// <param name="eventID">Det Id händelsen kommer få</param>
+        /// <param name="eventComment">The comment the event has, e.g. "Visited the site and took some pictures for further review."</param>
+        /// <param name="eventID">The ID to recognise the event in the eventList (each event gets an individual ID by the program)</param>
         /// <param name="crimeID">Det brotts Id som händelsen skall knytas till</param>
         public Event(string eventComment, int eventID, int crimeID)
         {

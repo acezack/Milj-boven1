@@ -14,11 +14,11 @@ namespace Miljöboven1.View
     /// <summary>
     /// Den här klassen är till för att ändra datumet för en vald händelse.
     /// </summary>
-    public partial class HandläggarDatum : Form
+    public partial class InvestigatorDate : Form
     {
         #region Variables
 
-        HandläggareForm handläggareform;
+        InvestigatorForm handläggareform;
         HandläggareFormController handläggarecontroller;
         int crimeID;
         int eventID;
@@ -36,7 +36,7 @@ namespace Miljöboven1.View
         /// <param name="newComment">Den nya kommentaren till händelsen</param>
         /// <param name="eventID">Används för att få rätt händelse</param>
         /// <param name="crimeID">Används för att få rätt brott</param>
-        public HandläggarDatum(HandläggareForm handläggareform, HandläggareFormController handläggarecontroller, string newComment, int eventID, int crimeID)
+        public InvestigatorDate(InvestigatorForm handläggareform, HandläggareFormController handläggarecontroller, string newComment, int eventID, int crimeID)
         {
             InitializeComponent();
             this.handläggareform = handläggareform;

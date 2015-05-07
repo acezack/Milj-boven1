@@ -11,7 +11,7 @@ using Miljöboven1.Controller;
 
 namespace Miljöboven1.View
 {
-    public partial class MiljösamordnareForm : Form
+    public partial class CoordinatorForm : Form
     {
         #region Variables
 
@@ -25,7 +25,7 @@ namespace Miljöboven1.View
 
         #region Constructor
 
-        public MiljösamordnareForm(UserList userList, CrimeList crimeList, EventList eventList)
+        public CoordinatorForm(UserList userList, CrimeList crimeList, EventList eventList)
         {
             InitializeComponent();
             this.userList = userList;
@@ -56,10 +56,11 @@ namespace Miljöboven1.View
 
         #region Functions
 
+        //Adds a crime to the crimeList.
         private void btnAddCrime_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Är du säker på att du vill lägga till detta ärende?", "Lägga till ärende", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {                
+            {                   
                 crimeList.AddCrime(new Crime(35,
                     crimeList.GetCount(),
                     0,
