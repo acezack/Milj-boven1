@@ -48,7 +48,7 @@
     <Compile Include="Controller\CrimeList.cs" />
     <Compile Include="Model\Event.cs" />
     <Compile Include="Controller\EventList.cs" />
-    <Compile Include="Controller\HandläggareFormController.cs" />
+    <Compile Include="Controller\InvestigatorController.cs" />
     <Compile Include="DAL\BinarySerialization.cs" />
     <Compile Include="DAL\DataAccessLayerDBA.cs" />
     <Compile Include="FormMain.cs">

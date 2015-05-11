@@ -12,14 +12,14 @@ using Miljöboven1.Controller;
 namespace Miljöboven1.View
 {
     /// <summary>
-    /// Den här klassen är till för att ändra datumet för en vald händelse.
+    /// This form is used to change the date for a specific even.
     /// </summary>
     public partial class InvestigatorDate : Form
     {
         #region Variables
 
         InvestigatorForm handläggareform;
-        HandläggareFormController handläggarecontroller;
+        InvestigatorController handläggarecontroller;
         int crimeID;
         int eventID;
         string newComment;
@@ -29,14 +29,14 @@ namespace Miljöboven1.View
         #region Form Component Events
 
         /// <summary>
-        /// Här initieras formen och alla värden sätts till de värden de bör vara för att formen skall kunna ändra datumet för händelsen.
+        /// The form initiates and all the values is set to the appropriate values so the form can change the date
         /// </summary>
-        /// <param name="handläggareform">Handläggarformen</param>
-        /// <param name="handläggarecontroller">Handläggarkontrollen</param>
-        /// <param name="newComment">Den nya kommentaren till händelsen</param>
-        /// <param name="eventID">Används för att få rätt händelse</param>
-        /// <param name="crimeID">Används för att få rätt brott</param>
-        public InvestigatorDate(InvestigatorForm handläggareform, HandläggareFormController handläggarecontroller, string newComment, int eventID, int crimeID)
+        /// <param name="handläggareform">Investigator form</param>
+        /// <param name="handläggarecontroller">Investigator controller</param>
+        /// <param name="newComment">The new description for the event</param>
+        /// <param name="eventID">Is used to get the correct event</param>
+        /// <param name="crimeID">Is used to get the correct crime</param>
+        public InvestigatorDate(InvestigatorForm handläggareform, InvestigatorController handläggarecontroller, string newComment, int eventID, int crimeID)
         {
             InitializeComponent();
             this.handläggareform = handläggareform;
@@ -47,8 +47,8 @@ namespace Miljöboven1.View
         }
 
         /// <summary>
-        /// Här anropas "EditEvents" metoden i handläggarkontrollen och ändrar händelsen med ett nytt datum och en ny kommentar.
-        /// Sen stängs fönstret och handläggarformen visas.
+        /// The "EditEvents" method is called in the Investigator controller and changes the event with a new date and a new desctription.
+        /// Then this form closes and investigator form shows.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -60,7 +60,7 @@ namespace Miljöboven1.View
         }
 
         /// <summary>
-        /// Om formen stängs göms den och sedan visas handläggarformen.
+        /// If the form is closed, it is hidden and investigator form is shown
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>

@@ -178,7 +178,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "HandläggareForm";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.HandläggareForm_FormClosed);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.InvestigatorForm_FormClosed);
             this.Load += new System.EventHandler(this.HandläggareForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
