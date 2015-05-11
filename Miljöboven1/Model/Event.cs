@@ -5,11 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Miljöboven1.Controller
-{
-    /// <summary>
-    /// Den här klassen är en model utav en händelse knutet till ett brott och används utav hela programmet.
-    /// </summary>
-    
+{    
     [Serializable]
     public class Event
     {
