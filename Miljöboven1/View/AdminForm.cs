@@ -51,7 +51,7 @@ namespace Miljöboven1.View
 
         #region Form_Load
 
-        // Loads the AdminForm and sets the ComboBoxes' index to 0, targetting the first option in the ComboBox.
+        // Loads the AdminForm and sets the ComboBoxes' indexes to 0, targetting the first option in the ComboBox.
         private void AdminForm_Load(object sender, EventArgs e)
         {
             cbxAddUserType.SelectedIndex = 0;
@@ -60,9 +60,9 @@ namespace Miljöboven1.View
 
         #endregion
 
-        #region Functions
+        #region Methods
 
-        // Funktionen som lägger till användare.
+        // The method to add users.
         private void btnAddUser_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Vill du lägga till denna användare?", "Lägga till användare", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
@@ -85,7 +85,7 @@ namespace Miljöboven1.View
             }
         }
 
-        // Funktionen som tar bort användare.
+        // The method to remove users.
         private void btnRemoveUser_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Vill du ta bort denna användare?", "Ta bort användare", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
@@ -108,11 +108,11 @@ namespace Miljöboven1.View
 
         #region FormClosed
 
-        // Öppnar InloggninsFormen som programmet först öppnas in i.
+        // Opens up the LoginForm when the form closes.
         private void AdminForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            InloggningsForm inloggningsForm = new InloggningsForm(userList, crimeList, eventList);
-            inloggningsForm.Show();
+            LoginForm loginForm = new LoginForm(userList, crimeList, eventList);
+            loginForm.Show();
         }
 
         #endregion

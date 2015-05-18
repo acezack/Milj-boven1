@@ -9,6 +9,7 @@ namespace Miljöboven1.Controller
 {
     /// <summary>
     /// Den här kontrollen hanterar en lista av brotten. Listan av brotten kan användas för att bl.a. få namn, address och brottstyp ifrån de olika brotten.
+    /// This class handles the list of crimes. The crimeList has useful methods such as 
     /// </summary>
     [Serializable]
     public class CrimeList

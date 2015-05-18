@@ -26,7 +26,7 @@ namespace Miljöboven1.View
 
         EventList eventList;
 
-        InloggningsForm inloggningsForm;
+        LoginForm inloggningsForm;
 
         HandläggareFormController handläggarController;
 
@@ -48,7 +48,7 @@ namespace Miljöboven1.View
             this.eventList = eventList;
             this.crimeList = crimeList;
             this.handläggarController = new HandläggareFormController(this, this.crimeList, eventList, handläggarusername);
-            inloggningsForm = new InloggningsForm(userList, crimeList, eventList);
+            inloggningsForm = new LoginForm(userList, crimeList, eventList);
         }
 
         #endregion

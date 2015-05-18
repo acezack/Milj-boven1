@@ -55,7 +55,7 @@ namespace Miljöboven1
             this.WindowState = FormWindowState.Minimized;
             this.FormBorderStyle = FormBorderStyle.None;
             this.Hide();
-            View.InloggningsForm inloggningsForm = new View.InloggningsForm(userList, crimeList, eventList);
+            View.LoginForm inloggningsForm = new View.LoginForm(userList, crimeList, eventList);
             inloggningsForm.ShowDialog();
         }
 

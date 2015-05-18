@@ -10,7 +10,14 @@ namespace Miljöboven1.Controller
     [Serializable]
     public class EventList
     {
+        #region Variables
+
         List<Event> eventList;
+
+        #endregion
+
+        #region Methods and functions
+
         public EventList()
         {
             this.eventList = new List<Event>();
@@ -73,9 +80,10 @@ namespace Miljöboven1.Controller
                 }
             }
         }
-        public int GetNumberOfEvents(int crimeID)
+        public int GetCrimeEventsCount(int crimeID)
         {
             int returning = 0;
+
             foreach (Event ev in eventList)
             {
                 if (ev.CrimeID == crimeID)
@@ -83,6 +91,7 @@ namespace Miljöboven1.Controller
                     returning++;
                 }
             }
+
             return returning;
         }
 
@@ -90,5 +99,7 @@ namespace Miljöboven1.Controller
         {
             return eventList[index].CrimeID;
         }
+
+        #endregion
     }
 }

@@ -16,6 +16,8 @@ namespace Miljöboven1.Controller
 
         #endregion
 
+        #region Methods and functions
+
         public void AddUser(User user)
         {
             userList.Add(user);
@@ -65,5 +67,7 @@ namespace Miljöboven1.Controller
         {
             userList[index].UserName = newUserName;
         }
+
+        #endregion
     }
 }

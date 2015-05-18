@@ -48,7 +48,7 @@ namespace Miljöboven1.View
 
         private void MiljösamordnareForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            InloggningsForm inloggningsForm = new InloggningsForm(userList, crimeList, eventList);
+            LoginForm inloggningsForm = new LoginForm(userList, crimeList, eventList);
             inloggningsForm.Show();
         }
 
