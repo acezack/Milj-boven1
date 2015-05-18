@@ -12,7 +12,7 @@ using Miljöboven1.DAL;
 
 namespace Miljöboven1.View
 {
-    public partial class InloggningsForm : Form
+    public partial class LoginForm : Form
     {
         #region Variables
 
@@ -28,7 +28,7 @@ namespace Miljöboven1.View
 
         #region Constructor
 
-        public InloggningsForm(UserList userList, CrimeList crimeList, EventList eventList)
+        public LoginForm(UserList userList, CrimeList crimeList, EventList eventList)
         {
             InitializeComponent();
             loggedIn = false;

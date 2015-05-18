@@ -97,11 +97,11 @@
     <Compile Include="View\InvestigatorForm.designer.cs">
       <DependentUpon>InvestigatorForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Inloggningsform.cs">
+    <Compile Include="View\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Inloggningsform.designer.cs">
-      <DependentUpon>Inloggningsform.cs</DependentUpon>
+    <Compile Include="View\LoginForm.designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
     <Compile Include="View\CoordinatorForm.cs">
       <SubType>Form</SubType>
@@ -132,8 +132,8 @@
     <EmbeddedResource Include="View\InvestigatorForm.resx">
       <DependentUpon>InvestigatorForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Inloggningsform.resx">
-      <DependentUpon>Inloggningsform.cs</DependentUpon>
+    <EmbeddedResource Include="View\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\CoordinatorForm.resx">
       <DependentUpon>CoordinatorForm.cs</DependentUpon>

@@ -19,6 +19,7 @@ namespace Miljöboven1.DAL
 
         /// <summary>
         /// Kollar om filer med data redan finns och om inte skapar nya filer med ny data och om det finns hämtar datan från filerna.
+        /// 
         /// </summary>
         public void Deserialize()
         {
