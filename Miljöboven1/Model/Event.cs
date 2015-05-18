@@ -28,7 +28,7 @@ namespace Miljöboven1.Controller
         /// </summary>
         /// <param name="eventComment">The comment the event has, e.g. "Visited the site and took some pictures for further review."</param>
         /// <param name="eventID">The ID to recognise the event in the eventList (each event gets an individual ID by the program)</param>
-        /// <param name="crimeID">The crime the event gets linked to using the crime's ID.</param>
+        /// <param name="crimeID">The crimeID an individual event will be linked to.</param>
         public Event(string eventComment, int eventID, int crimeID)
         {
             this.EventComment = eventComment;

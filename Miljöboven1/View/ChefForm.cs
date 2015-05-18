@@ -47,7 +47,7 @@ namespace Miljöboven1.View
             cbxHandläggare.Items.Add("Alla");
             for (int index = 0; index < userList.GetCount(); index++)
             {
-                if (userList.GetUser(index).Type == 2)
+                if (userList.GetUser(index).UserType == 2)
                 {
                     cbxHandläggare.Items.Add(userList.GetUser(index).UserName);
                 }
@@ -261,7 +261,7 @@ namespace Miljöboven1.View
 
         private void ChefForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            LoginForm inloggningsForm = new LoginForm(userList, crimeList, eventList);
+            InloggningsForm inloggningsForm = new InloggningsForm(userList, crimeList, eventList);
             inloggningsForm.Show();
         }
 
