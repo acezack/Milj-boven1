@@ -8,7 +8,7 @@ using Miljöboven1.View;
 namespace Miljöboven1.Controller
 {
     /// <summary>
-    /// Den här kontrollen hanterar en lista av brotten. Listan av brotten kan användas för att bl.a. få namn, address och brottstyp ifrån de olika brotten.
+    /// This controller handles a list of the crimes. This list can be used to get the name, address, crimetype and more from the different crimes.
     /// </summary>
     [Serializable]
     public class CrimeList
@@ -19,71 +19,61 @@ namespace Miljöboven1.Controller
 
         #endregion
 
-        #region Functions
+        #region Functions and methods
 
         /// <summary>
-        /// Returneran hur många brott som just nu finns i listan.
+        /// Returns how many crimes there is in the list at the moment.
         /// </summary>
-        /// <returns>Hur många brott som finns</returns>
+        /// <returns>How many crimes there is in the list</returns>
         public int GetCount()
         {
             return crimeList.Count;
-        }
+        } 
 
         /// <summary>
-        /// Returnerar ett brott i klassform.
+        /// Returns the crimes Id using an index
         /// </summary>
-        /// <param name="index">Index för vilket brott det är</param>
-        /// <returns>Ett brott i klassform</returns>
-        public Crime GetCrime(int index)
-        {
-            return crimeList[index];
-        }   
-
-        /// <summary>
-        /// Returnerar brottets id med hjälp utav ett visst index
-        /// </summary>
-        /// <param name="index">Det index man returnerar brottets id med</param>
-        /// <returns>Bottets ID</returns>
+        /// <param name="index">The index used to return the crimes Id</param>
+        /// <returns>The crimes Id</returns>
         public int GetCrimeID(int index)
         {
             return crimeList[index].CrimeID;
         }
 
         /// <summary>
-        /// Returnerar brottets brottsstatus
+        /// Returns the crimes crimestatus.
         /// </summary>
-        /// <param name="index">Det index man returnerar brottets brottsstatus med</param>
-        /// <returns>Brottets brottsstatus</returns>
+        /// <param name="index">The index used to return the crimes crimestatus.</param>
+        /// <returns>The crimes crimestatus</returns>
         public int GetCrimeStatus(int index)
         {
             return crimeList[index].CrimeStatus;
         }
 
         /// <summary>
-        /// Returnerar brottets titel
+        /// Returns the crimes title.
         /// </summary>
-        /// <param name="index">Det index man returnerar brottets titel med</param>
-        /// <returns>Brottets titel</returns>
+        /// <param name="index">The index used to return the crimes title.</param>
+        /// <returns>The crimes title</returns>
         public string GetCrimeTitle(int index)
         {
             return crimeList[index].CrimeTitle;
         }
 
         /// <summary>
-        /// Returnerar brottets händelsedatum
+        /// Return the crimes date.
         /// </summary>
-        /// <param name="index">Det index man returnerar brottets händelsedatum med</param>
-        /// <returns>Brottets händelsedatum</returns>
+        /// <param name="index">The index used to return the crimes date.</param>
+        /// <returns>The crimes date.</returns>
         public string GetCrimeDate(int index)
         {
             return crimeList[index].CrimeDate;
         }
 
         /// <summary>
-        /// Returnerar brottets brottsplats
+        /// Returns the crimes location
         /// </summary>
-        /// <param name="index">Det index man returnerar brottets plats med</param>
+        /// <param name="index">The index used to return the crimes crimelocation.</param>
         /// <returns>Brotssplatsen</returns>
         public string GetCrimeLocation(int index)
         {
@@ -91,29 +81,39 @@ namespace Miljöboven1.Controller
         }
 
         /// <summary>
-        /// Returnerar brottets information (för visande i handläggarformen)
+        /// Returns the crimes information (to be shown in investigator form)
         /// </summary>
-        /// <param name="index">Det index man returnerar brottets information med</param>
-        /// <returns>Brottets information (address, nummer etc.)</returns>
+        /// <param name="index">The index used to return the crimes information.</param>
+        /// <returns>The crimes information (address, caller name etc.)</returns>
         public string GetCrimeInformation(int index)
         {
             return crimeList[index].CrimeInformation;
         }
 
         /// <summary>
-        /// Returnerar anmälarens namn
+        /// Returns the informers name
         /// </summary>
-        /// <param name="index">Det index man använder i brottet när man returnerar anmälarens namn</param>
-        /// <returns>Anmälarens namn</returns>
+        /// <param name="index">The index used to return the crimes informers name.</param>
+        /// <returns>informer name.</returns>
         public string GetCallerName(int index)
         {
             return crimeList[index].CallerName;
         }
 
         /// <summary>
-        /// Returnerar anmälarens address
+        /// Returns a crime in the form of a class.
         /// </summary>
-        /// <param name="index">Det index man använder i brottet när man returnerar anmälarens address</param>
+        /// <param name="index">Index for which crime it is.</param>
+        /// <returns>A crime in the form of a class.</returns>
+        public Crime GetCrime(int index)
+        {
+            return crimeList[index];
+        }  
+
+        /// <summary>
+        /// Returns the informers address
+        /// </summary>
+        /// <param name="index">The index used to return the crimes informers address.</param>
         /// <returns>Anmälarens address</returns>
         public string GetCallerAddress(int index)
         {
@@ -122,8 +122,9 @@ namespace Miljöboven1.Controller
 
         /// <summary>
         /// Returnerar anmälarens nummer
+        /// Returns the informers callernumber
         /// </summary>
-        /// <param name="index">Det index man använder i brottet när man returnerar anmälarens nummer</param>
+        /// <param name="index">The index used to return the crimes informers number.</param>
         /// <returns>anmälarens nummer</returns>
         public string GetCallerNumber(int index)
         {
@@ -135,7 +136,7 @@ namespace Miljöboven1.Controller
         /// </summary>
         /// <param name="index">Det index man använder i brottet när man returnerar namnet för den hanläggare som satts till brottet</param>
         /// <returns>Den handläggare som satts till brottet</returns>
-        public string GetHandläggarUserName(int index)
+        public string GetInvestigatorUserName(int index)
         {
             return crimeList[index].InvestigatorUserName;
         }
@@ -149,10 +150,6 @@ namespace Miljöboven1.Controller
         {
             return crimeList[id].CallerName + " " + crimeList[id].CallerAddress + " " + crimeList[id].CallerNumber;
         }
-
-        #endregion
-
-        #region Methods
 
         /// <summary>
         /// Lägger in ett brott i brottslistan.
