@@ -72,7 +72,7 @@ namespace Miljöboven1.Controller
         /// </summary>
         public void AddEvent()
         {
-            eventList.AddToList(new Event(investigatorForm.rtbEvent.Text.Trim(), eventList.GetNumberOfEvents(Convert.ToInt32((investigatorForm.lbCrimes.Items[investigatorForm.lbCrimes.SelectedIndex].ToString().Substring(6)))), Convert.ToInt32((investigatorForm.lbCrimes.Items[investigatorForm.lbCrimes.SelectedIndex].ToString().Substring(6)))));
+            eventList.AddToList(new Event(investigatorForm.rtbEvent.Text.Trim(), eventList.GetCrimeEventsCount(Convert.ToInt32((investigatorForm.lbCrimes.Items[investigatorForm.lbCrimes.SelectedIndex].ToString().Substring(6)))), Convert.ToInt32((investigatorForm.lbCrimes.Items[investigatorForm.lbCrimes.SelectedIndex].ToString().Substring(6)))));
         }
 
         /// <summary>
@@ -85,7 +85,7 @@ namespace Miljöboven1.Controller
             {
                 investigatorForm.rtbCrimeInfo.Text = crimeList.GetÄrendeInformation(i);
                 investigatorForm.lbxEvent.Items.Clear();
-                for (int j = 0; j < eventList.GetNumberOfEvents(i); j++)
+                for (int j = 0; j < eventList.GetCrimeEventsCount(i); j++)
                 {
                     investigatorForm.lbxEvent.Items.Add(eventList.GetEventInfo(j, i));
                 }
