@@ -39,15 +39,21 @@ namespace Miljöboven1
         /// </summary>
         public FormMain()
         {
-            //testData.testData();
+            testData.testData();
 
-            binarySerialization.Deserialize();
+            userList = testData.userList;
 
-            userList = binarySerialization.userList;
+            crimeList = new CrimeList();
 
-            crimeList = binarySerialization.crimeList;
+            eventList = new EventList();
 
-            eventList = binarySerialization.eventList;
+            //binarySerialization.Deserialize();
+
+            //userList = binarySerialization.userList;
+
+            //crimeList = binarySerialization.crimeList;
+
+            //eventList = binarySerialization.eventList;
 
             InitializeComponent();
 
