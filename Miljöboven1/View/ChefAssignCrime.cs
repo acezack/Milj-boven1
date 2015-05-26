@@ -62,18 +62,17 @@ namespace Miljöboven1.View
                     MessageBox.Show("Du har inte valt ett brott eller en handläggare.", "Fel");
                 }
                 else
-                {
-                    for (int index = 0; index < crimeList.GetCount(); index++)
-                    {
-                        if (crimeList.GetCrimeTitle(index) == lbxUnassignedCrimes.Items[lbxUnassignedCrimes.SelectedIndex].ToString())
+                {                    
+                    int crimeID = Convert.ToInt32(lbxUnassignedCrimes.Items[lbxUnassignedCrimes.SelectedIndex].ToString().Substring(6));
+                        if (crimeList.GetCrimeTitle(crimeID) == lbxUnassignedCrimes.Items[lbxUnassignedCrimes.SelectedIndex].ToString())
                         {
                             for (int index1 = 0; index1 < userList.GetCount(); index1++)
                             {
                                 if (userList.GetUserName(index1) == lbxInvestigator.Items[lbxInvestigator.SelectedIndex].ToString())
                                 {
-                                    crimeList.ChangeInvestigator(index, lbxInvestigator.Items[lbxInvestigator.SelectedIndex].ToString());
-                                    lbxUnassignedCrimes.SelectedIndex = -1;
-                                    lbxInvestigator.SelectedIndex = -1;
+                                    crimeList.ChangeInvestigator(crimeID, lbxInvestigator.Items[lbxInvestigator.SelectedIndex].ToString());
+                                    //lbxUnassignedCrimes.SelectedIndex = 0;
+                                    //lbxInvestigator.SelectedIndex = 0;
 
                                     lbxUnassignedCrimes.Items.Clear();
 
@@ -98,7 +97,7 @@ namespace Miljöboven1.View
                                 }
                             }
                         }
-                    }
+                    //}
                 }
             }
         }

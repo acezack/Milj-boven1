@@ -47,6 +47,14 @@ namespace Miljöboven1
 
             eventList = new EventList();
 
+            //crimeList.AddCrime(new Crime(35, 0, 1, "15-35-000", "2015-05-26", "s", "s", "s", "s", "s", "hand"));
+            //crimeList.AddCrime(new Crime(35, 1, 1, "15-35-001", "2015-05-26", "s", "s", "s", "s", "s", "hand"));
+
+            //eventList.AddEvent(new Event("aaa", 0, 0));
+            //eventList.AddEvent(new Event("asd", 1, 1));
+            //eventList.AddEvent(new Event("sss", 2, 0));
+            //eventList.AddEvent(new Event("ddd", 3, 0));
+
             //binarySerialization.Deserialize();
 
             //userList = binarySerialization.userList;

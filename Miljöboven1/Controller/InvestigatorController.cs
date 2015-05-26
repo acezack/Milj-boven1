@@ -23,7 +23,7 @@ namespace Miljöboven1.Controller
 
         String investigatorusername;
 
-        List<int> eventIDlist = new List<int>();
+        public List<int> eventIDlist = new List<int>();
 
         #endregion
 
@@ -83,6 +83,7 @@ namespace Miljöboven1.Controller
         /// <param name="i">Index for the selected crime</param>
         public void UpdateSelectedCrime(int i)
         {
+            eventIDlist.Clear();
             try
             {
                 investigatorForm.rtbCrimeInfo.Text = crimeList.GetÄrendeInformation(i);
@@ -90,6 +91,7 @@ namespace Miljöboven1.Controller
                 for (int j = 0; j < eventList.GetCrimeEventsCount(i); j++)
                 {
                     investigatorForm.lbxEvent.Items.Add(eventList.GetEventInfo(j, i));
+                    eventIDlist.Add(j);
                 }
             }
             catch (Exception)

@@ -30,6 +30,8 @@ namespace Miljöboven1.View
 
         InvestigatorController investigatorController;
 
+        List<int> eventIDlist = new List<int>();
+
         #endregion
 
         #region Contructor
@@ -130,6 +132,7 @@ namespace Miljöboven1.View
         private void lbCrimes_SelectedIndexChanged(object sender, EventArgs e)
         {
             investigatorController.UpdateSelectedCrime(Convert.ToInt32((lbCrimes.Items[lbCrimes.SelectedIndex].ToString().Substring(6))));
+            eventIDlist = investigatorController.eventIDlist;
         }
 
         /// <summary>
@@ -164,7 +167,7 @@ namespace Miljöboven1.View
                             this.Hide();
                         }
                         else
-                            investigatorController.EditEvents(Convert.ToInt32(lbxEvent.Items[lbxEvent.SelectedIndex].ToString().Substring(6)), Convert.ToInt32(lbCrimes.Items[lbCrimes.SelectedIndex].ToString().Substring(6)), rtbEvent.Text.Trim());
+                            investigatorController.EditEvents(eventIDlist[lbxEvent.SelectedIndex], Convert.ToInt32(lbCrimes.Items[lbCrimes.SelectedIndex].ToString().Substring(6)), rtbEvent.Text.Trim());
                     }
             }
             else
