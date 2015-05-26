@@ -23,52 +23,52 @@ namespace Miljöboven1.DAL
         /// </summary>
         public void Deserialize()
         {
-            Stream userFileStream;
+            //Stream userFileStream;
 
-            if (File.Exists("1userData.txt"))
-            {
-                userFileStream = File.OpenRead("1userData.txt");
-                BinaryFormatter deserializer = new BinaryFormatter();
-                userList = (UserList)(deserializer.Deserialize(userFileStream));
-                userFileStream.Close();
-            }
-            else
-            {
-                userFileStream = File.Create("1userData.txt");
-                BinaryFormatter serializer = new BinaryFormatter();
-                serializer.Serialize(userFileStream, userList);
-                userFileStream.Close();
-            }
+            //if (File.Exists("1userData.txt"))
+            //{
+            //    userFileStream = File.OpenRead("1userData.txt");
+            //    BinaryFormatter deserializer = new BinaryFormatter();
+            //    userList = (UserList)(deserializer.Deserialize(userFileStream));
+            //    userFileStream.Close();
+            //}
+            //else
+            //{
+            //    userFileStream = File.Create("1userData.txt");
+            //    BinaryFormatter serializer = new BinaryFormatter();
+            //    serializer.Serialize(userFileStream, userList);
+            //    userFileStream.Close();
+            //}
 
-            if (File.Exists("1crimeData.txt"))
-            {
-                Stream crimeFileStream = File.OpenRead("1crimeData.txt");
-                BinaryFormatter deserializer = new BinaryFormatter();
-                crimeList = (CrimeList)(deserializer.Deserialize(crimeFileStream));
-                crimeFileStream.Close();
-            }
-            else
-            {
-                Stream crimeFileStream = File.Create("1crimeData.txt");
-                BinaryFormatter serializer = new BinaryFormatter();
-                serializer.Serialize(crimeFileStream, crimeList);
-                crimeFileStream.Close();
-            }
+            //if (File.Exists("1crimeData.txt"))
+            //{
+            //    Stream crimeFileStream = File.OpenRead("1crimeData.txt");
+            //    BinaryFormatter deserializer = new BinaryFormatter();
+            //    crimeList = (CrimeList)(deserializer.Deserialize(crimeFileStream));
+            //    crimeFileStream.Close();
+            //}
+            //else
+            //{
+            //    Stream crimeFileStream = File.Create("1crimeData.txt");
+            //    BinaryFormatter serializer = new BinaryFormatter();
+            //    serializer.Serialize(crimeFileStream, crimeList);
+            //    crimeFileStream.Close();
+            //}
 
-            if (File.Exists("1eventData.txt"))
-            {
-                Stream eventFileStream = File.OpenRead("1eventData.txt");
-                BinaryFormatter deserializer = new BinaryFormatter();
-                eventList = (EventList)(deserializer.Deserialize(eventFileStream));
-                eventFileStream.Close();
-            }
-            else
-            {
-                Stream eventFileStream = File.Create("1eventData.txt");
-                BinaryFormatter serializer = new BinaryFormatter();
-                serializer.Serialize(eventFileStream, eventList);
-                eventFileStream.Close();
-            }
+            //if (File.Exists("1eventData.txt"))
+            //{
+            //    Stream eventFileStream = File.OpenRead("1eventData.txt");
+            //    BinaryFormatter deserializer = new BinaryFormatter();
+            //    eventList = (EventList)(deserializer.Deserialize(eventFileStream));
+            //    eventFileStream.Close();
+            //}
+            //else
+            //{
+            //    Stream eventFileStream = File.Create("1eventData.txt");
+            //    BinaryFormatter serializer = new BinaryFormatter();
+            //    serializer.Serialize(eventFileStream, eventList);
+            //    eventFileStream.Close();
+            //}
         }
 
         /// <summary>
@@ -76,20 +76,20 @@ namespace Miljöboven1.DAL
         /// </summary>
         public void Serialize()
         {
-            Stream userFileStream = File.OpenWrite("1userData.txt");
-            BinaryFormatter serializer = new BinaryFormatter();
-            serializer.Serialize(userFileStream, userList);
-            userFileStream.Close();
+            //Stream userFileStream = File.OpenWrite("1userData.txt");
+            //BinaryFormatter serializer = new BinaryFormatter();
+            //serializer.Serialize(userFileStream, userList);
+            //userFileStream.Close();
 
-            Stream crimeFileStream = File.OpenWrite("1crimeData.txt");
-            serializer = new BinaryFormatter();
-            serializer.Serialize(crimeFileStream, crimeList);
-            crimeFileStream.Close();
+            //Stream crimeFileStream = File.OpenWrite("1crimeData.txt");
+            //serializer = new BinaryFormatter();
+            //serializer.Serialize(crimeFileStream, crimeList);
+            //crimeFileStream.Close();
 
-            Stream eventFileStream = File.OpenWrite("1eventData.txt");
-            serializer = new BinaryFormatter();
-            serializer.Serialize(eventFileStream, eventList);
-            eventFileStream.Close();
+            //Stream eventFileStream = File.OpenWrite("1eventData.txt");
+            //serializer = new BinaryFormatter();
+            //serializer.Serialize(eventFileStream, eventList);
+            //eventFileStream.Close();
         }
     }
 }

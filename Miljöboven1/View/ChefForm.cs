@@ -26,7 +26,7 @@ namespace Miljöboven1.View
         #region Constructor
 
         /// <summary>
-        /// ChefFormen hanterar allt som chefen ska kunna göra. Här visas alla brott och all information relaterade till dessa.
+        /// ChefFormen hanterar allt som chefen ska kunna göra. Här visas alla brott och all information relaterade till dessa. I change it all lol
         /// </summary>
         /// <param name="userList">Listan som hanterar alla användare och även alla metoder som används för användarhantering.</param>
         /// <param name="crimeList">Listan som hanterar alla miljöbrott och även alla metoder som används för miljöbrottshantering.</param>
@@ -249,10 +249,11 @@ namespace Miljöboven1.View
 
         #region AssignCrime
 
+        // Opens up 
         private void btnAssignCrime_Click(object sender, EventArgs e)
         {
-            ChefAssignCrime chefTilldelaÄrendeForm = new ChefAssignCrime(userList, crimeList);
-            chefTilldelaÄrendeForm.Show();
+            ChefAssignCrime chefAssignCrime = new ChefAssignCrime(userList, crimeList);
+            chefAssignCrime.Show();
         }
 
         #endregion
