@@ -23,6 +23,8 @@ namespace Miljöboven1.Controller
 
         String investigatorusername;
 
+        List<int> eventIDlist = new List<int>();
+
         #endregion
 
         #region Constructor
