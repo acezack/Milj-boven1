@@ -131,7 +131,16 @@ namespace Miljöboven1.View
         /// <param name="e"></param>
         private void lbCrimes_SelectedIndexChanged(object sender, EventArgs e)
         {
-            investigatorController.UpdateSelectedCrime(Convert.ToInt32((lbCrimes.Items[lbCrimes.SelectedIndex].ToString().Substring(6))));
+            if (lbCrimes.SelectedIndex == -1)
+            {
+                lbxEvent.Items.Clear();
+                rtbCrimeInfo.Text = "";
+                rtbEvent.Text = "";
+            }
+            else
+            {
+                investigatorController.UpdateSelectedCrime(Convert.ToInt32((lbCrimes.Items[lbCrimes.SelectedIndex].ToString().Substring(6))));
+            }
             eventIDlist = investigatorController.eventIDlist;
         }
 
@@ -162,12 +171,12 @@ namespace Miljöboven1.View
                         DialogResult res2 = MessageBox.Show("Vill du ändra datum?", "Bekräfta", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                         if (res2 == DialogResult.Yes)
                         {
-                            InvestigatorDate hlg = new InvestigatorDate(this, investigatorController, rtbEvent.Text.Trim(), Convert.ToInt32(lbxEvent.Items[lbxEvent.SelectedIndex].ToString().Substring(6)), Convert.ToInt32(lbCrimes.Items[lbCrimes.SelectedIndex].ToString().Substring(6)));
+                            InvestigatorDate hlg = new InvestigatorDate(this, investigatorController, rtbEvent.Text.Trim(), eventList.GetEventID(Convert.ToInt32(lbCrimes.Items[lbCrimes.SelectedIndex].ToString().Substring(6)), lbxEvent.SelectedIndex), Convert.ToInt32(lbCrimes.Items[lbCrimes.SelectedIndex].ToString().Substring(6)));
                             hlg.Show();
                             this.Hide();
                         }
                         else
-                            investigatorController.EditEvents(eventIDlist[lbxEvent.SelectedIndex], Convert.ToInt32(lbCrimes.Items[lbCrimes.SelectedIndex].ToString().Substring(6)), rtbEvent.Text.Trim());
+                            investigatorController.EditEvents(eventList.GetEventID(Convert.ToInt32(lbCrimes.Items[lbCrimes.SelectedIndex].ToString().Substring(6)), lbxEvent.SelectedIndex), Convert.ToInt32(lbCrimes.Items[lbCrimes.SelectedIndex].ToString().Substring(6)), rtbEvent.Text.Trim());
                     }
             }
             else
@@ -184,9 +193,15 @@ namespace Miljöboven1.View
             if (lbxEvent.SelectedIndex != -1)
             {
                 DialogResult res = MessageBox.Show("Bekräfta borttagning!", "Bekräfta", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
-                if (res == DialogResult.Yes)
+                if (res == DialogResult.OK)
                 {
-                    investigatorController.RemoveEvent(Convert.ToInt32(lbxEvent.Items[lbxEvent.SelectedIndex].ToString().Substring(6)), Convert.ToInt32((lbCrimes.Items[lbCrimes.SelectedIndex].ToString().Substring(6))));
+                    int l = lbxEvent.SelectedIndex;
+                    int sel = lbCrimes.SelectedIndex;
+                    investigatorController.RemoveEvent(eventList.GetEventID(Convert.ToInt32(lbCrimes.Items[lbCrimes.SelectedIndex].ToString().Substring(6)), lbxEvent.SelectedIndex), Convert.ToInt32((lbCrimes.Items[lbCrimes.SelectedIndex].ToString().Substring(6))));
+                    //alla event under eventet i listan måste få -1 i listeventid
+                    lbCrimes.SelectedIndex = sel;
+                    investigatorController.AdjustEventListIDs(l);
+                    lbCrimes.SelectedIndex = -1;
                 }
             }
             else

@@ -74,7 +74,7 @@ namespace Miljöboven1.Controller
         /// </summary>
         public void AddEvent()
         {
-            eventList.AddToList(new Event(investigatorForm.rtbEvent.Text.Trim(), eventList.GetCrimeEventsCount(Convert.ToInt32((investigatorForm.lbCrimes.Items[investigatorForm.lbCrimes.SelectedIndex].ToString().Substring(6)))), Convert.ToInt32((investigatorForm.lbCrimes.Items[investigatorForm.lbCrimes.SelectedIndex].ToString().Substring(6)))));
+            eventList.AddToList(new Event(investigatorForm.rtbEvent.Text.Trim(), eventList.GetCrimeEventsCount(Convert.ToInt32((investigatorForm.lbCrimes.Items[investigatorForm.lbCrimes.SelectedIndex].ToString().Substring(6)))), Convert.ToInt32((investigatorForm.lbCrimes.Items[investigatorForm.lbCrimes.SelectedIndex].ToString().Substring(6))), investigatorForm.lbxEvent.Items.Count));
         }
 
         /// <summary>
@@ -95,7 +95,14 @@ namespace Miljöboven1.Controller
                 }
             }
             catch (Exception)
-            { }
+            {
+                
+            }
+        }
+
+        public void AdjustEventListIDs(int l)
+        {
+            eventList.ChangeEventListID(l, Convert.ToInt32((investigatorForm.lbCrimes.Items[investigatorForm.lbCrimes.SelectedIndex].ToString().Substring(6))));
         }
 
         /// <summary>
@@ -144,6 +151,7 @@ namespace Miljöboven1.Controller
         public void RemoveEvent(int eventID, int crimeID)
         {
             eventList.RemoveEvent(eventID, crimeID);
+            investigatorForm.lbCrimes.SelectedIndex = -1;
         }
 
         #endregion

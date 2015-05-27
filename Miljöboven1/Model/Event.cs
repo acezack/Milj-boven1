@@ -17,6 +17,8 @@ namespace Miljöboven1.Controller
 
         public Int32 EventID { get; set; }
 
+        public Int32 ListEventID { get; set; }
+
         public Int32 CrimeID { get; set; }
 
         #endregion
@@ -29,8 +31,9 @@ namespace Miljöboven1.Controller
         /// <param name="eventComment">The comment the event has, e.g. "Visited the site and took some pictures for further review."</param>
         /// <param name="eventID">The ID to recognise the event in the eventList (each event gets an individual ID by the program)</param>
         /// <param name="crimeID">The crimeID an individual event will be linked to.</param>
-        public Event(string eventComment, int eventID, int crimeID)
+        public Event(string eventComment, int eventID, int crimeID, int ListEventID)
         {
+            this.ListEventID = ListEventID;
             this.EventComment = eventComment;
             this.EventDate = DateTime.Now.ToString("yyyy/MM/dd");
             this.EventID = eventID;

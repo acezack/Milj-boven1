@@ -23,9 +23,33 @@ namespace Miljöboven1.Controller
             this.eventList = new List<Event>();
         }
 
+        public void ChangeEventListID(int l, int crimeID)
+        {
+            for (int i = 0; i < eventList.Count; i++)
+            {
+                if (eventList[i].CrimeID == crimeID && eventList[i].ListEventID > l)
+                {
+                    eventList[i].ListEventID -= 1;
+                }
+            }
+        }
+
         public void AddToList(Event ev)
         {
             eventList.Add(ev);
+        }
+
+        public int GetEventID(int crimeID, int eventListID)
+        {
+            int id = -1;
+            foreach (Event ev in eventList)
+            {
+                if (ev.ListEventID == eventListID && ev.CrimeID == crimeID)
+                {
+                    id = ev.EventID;
+                }
+            }
+            return id;
         }
 
         public void AddEvent(Event ev)
